@@ -1,0 +1,4556 @@
+{
+ "upi": {
+  "title": "UPI Live Members",
+  "total": 752,
+  "head": "UPI Bank/PPI Live: 741(110-PSP & 631-Issuer )",
+  "keys": [
+   "bank_name",
+   "details"
+  ],
+  "rows": [
+   [
+    "Abhinandan Urban Co-Op Bank Amravati",
+    "Issuer"
+   ],
+   [
+    "Abhyudaya Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Ace Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Adarniya P D Patilsaheb Sahakari Bank Ltd Karad",
+    "Issuer"
+   ],
+   [
+    "Adarsh Co-Operative Bank Rajasthan",
+    "Issuer"
+   ],
+   [
+    "Ahmedabad District Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Ahmednagar Merchants Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ahmednagar Shahar Sahakari Bank Maryadit",
+    "Issuer"
+   ],
+   [
+    "Airtel Payments Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Akhand Anand Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Alavi Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Aman Sahakari Bank Ltd, Ichalkaranji",
+    "Issuer"
+   ],
+   [
+    "Amazon",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Ambajogai Peoples Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ambarnath Jai Hind Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Amreli Jilla Madhyastha Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Amreli Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Apna Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Appasaheb Birnale Sahakari Bank Ltd Dudhgaon",
+    "Issuer"
+   ],
+   [
+    "Arihant Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Arunachal Pradesh Rural Bank",
+    "Issuer"
+   ],
+   [
+    "Arvind Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Assam Gramin Vikash Bank",
+    "Issuer"
+   ],
+   [
+    "Associate Co.Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Au Small Finance Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Axis Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Bajaj Finance Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Balasinor Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Balotra Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bandhan Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Bank of America N.A.",
+    "Issuer"
+   ],
+   [
+    "Bank of Baroda",
+    "PSP & Issuer"
+   ],
+   [
+    "Bank of India",
+    "PSP & Issuer"
+   ],
+   [
+    "Bank of Maharashtra",
+    "PSP & Issuer"
+   ],
+   [
+    "Baran Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "(Baroda Gujarat Gramin Bank) Gujrat Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "( Baroda Uttar Pradesh Gramin Bank) Uttar Pradesh Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Bassein Catholic Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Betul Nagrik Sahakari Bank Mydt",
+    "Issuer"
+   ],
+   [
+    "Bhadradri Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bhagini Nivedita Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bhavna Rishi Co Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bhavnagar District Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bhilwara Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bombay Mercantile Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Brahmadeodada Mane Sahakari Bank Ltd Solapur",
+    "Issuer"
+   ],
+   [
+    "Canara Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Capital Small Finance Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Central Bank of India",
+    "PSP & Issuer"
+   ],
+   [
+    "(Chaitanya Godavari Grameena Bank)  Andhra Pradesh Grameena Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Chartered Sahakari Bank Niyamitha",
+    "Issuer"
+   ],
+   [
+    "Chhattisgarh Rajya Gramin Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Chhattisgarh Rajya Sahakari Bank Mydt",
+    "Issuer"
+   ],
+   [
+    "Chittorgarh Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Citibank Corporate",
+    "PSP & Issuer"
+   ],
+   [
+    "Citizen Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Citizen Credit Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Citizens Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "City Union Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Coastal Area Local Bank",
+    "Issuer"
+   ],
+   [
+    "CSB Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Cuddalore District Central Co-Op Bank",
+    "Issuer"
+   ],
+   [
+    "Daivadnya Sahakara Bank Niyamit",
+    "Issuer"
+   ],
+   [
+    "(Dakshin Bihar Gramin Bank)  Bihar Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Dapoli Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Darussalam Co-Operative Urban Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Dattatraya Maharaj Kalambe Jaoli Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Dausa Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "DBS Bank India Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "DCB Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Deendayal Nagri Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Deogiri Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Deutsche Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Dhanalakshmi Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Dhanera Mercantile Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Dharmapuri District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Dhule Vikas Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Dindigul District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Dombivli Nagarik Sahakari Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Equitas Small Finance Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Eroute Technologies Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Esaf Small Finance Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "Federal Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Fingrowth Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Fino Payments Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "G P Parsik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Godavari Urban Co-Operative Bank Ltd. Nashik",
+    "Issuer"
+   ],
+   [
+    "Guardian Souharda Sahakari Bank Niyamita",
+    "Issuer"
+   ],
+   [
+    "Gujarat Ambuja Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Haveli Sahakari Bank Maryadit Moshi",
+    "Issuer"
+   ],
+   [
+    "HDFC Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Himachal Pradesh Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Himatnagar Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "HSBC Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Hutatma Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "ICICI Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "IDBI Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "IDFC First Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "India Post Payments Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Indian Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Indian Overseas Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Indore Cloth Market Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Indore Paraspar Sahakari Bank Ltd. Indore",
+    "Issuer"
+   ],
+   [
+    "Indore Premier Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Indraprastha Sehkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Indrayani Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Indusind Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Irinjalakuda Town Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jalgaon Janata Sahakari Bank Ltd Jalgaon",
+    "Issuer"
+   ],
+   [
+    "Jalna Merchants Co.Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Jalore Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jamia Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "(Jammu And Kashmir Grameen Bank ) Jammu And  Kashmir Gramin Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Jana Small Finance Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "Janakalyan Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Janaseva Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Janata Sahakari Bank, Pune",
+    "PSP & Issuer"
+   ],
+   [
+    "Janata Sahakari Bank Ltd Ajara",
+    "Issuer"
+   ],
+   [
+    "Janatha Seva Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jharkhand Rajya Gramin Bank (Erstwhile Vananchal Gramin Bank)",
+    "Issuer"
+   ],
+   [
+    "Jijamata Mahila Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jila Sahakari Kendriya Bank Maryadit Raipur",
+    "Issuer"
+   ],
+   [
+    "Jila Sahakari Kendriya Bank Mydt Durg",
+    "Issuer"
+   ],
+   [
+    "Jila Sahkari Kendriya Bank Maryadit Khargone",
+    "Issuer"
+   ],
+   [
+    "Jio Payments Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "Jivan Commercial Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Jodhpur Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jogindra Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Kallappanna Awade Ichalkaranji Janata Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "Kalyan Janata Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "Kanaka Mahalakshmi Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Kancheepuram Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Kankaria Maninagar Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Kanyakumari District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Karnataka Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "(Karnataka Gramin Bank) Karnataka Grameena Bank",
+    "Issuer"
+   ],
+   [
+    "Karnataka Mahila Sahakara Bank Niyamitha",
+    "Issuer"
+   ],
+   [
+    "Karur Vysya Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Kashmir Mercantile Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Kerala Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Kokan Mercantile Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Kolhapur Dist. Central Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Kolhapur Mahila Sahakari Bank Ltd. Kolhapur",
+    "Issuer"
+   ],
+   [
+    "Kotak Mahindra Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Kottayam Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Koyana Sahakari Bank Ltd Karad",
+    "Issuer"
+   ],
+   [
+    "Krishna Bhima Samruddhi Local Area Bank",
+    "Issuer"
+   ],
+   [
+    "Krishna Mercantile Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Laxmi Urbanco-Op Bank Ltd Latur",
+    "Issuer"
+   ],
+   [
+    "Lic Employees Co-Operative Bank Ltd, Udupi",
+    "Issuer"
+   ],
+   [
+    "Liluah Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Livquik Technology India Pvt Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Lokmangal Co Op Bank Ltd Solapur",
+    "Issuer"
+   ],
+   [
+    "Lonavala Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "M S Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Madhya Pradesh Rajya Sahakari Bank Maryadit",
+    "Issuer"
+   ],
+   [
+    "Madurai District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "GS Mahanagar Co Op Bank",
+    "Issuer"
+   ],
+   [
+    "Mahanagar Nagrik Sahakari Bank Maryadit",
+    "Issuer"
+   ],
+   [
+    "Maharashtra Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Maharashtra Nagari Sahakari Bank Maryadit Latur",
+    "Issuer"
+   ],
+   [
+    "Mahatma Fule Urban Co-Op Bank Ltd Amravati",
+    "Issuer"
+   ],
+   [
+    "Mahaveer Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Mahesh Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Mahesh Urban Co-Operative Bank Ltd Parbhani",
+    "Issuer"
+   ],
+   [
+    "Mahila Nagrik Sahakari Bank Maryadit Mahasamund",
+    "Issuer"
+   ],
+   [
+    "Malviya Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Manipur Rural Bank",
+    "Issuer"
+   ],
+   [
+    "Mann Deshi Mahila Sahakari Bank. Ltd.",
+    "Issuer"
+   ],
+   [
+    "Mansing Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Manvi Pattana Souharda Sahakari Bank Ni.",
+    "Issuer"
+   ],
+   [
+    "Maratha Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Meghalaya Rural Bank",
+    "Issuer"
+   ],
+   [
+    "Mehsana Urban Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Mizoram Rural Bank",
+    "Issuer"
+   ],
+   [
+    "Model Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Moti Urban Co-Operative Bank Ltd Taloda",
+    "Issuer"
+   ],
+   [
+    "Muzaffarnagar District Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Nagarik Sahakari Bank Maryadit",
+    "Issuer"
+   ],
+   [
+    "Nagrik Sahakari Maryadit Gwalior",
+    "Issuer"
+   ],
+   [
+    "Nandani Sahakari Bank Ltd Nandani",
+    "Issuer"
+   ],
+   [
+    "Navanagara Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Navi Mumbai Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Navsarjan Industrial Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Nilgiris District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "NKGSB Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Northern Railway Primary Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "NSDL Payments Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Nutan Nagarik Sahakari Bank Ltd.",
+    "PSP & Issuer"
+   ],
+   [
+    "One Mobikwik Systems Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Pali Urban Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Palus Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Patan Nagarik Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Pavana Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Paypoint India Network Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Peoples Co-Operative Bank Ltd Dholka",
+    "Issuer"
+   ],
+   [
+    "Peoples Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Pine Labs Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Poornawdi Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Prerana Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Prime Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Priyadarshani Nagari Sahakari Bank Maryadit",
+    "Issuer"
+   ],
+   [
+    "Pudukottai District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Puduvai Bharathiar Grama Bank",
+    "Issuer"
+   ],
+   [
+    "Pune Cantonment Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Pune District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Pune Peoples Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Pune Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Punjab And Sind Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Punjab Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Punjab National Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Pusad Urban Co-Op Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Rajadhani Co Op Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rajapur Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rajarambapu Sahakari Bank Ltd Peth",
+    "Issuer"
+   ],
+   [
+    "Rajarshi Shahu Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "(Rajasthan Marudhara Gramin Bank)  Rajasthan Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Raje Vikramsinh Ghatage Co-Operative Bank Ltd.Kagal",
+    "Issuer"
+   ],
+   [
+    "Rajgurunagar Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rajkot Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rajkot Peoples Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rajlaxmi Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ramanathapuram District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Rampur Zila Sahkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rani Channamma Mahila Sahakari Bank Niyamit",
+    "Issuer"
+   ],
+   [
+    "Ratnakar Bank Limited (RBL)",
+    "PSP & Issuer"
+   ],
+   [
+    "Reserve Bank Employees Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "SSLSA Kurundwad Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sadalga Urban Souharda Sahakari Bank Niyamit",
+    "Issuer"
+   ],
+   [
+    "Sadhana Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sadhana Sahakari Bank Ltd Yes Bank",
+    "Issuer"
+   ],
+   [
+    "Saibaba Nagari Sahakari Bank Maryadit Sailu",
+    "Issuer"
+   ],
+   [
+    "Salem District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Samarth Sahakari Bank Ltd. Solapur",
+    "Issuer"
+   ],
+   [
+    "Samarth Sahakari Bank Maryadit Jalna",
+    "Issuer"
+   ],
+   [
+    "Samata Co Operative Development Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Samata Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sampada Sahakari Bank Ltd Pune",
+    "Issuer"
+   ],
+   [
+    "Samruddhi Co-Operative Bank Ltd Nagpur",
+    "Issuer"
+   ],
+   [
+    "Sandur Pattana Souharda Sahakari Bank Ni",
+    "Issuer"
+   ],
+   [
+    "Sant Sopankaka Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sarakari Naukarara Sahakari Bank Niyamat Vijayapur",
+    "Issuer"
+   ],
+   [
+    "Saraspur Nagarik Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Saraswat Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Sardar Vallabhbhai Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sarva Haryana Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Sarvodaya Commercial Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "SBM Bank India Ltd.",
+    "PSP & Issuer"
+   ],
+   [
+    "SBPP Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Sharad Sahakari Bank Ltd, Manchar",
+    "Issuer"
+   ],
+   [
+    "Shivalik Small Finance Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Shramik Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Basaveshwar Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Dharati Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shree Kadi Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Mahavir Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Mahesh Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Mahuva Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Panchganga Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Vardhman Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shree Warana Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Adinath Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Anand Nagari Sahakari Bank Limited, Chandrapur",
+    "Issuer"
+   ],
+   [
+    "Shri Arihant Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shri Basaveshwar Sahakari Bank Nyt.",
+    "Issuer"
+   ],
+   [
+    "Shri Bharat Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Chatrapati Shivaji Maharaj Sahakari Bank Niyamith",
+    "Issuer"
+   ],
+   [
+    "Shri Chhani Nagrik Sahkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Chhatrapati Rajarshi Shahu Urban Co-Op. Bank Ltd. Beed",
+    "Issuer"
+   ],
+   [
+    "Shri Janata Sahakari Bank Ltd.Halol",
+    "Issuer"
+   ],
+   [
+    "Shri Mahalaxmi Co-Operative Bank Ltd Kolhapur",
+    "Issuer"
+   ],
+   [
+    "Shri Mahila Sewa Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shri Rajkot District Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shri Swami Samarth Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Veershaiv Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Yashwant Sahakari Bank Maryadit Kuditre",
+    "Issuer"
+   ],
+   [
+    "Shrikrishna Co-Operative Bank Ltd Umrer",
+    "Issuer"
+   ],
+   [
+    "Sindhudurg District Central Co. Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Sivagangai District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Smriti Nagrik Sahakari Bank Maryadit Mandsaur",
+    "Issuer"
+   ],
+   [
+    "Spice Money Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Sree Charan Souhardha Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sreenidhi Souharda Sahakari Bank Niyamitha",
+    "Issuer"
+   ],
+   [
+    "Sri Rama Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Sri Seetharaghava Souharda Sahakara Bank Niyamitha",
+    "Issuer"
+   ],
+   [
+    "Sri Sudha Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sri Vasavamba Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Standard Chartered Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "State Bank Of India",
+    "PSP & Issuer"
+   ],
+   [
+    "Sterling Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Suco Souharda Sahakari Bank-Imps",
+    "Issuer"
+   ],
+   [
+    "Sudha Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sunderlal Sawji Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Surat National Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Suryoday Small Finance Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Suvarnayug Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Tamil Nadu Grama Bank",
+    "Issuer"
+   ],
+   [
+    "Tamilnad Mercantile Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Telangana Grameena Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Telangana State Co-Operative Apex Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Textile Traders Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Thane Bharat Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Thane Janata Sahakari Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Thanjavur District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "The A.P. Mahesh Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Abhinav Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Adarsh Co-Operative Urban Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Adilabad District Co-Op Central Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Agrasen Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Agrasen Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ahmedabad Mercantile Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ahmednagar District Central Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ajara Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Akola District Central Co-Op.Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Akola Janata Commercial Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Akola Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Amravati Zilla Parishad Shikshak Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "The Anand Mercantile Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Andhra Pradesh State Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ap Rajarajeswari Mahila Co-Op Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ashta Peoples Co-Op Bank Ltd Ashta",
+    "Issuer"
+   ],
+   [
+    "The Babasaheb Deshmukh Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Banaskantha District Central Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Banaskantha Mercantile Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Baramati Sahakari Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Bardoli Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Baroda Central Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Baroda City Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bavla Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bellary Dist Co-Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bhagyalakshmi Mahila Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bhagyodaya Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bharat Co Operative Bank Mumbai Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Bharuch District Central Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bhuj Commercial Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bicholim Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Burdwan Central Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Business Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chandwad Merchants Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chembur Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chennai Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chiplun Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Coimbatore District Central Co-Op Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Commercial Co Operative Bank Ltd Kolhapur",
+    "Issuer"
+   ],
+   [
+    "The Commercial Co-Operative Bank Ltd, Jamnagar",
+    "Issuer"
+   ],
+   [
+    "The Co-Op Bank Of Mehsana Ltd",
+    "Issuer"
+   ],
+   [
+    "The Co-Operative Bank Of Rajkot Ltd",
+    "Issuer"
+   ],
+   [
+    "The Cosmos Co-Operative Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Dahod Mercantile Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Dahod Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Davangere Harihar Urban Sahakara Bank Niyamitha",
+    "Issuer"
+   ],
+   [
+    "The Dhanbad Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The District Central Co Op Bank Ltd Khammam",
+    "Issuer"
+   ],
+   [
+    "The District Co-Operative Central Bank Ltd.Medak",
+    "Issuer"
+   ],
+   [
+    "The Eenadu Co-Op.Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Erode District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Financial Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gadchiroli District Central Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Gandevi Peoples Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gandhidham Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gandhinagar Nagarik Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gandhinagar Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gayatri Co-Operative Urban Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Godhra Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Greater Bombay Co-Operative Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "The Gujarat State Co-Op Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Guntur Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Haryana State Co-Operative Apex Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Hassan District Co-Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Hasti Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Himachal Pradesh State Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Idar Nagrik Sahakari Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Jalgaon Peoples Co.Op.Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Jamkhandi Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Jammu & Kashmir Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "The Jampeta Co Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Janata Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Junagadh Commercial Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Junagadh Jilla Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kaira District Central Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Kakatiya Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kakinada Co-Operative Town Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kalupur Commercial Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kangra Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Karimnagar District Co Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Karnataka State Co-Operative Apex Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Karnavati Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kerala State Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Khamgaon Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Khattri Co-Operative Urban Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Kodagu District Co-Op Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kodinar Taluka Co-Operative Banking Union Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kodungallur Town Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kolhapur Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kopargaon Peoples Co-Op.Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kottakkal Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kranthi Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kukarwada Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kumbakonam Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Latur Urban Co-Op Bank Ltd Latur",
+    "Issuer"
+   ],
+   [
+    "The Lunawada Peoples Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Maharashtra Mantralaya And Allied Offices Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Maharashtra State Co-Operative Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "The Mahaveer Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Makarpura Industrial Estate Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Malad Sahakari Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Mandvi Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Meghalaya Co-Operative Apex Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Mehsana Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Merchants Liberal Co-Operative Bank Ltd Gadag",
+    "Issuer"
+   ],
+   [
+    "The Merchants Souharda Sahakara Bank Ni.",
+    "Issuer"
+   ],
+   [
+    "The Mizoram Co-Operative Apex Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Modasa Nagarik Sahakari Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Municipal Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Muslim Co-Operative Bank Ltd Pune",
+    "PSP & Issuer"
+   ],
+   [
+    "The Nainital Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Nalgonda Dist Co-Op Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Nanded Merchants Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Nandura Urban Co-Op Bank Ltd. Nandura",
+    "Issuer"
+   ],
+   [
+    "The Naroda Nagrik Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Nasik Merchants Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The National Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Naval Dockyard Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "The Navnirman Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Nawanagar Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The New Urban Co-Operative Bank Ltd Rampur",
+    "Issuer"
+   ],
+   [
+    "The Panchmahal District Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Panipat Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Pimpalgaon Merchants Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Pochampally Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Pratap Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Raigad District Co Operative Bank Ltd Alibag",
+    "Issuer"
+   ],
+   [
+    "The Railway Employees Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Raipur Urban Mercantile Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Rajasthan State Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Rajkot Commercial Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "The Ranuj Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The S.S.K. Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Sabarkantha Dist. Cent. Co.Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Sangamner Merchants Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Sarvodaya Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Sarvodaya Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Satara District Central Co-Op. Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Satara Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Saurashtra Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Shahada Peoples Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "SVC  Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Sirsi Urban Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The South Indian Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "The Sultans Battery Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Surat District Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "The Surat Mercantile Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Surat Peoples Co-Op Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Sutex Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Tamil Nadu State Apex Co Operative Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "The Thane Dist Central Co Op. Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Tiruvannamalai District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Udaipur Mahila Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Udaipur Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Udupi Co Operative Town Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Umreth Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Union Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Urban Co-Op Bank Ltd Dharangaon",
+    "Issuer"
+   ],
+   [
+    "The Urban Co-Op Bank Ltd No 1758, Perinthalmanna",
+    "Issuer"
+   ],
+   [
+    "The Uttarsanda Peoples Co-Op Bank Ltd, Uttarsanda",
+    "Issuer"
+   ],
+   [
+    "The Vaish Co Operative New Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Vallabh Vidyanagar Commercial Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Varachha Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Veraval Peoples Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Vijay Co-Operative Bank Ltd, Ahmedabad",
+    "Issuer"
+   ],
+   [
+    "The Visakhapatnam Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Vishweshwar Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Warangal District Co-Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Zoroastrian Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Thetiruchirappalli District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Thoothukudi District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Tirunelveli District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Tirupati Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Transcorp International Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Transerv Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Tri O Tech Solutions Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Tripura Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Tripura State Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Tumkur Grain Merchants Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "UCO Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "Udaipur Mahila Samrudhi Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ujjivan Small Finance Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Uma Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Union Bank Of India",
+    "PSP & Issuer"
+   ],
+   [
+    "Unity Small Finance Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Unjha Nagarik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Urban Co Operativa Bank Ltd Siddharthnagar",
+    "Issuer"
+   ],
+   [
+    "Urban Co-Operative Bank Ltd Bareilly",
+    "Issuer"
+   ],
+   [
+    "Utkarsh Small Finance Bank Limited",
+    "PSP & Issuer"
+   ],
+   [
+    "Uttar Pradesh Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Uttarakhand Gramin Bank - Imps",
+    "Issuer"
+   ],
+   [
+    "Vaishya Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vaishya Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Valmiki Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Valsad District Central Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vardhaman Mahila Co Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vasai Janata Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vasai Vikas Sahakari Bank Ltd",
+    "PSP & Issuer"
+   ],
+   [
+    "Vasundhara Mahila Nagari Sahakari Bank. Ltd Ambejogai",
+    "Issuer"
+   ],
+   [
+    "Veerashaiva Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vellore District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Vidarbha Merchants Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vijay Commercial Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vikas Souharda Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vikramaditya Nagrik Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "Villupuram District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Virudhunagar District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Vyavsayik Sahkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Warangal Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Yes Bank Limited Ybs",
+    "PSP & Issuer"
+   ],
+   [
+    "Zila Sahakari Bank Ltd Lakhimpur Kheri",
+    "Issuer"
+   ],
+   [
+    "Sanmitra Mahila Nagari Sahakari Bank Maryadit Chandrapur",
+    "Issuer"
+   ],
+   [
+    "The Veraval Mercantile Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chandigarh State Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ratnagiri District Central Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Raichur District Central Co-Op Bank Ltd Raichur",
+    "Issuer"
+   ],
+   [
+    "Sri Gokarnanath Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Hadagali Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sardar Singh Nagrik Sahkari Bank Maryadit Tikamgarh",
+    "Issuer"
+   ],
+   [
+    "The Sarvodaya Sahakari Bank Ltd., Modasa",
+    "Issuer"
+   ],
+   [
+    "The Gandhi Gunj Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Ilkal Co-Operative Bank Ltd Ilkal",
+    "Issuer"
+   ],
+   [
+    "Dr. Annasaheb Chougule Urban Co-Op. Bank Ltd.,Peth Vadgaon",
+    "Issuer"
+   ],
+   [
+    "ICICI Pockets (Ppi)",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "IDFC First Bank Ltd (Ppi)",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Balitikuri Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Wana Nagarik Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Lokvikas Nagari Sahkari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Gandhidham Mercantile Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Contai Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Shri Rukmini Sahakari Bank Ltd, Shrigonda",
+    "Issuer"
+   ],
+   [
+    "Chaitanya Mahila Bank",
+    "Issuer"
+   ],
+   [
+    "Sonbhadra Nagar Sahkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Rapipay Fintech Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Unimoni Financial Services Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Nasikroad Deolali Vyapari Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shri  D. T. Patil Co-Opertive Bank Ltd, Chikodi",
+    "Issuer"
+   ],
+   [
+    "Priyadarshani Urban Co Op Bank Ltd Kallam",
+    "Issuer"
+   ],
+   [
+    "Khardah Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Lakhimpur Urban Cooperative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Umiya Urban Co-Operative Bank Maryadit Nagpur",
+    "Issuer"
+   ],
+   [
+    "The Shoranur Co Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vilas Co-Operative Bank Ltd., Latur",
+    "Issuer"
+   ],
+   [
+    "Jankalyan Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Payu Payments Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Shree Balaji Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Gajanan Maharaj Urban Co-Op Bank Ltd Bhokardan",
+    "Issuer"
+   ],
+   [
+    "Dr. Appasaheb Urf Sa. Re. Patil Jaysingpur Udgaon Sahakari Bank Ltd Jaysingpur",
+    "Issuer"
+   ],
+   [
+    "The Pioneer Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Mehsana District Central Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Shillong Cooperative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Mahalakshmi Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ambika Mahila Sahakari Bank Ltd. Ahmednagar",
+    "Issuer"
+   ],
+   [
+    "Vyaparik Audhyogik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Davangere Urban Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Mumbai Mahanagarpalika Shikshan Vibhag Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "The Nadiad Peoples Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Goa Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Chikhli Urban Co-Op Bank Ltd., Chikhli",
+    "Issuer"
+   ],
+   [
+    "Siddheshwar Urban Co-Operative Bank Mydt. Sillod",
+    "Issuer"
+   ],
+   [
+    "Shriram Urban Co-Operative Bank Ltd., Nagpur",
+    "Issuer"
+   ],
+   [
+    "Bhavani Urban Co-Operative Bank Ltd Georai",
+    "Issuer"
+   ],
+   [
+    "The Bhuj Mercantile Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Development Cooperative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Godhra City Co-Operative Bank Ltd. Godhra",
+    "Issuer"
+   ],
+   [
+    "The Quilon Co-Operative Urban Bank",
+    "Issuer"
+   ],
+   [
+    "Vijayapura Dcc Bank",
+    "Issuer"
+   ],
+   [
+    "Sri Ganapathi Urban Co Operative Bank Ltd., Sagar",
+    "Issuer"
+   ],
+   [
+    "The Washim Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Shri Durgadevi Mahila Sahakari Bank Niyamith",
+    "Issuer"
+   ],
+   [
+    "Agroha Co–Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Panchsheel Mercantile Co-Op. Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chittoor District Co-Op Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bangalore City Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Nyayamitra Sahakari Bank Niyamita",
+    "Issuer"
+   ],
+   [
+    "Bellad Bagewadi Urban Souharada Sahakari Bank Nyt",
+    "Issuer"
+   ],
+   [
+    "Nandurbar Merchants Co-Operative Bank Ltd.,Nandurbar",
+    "Issuer"
+   ],
+   [
+    "Bhausaheb Sahakari Bank Ltd, Udgir",
+    "Issuer"
+   ],
+   [
+    "Bhausaheb Birajdar Urban Co-Operative Bank Ltd., Omerga",
+    "Issuer"
+   ],
+   [
+    "Ebix Payment Services Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Latur District Central Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Bramhapuri Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "(Bangiya Gramin Vikash Bank) West Bengal Gramin Bank",
+    "Issuer"
+   ],
+   [
+    "Astha Mahila Nagrik Sahkari Bank",
+    "Issuer"
+   ],
+   [
+    "Balance Hero India Pvt Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Annasaheb Savant Co-Operative Urban Bank Mahad Ltd.",
+    "Issuer"
+   ],
+   [
+    "Slice Small Finance Bank",
+    "PSP & Issuer"
+   ],
+   [
+    "510 Army Base Workshop Credit Co Operative Primary Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Muvattupuzha Urban Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Basoda Nagrik Sahakari Bank Mydt Ganjbasoda",
+    "Issuer"
+   ],
+   [
+    "The Sarangpur Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Santrampur Urban Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Prathamik Shikshak Sahakari Bank Ltd., Satara",
+    "Issuer"
+   ],
+   [
+    "Teachers Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Rander Peoples Coop Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Omprakash Deora Peoples Co Operative Bank Ltd, Hingoli",
+    "Issuer"
+   ],
+   [
+    "Shri Laxmikrupa Urban Co - Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Punjab State Cooperative Bank",
+    "Issuer"
+   ],
+   [
+    "Ramrajya Sahakari Bank Ltd, Pune",
+    "Issuer"
+   ],
+   [
+    "Mumbai District Central Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chitnavispura Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Ankola Urban Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Yeshwant Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Shirpur Peoples Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Mahesh Urban Co-Operative Bank Ltd.,Ahmedpur",
+    "Issuer"
+   ],
+   [
+    "Vyapari Sahakari Bank Maryadit,Solapur",
+    "Issuer"
+   ],
+   [
+    "Sankheda Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Merchants Co Operative Bank Ltd Tiptur",
+    "Issuer"
+   ],
+   [
+    "Paul Merchants Finance Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Krishna Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Gautam Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Obopay Mobile Technology India Pvt Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Koilkuntla Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Karad Urban Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Durgapur Steel Peoples Coop Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Azad Co-Operative Bank Ltd Gadag",
+    "Issuer"
+   ],
+   [
+    "Lala Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The West Bengal State Co-Operative Bank (Wbscb Ltd)",
+    "Issuer"
+   ],
+   [
+    "Shree Thyagaraja Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Shri Shiveshwar Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Nidhi Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Hyderabad District Coop Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Tirumala Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sahakarmaharshi Bhausaheb Thorat Amrutvahini Sahakari Bank",
+    "Issuer"
+   ],
+   [
+    "Phone Pe",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "YES Bank PPI",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Mudalagi Co Op Bank Ltd Mudalagi",
+    "Issuer"
+   ],
+   [
+    "Nav Jeevan Co-Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Nileshwar Cooperative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Mahavir Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shinhan Bank",
+    "Issuer"
+   ],
+   [
+    "Hindon Mercantile Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Intergral Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Standard Urban Co-Operative Bank Lts",
+    "Issuer"
+   ],
+   [
+    "The Ottapalam Cooperative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Tamluk Ghatal Central Cooperative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Accountant General'S Office Employees' Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Kangra Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Grain Merchants Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Balusseri Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Solapur Siddheshwar Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bhingar Urban Cooperative Bank",
+    "Issuer"
+   ],
+   [
+    "The Vani Merchants Co Op Bank",
+    "Issuer"
+   ],
+   [
+    "The Payyanur Co Operative Town Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Kanyaka Nagari Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Rayat Sevak Co-Op Bank Ltd., Satara",
+    "Issuer"
+   ],
+   [
+    "Mugberia Central Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Mahayogi Lakshmamma Co-Op. Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Smart Payments Solutions Pvt Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Mobilepe Fintech Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Transaction Analysts (India) Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Krishna District Cooperative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Rajajinagar Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Laxmi Sahakari Bank Niyamit, Guledgudd",
+    "Issuer"
+   ],
+   [
+    "The Coastal Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jila Sahakari Kendriya Bank Maryadit Vidisha",
+    "Issuer"
+   ],
+   [
+    "Dreampurse",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Tirupati Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Mattancherry Sarvajanik Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Padmavathi Cooperative Urban Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Yadrav Co-Operative Bank Ltd, Yadrav",
+    "Issuer"
+   ],
+   [
+    "The Bengaluru District Central Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jilasahakari Kendriya Bank Maryadit Jagdalpur",
+    "Issuer"
+   ],
+   [
+    "Hooghly District Central Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shri Shivayogi Murughendra Swami Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "HDFC Bank PPI",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Vidyasagar Central Cooperative Bank Ltd., Midnapore",
+    "Issuer"
+   ],
+   [
+    "The Mysore And Chamarajanagar District Co Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Kanara Dcc Bank Ltd Sirsi",
+    "Issuer"
+   ],
+   [
+    "Sikkim State Co-Operative Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "Maharana Pratap Cooperative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Sardargunj Mercantile Cooperative Bank Ltd Patan",
+    "Issuer"
+   ],
+   [
+    "The Chikmagalur District Co Operative Central Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Amica Payment Services Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Pragati Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bharati Sahakari Bank Ltd Pune",
+    "Issuer"
+   ],
+   [
+    "Malda District Central Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The South Canara District Co-Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The District Cooperative Central Bank Ltd Eluru",
+    "Issuer"
+   ],
+   [
+    "Odisha Grameen Bank",
+    "Issuer"
+   ],
+   [
+    "Col Rd Nikam Sainik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Chopda Peoples Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Sri Potti Sriramulu Nellore DCCB Ltd",
+    "Issuer"
+   ],
+   [
+    "Pandharpur Merchants Co-Op Bank Ltd Pandharpur",
+    "Issuer"
+   ],
+   [
+    "I Money Pay Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Janata Co-Operative Bank Ltd Malegaon",
+    "Issuer"
+   ],
+   [
+    "Belagavi Shree Basaveshwar Cooperative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Pachhapur Urban Co-Op Bank Ltd.,Pachhapur",
+    "Issuer"
+   ],
+   [
+    "The Kachchh District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Nagpur Nagarik Sahakari Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Niphad Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Loknete Dattaji Patil Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Neelkanth Co Operative Bank Ltd Solapur",
+    "Issuer"
+   ],
+   [
+    "The Malegaon Merchant Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Dccb Visakhapatnam",
+    "Issuer"
+   ],
+   [
+    "Ahmednagar Zilla Prathamik Shikshak Sahakari Bank Ltd, Ahilyanagar",
+    "Issuer"
+   ],
+   [
+    "The Hotel Industrialists Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Calicut Cooperative Urban Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Bank Of Bahrain And Kuwait B.S.C",
+    "Issuer"
+   ],
+   [
+    "The Payyoli Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "M D Pawar Peoples Co-Op Bank Limited",
+    "Issuer"
+   ],
+   [
+    "The Surendranagar District Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jankalyan Co Operative Bank Ltd Nashik",
+    "Issuer"
+   ],
+   [
+    "Churu Zila Urban Co Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The District Cooperative Central Bank Ltd Srikakulam",
+    "Issuer"
+   ],
+   [
+    "Revolut Payments India Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Premium Ebusiness Ventures Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Universal Co-Operative Urban Bank Ltd.",
+    "Issuer"
+   ],
+   [
+    "The Tirur Urban Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shree Talaja Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Bhandara Urban Co- Operative Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Dccb Mahabubnagar",
+    "PSP & Issuer"
+   ],
+   [
+    "The Belagavi District Central Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Jpmorgan Chase Bank",
+    "Acquirer"
+   ],
+   [
+    "Manappuram Finance Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Mansa Nagrik Sahkari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Krishna Urban Co-Op Bank Ltd Kaij",
+    "Issuer"
+   ],
+   [
+    "Pravara Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Seven Hills Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Gandhi Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Aryapuram Cooperative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Bapuji Co Op Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Pachora Peoples Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Zila Sahkari Bank Ltd.Meerut",
+    "Issuer"
+   ],
+   [
+    "Wardhaman Urban Co-Operative Bank Ltd Nagpur",
+    "Issuer"
+   ],
+   [
+    "In-Solutions Global Pvt Ltd",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "The Jalna Peoples Co-Op Bank Ltd Jalna",
+    "Issuer"
+   ],
+   [
+    "The Jamnagar District Cooperative Bank",
+    "Issuer"
+   ],
+   [
+    "Rajpipla Nagrik Sahakari Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Palghat Co-Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Vasavi Mscm Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "Shiva Sahakari Bank Niyamitha Tarikere",
+    "Issuer"
+   ],
+   [
+    "The Sircilla Co Operative Urban Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Eluri Co Operative Urban Bank Limited",
+    "Issuer"
+   ],
+   [
+    "Nehat Tech Solutions Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Mswipe Technologies Private Limited",
+    "PSP & PPI Issuer"
+   ],
+   [
+    "Janata Sahakari Bank Ltd Dharashiv",
+    "Issuer"
+   ],
+   [
+    "The Madanapalle Cooperative Town Bank Ltd Madanapalle",
+    "Issuer"
+   ],
+   [
+    "Barclays Bank Plc",
+    "PSP & Issuer"
+   ],
+   [
+    "Devi Gayatri Co Operative Urban Bank",
+    "Issuer"
+   ],
+   [
+    "Sardarganj Mercantile Co-Operative Bank Ltd",
+    "Issuer"
+   ],
+   [
+    "The Cardamom Merchants Cooperative Bank Ltd, Haveri",
+    "Issuer"
+   ],
+   [
+    "Shri Shantappanna Miraji Urban Co-Operative Bank Ltd Chikodi",
+    "Issuer"
+   ],
+   [
+    "Jugalkishor Tapdiya Shree Mahesh Urban Co-Operative Bank",
+    "Issuer"
+   ],
+   [
+    "Shiva Sahakari Bank Niyamitha Davangere",
+    "Issuer"
+   ],
+   [
+    "Shankar Nagari Sahakari Bank Ltd Nanded",
+    "Issuer"
+   ],
+   [
+    "Pockket Payment Technologies Private Limited",
+    "PSP & PPI Issuer"
+   ]
+  ]
+ },
+ "upi-apps-live-on-ipo": {
+  "title": "UPI Applications Live on IPO",
+  "total": 36,
+  "head": null,
+  "keys": [
+   "upi_apps_live_on_ipo",
+   "handle"
+  ],
+  "rows": [
+   [
+    "Bajaj Finserv (android & iOS)",
+    "@abfspay"
+   ],
+   [
+    "BHIM Baroda Pay (only Android)",
+    "@BARODAMPAY"
+   ],
+   [
+    "BHIM PayWiz ( Android )",
+    "@idbi"
+   ],
+   [
+    "BHIM (android & iOS)",
+    "@upi"
+   ],
+   [
+    "BHIM AUPay (Android & iOS)",
+    "@aubank"
+   ],
+   [
+    "BHIM BANDHAN UPI (Android & iOS)",
+    "@bandhan"
+   ],
+   [
+    "BHIM DLB UPI (Android & iOS)",
+    "@dlb"
+   ],
+   [
+    "BHIM IndusPay (only Android)",
+    "@indus"
+   ],
+   [
+    "BHIM KBL UPI (Android)",
+    "@kbl"
+   ],
+   [
+    "BHIM Lotza UPI (only Android)",
+    "@federal"
+   ],
+   [
+    "BHIM PNB (Android & iOS)",
+    "@pnb"
+   ],
+   [
+    "BHIM SBIPay (only android)",
+    "@sbi"
+   ],
+   [
+    "BHIM UCO UPI (Android and iOS both)",
+    "@uco"
+   ],
+   [
+    "DhanSmart (Android & iOS)",
+    "@dlb"
+   ],
+   [
+    "DigiBank - DBS (Android & iOS)",
+    "@dbs"
+   ],
+   [
+    "Freecharge (Android & iOS)",
+    "@freecharge"
+   ],
+   [
+    "Google Pay (android & iOS)",
+    "@okhdfcbank, @okaxis , @oksbi, @okicici"
+   ],
+   [
+    "Groww Pay (Android & iOS)",
+    "@yesg"
+   ],
+   [
+    "HSBC Simply Pay (android & iOS)",
+    "@hsbc"
+   ],
+   [
+    "IDBI Bank GO Mobile+ ( Android & iOS)",
+    "@idbi"
+   ],
+   [
+    "iMobile by ICICI Bank (android users)",
+    "@icici"
+   ],
+   [
+    "Indie by IndusInd Bank (Android & iOS)",
+    "@indie"
+   ],
+   [
+    "INDmoney (android & iOS)",
+    "@inhdfc"
+   ],
+   [
+    "IndOASIS (Android and iOS both)",
+    "@indianbank, @allbank"
+   ],
+   [
+    "Kotak Mobile Banking App (Android)",
+    "@kotak"
+   ],
+   [
+    "MobiK wik ( Android & iOS)",
+    "@ikwik"
+   ],
+   [
+    "Navi (Android & iOS)",
+    "@naviaxis"
+   ],
+   [
+    "Union ease ( iOS and Android )",
+    "@unionbankofindia, @uboi and @unionbank"
+   ],
+   [
+    "Paytm (Android & IOS)",
+    "@ptaxis, @pthdfc, @ptyes, @ptsbi"
+   ],
+   [
+    "PayZapp by HDFC Bank Limited (android & iOS)",
+    "@pz"
+   ],
+   [
+    "Phone-Pe (Android & iOS)",
+    "@ybl, @axl, @ibl"
+   ],
+   [
+    "Shriram One",
+    "@shriramhdfcbank"
+   ],
+   [
+    "SIB Mirror+ (only Android)",
+    "@sib"
+   ],
+   [
+    "YES Pay Next (android & iOS)",
+    "@yespay"
+   ],
+   [
+    "TMB MBank (Android & iOS)",
+    "@tmb"
+   ],
+   [
+    "Slice (Android & iOS)",
+    "@slc"
+   ]
+  ]
+ },
+ "sponsor-banks-live-on-ipo": {
+  "title": "Sponsor Banks live on IPO",
+  "total": 8,
+  "head": null,
+  "keys": [
+   "sponsor_banks_live_on_ipo"
+  ],
+  "rows": [
+   [
+    "Axis Bank Limited"
+   ],
+   [
+    "Federal Bank Limited"
+   ],
+   [
+    "HDFC BANK"
+   ],
+   [
+    "ICICI Bank"
+   ],
+   [
+    "Indusind Bank Ltd"
+   ],
+   [
+    "Kotak Mahindra Bank Limited"
+   ],
+   [
+    "State Bank of India"
+   ],
+   [
+    "Yes Bank"
+   ]
+  ]
+ },
+ "customer-bank": {
+  "title": "Customer banks live on IPO",
+  "total": 53,
+  "head": null,
+  "keys": [
+   "scsbs_eligible_to_act_as_issuer_bank_customer_bank"
+  ],
+  "rows": [
+   [
+    "AU Small Finance Bank"
+   ],
+   [
+    "Axis Bank"
+   ],
+   [
+    "Bandhan Bank"
+   ],
+   [
+    "Bank of Baroda"
+   ],
+   [
+    "Bank of India"
+   ],
+   [
+    "Bank of Maharashtra"
+   ],
+   [
+    "Canara Bank"
+   ],
+   [
+    "Capital Small Finance Bank Ltd."
+   ],
+   [
+    "Central Bank of India."
+   ],
+   [
+    "City Union Bank"
+   ],
+   [
+    "DBS Bank India Limited"
+   ],
+   [
+    "DCB Bank"
+   ],
+   [
+    "Deustche Bank"
+   ],
+   [
+    "Dhanlaxmi Bank Limited"
+   ],
+   [
+    "Equitas Small Finance Bank"
+   ],
+   [
+    "HDFC Bank Ltd."
+   ],
+   [
+    "HSBC Bank"
+   ],
+   [
+    "ICICI Bank"
+   ],
+   [
+    "IDBI Bank Limited"
+   ],
+   [
+    "IDFC FIRST Bank"
+   ],
+   [
+    "Indian Bank"
+   ],
+   [
+    "Indian Overseas Bank"
+   ],
+   [
+    "Indusind Bank"
+   ],
+   [
+    "Jana Small Finance Bank Limited"
+   ],
+   [
+    "Janata Sahakari Bank Ltd"
+   ],
+   [
+    "Karnataka Bank Limited"
+   ],
+   [
+    "Karur Vysya Bank Limited"
+   ],
+   [
+    "Kotak Mahindra Bank"
+   ],
+   [
+    "Nutan Nagarik Sahakari Bank Ltd."
+   ],
+   [
+    "Punjab & Sind Bank"
+   ],
+   [
+    "Punjab National Bank"
+   ],
+   [
+    "Rajkot Nagarik Sahakari Bank Ltd."
+   ],
+   [
+    "RBL BANK"
+   ],
+   [
+    "Saraswat Co-operative Bank Limited"
+   ],
+   [
+    "South Indian Bank"
+   ],
+   [
+    "Standard Chartered Bank"
+   ],
+   [
+    "State Bank of India"
+   ],
+   [
+    "SVC Co-operative Bank Limited"
+   ],
+   [
+    "Tamilnad Mercantile Bank"
+   ],
+   [
+    "The Ahmedabad Mercantile Co-operative Bank Limited"
+   ],
+   [
+    "The Catholic Syrian Bank Limited"
+   ],
+   [
+    "The Federal Bank Limited"
+   ],
+   [
+    "The Jammu & Kashmir Bank Ltd"
+   ],
+   [
+    "The Kalupur Commercial Co-operative Bank Ltd."
+   ],
+   [
+    "The Mehsana Urban Co-operative Bank Limited"
+   ],
+   [
+    "The Surat People's Co-op Bank Ltd."
+   ],
+   [
+    "TJSB Sahakari Bank Limited"
+   ],
+   [
+    "UCO Bank"
+   ],
+   [
+    "Union Bank of India"
+   ],
+   [
+    "Utkarsh Small Finance Bank Ltd."
+   ],
+   [
+    "Yes Bank"
+   ],
+   [
+    "Slice Small Finance Bank"
+   ],
+   [
+    "Ujjivan Small Finance Bank"
+   ]
+  ]
+ },
+ "apps-live": {
+  "title": "Applications Live on UPI Lite",
+  "total": 43,
+  "head": "UPI LITE - 43 Applications Live",
+  "keys": [
+   "apps",
+   "lite"
+  ],
+  "rows": [
+   [
+    "ABCD",
+    "Live"
+   ],
+   [
+    "Bajaj Pay",
+    "Live"
+   ],
+   [
+    "BharatPe",
+    "Live"
+   ],
+   [
+    "BHIM",
+    "Live"
+   ],
+   [
+    "BHIM IOB UPI",
+    "Live"
+   ],
+   [
+    "BHIM PNB",
+    "Live"
+   ],
+   [
+    "BHIM SBI Pay",
+    "Live"
+   ],
+   [
+    "BHIM Suryoday UPI",
+    "Live"
+   ],
+   [
+    "BOB world UPI",
+    "Live"
+   ],
+   [
+    "Canara ai1",
+    "Live"
+   ],
+   [
+    "Cent eeZ",
+    "Live"
+   ],
+   [
+    "Cent UPI (CBI)",
+    "Live"
+   ],
+   [
+    "Curie Money",
+    "Live"
+   ],
+   [
+    "Fino Pay",
+    "Live"
+   ],
+   [
+    "Freecharge",
+    "Live"
+   ],
+   [
+    "Freo",
+    "Live"
+   ],
+   [
+    "Gpay",
+    "Live"
+   ],
+   [
+    "Groww",
+    "Live"
+   ],
+   [
+    "iMobile",
+    "Live"
+   ],
+   [
+    "Jar",
+    "Live"
+   ],
+   [
+    "JKB BHIM UPI",
+    "Live"
+   ],
+   [
+    "Jupiter",
+    "Live"
+   ],
+   [
+    "Moneyview",
+    "Live"
+   ],
+   [
+    "Navi",
+    "Live"
+   ],
+   [
+    "OneCard",
+    "Live"
+   ],
+   [
+    "PayTm",
+    "Live"
+   ],
+   [
+    "PhonePe",
+    "Live"
+   ],
+   [
+    "POP UPI ",
+    "Live"
+   ],
+   [
+    "PSB Unic",
+    "Live"
+   ],
+   [
+    "Samsung Wallet",
+    "Live"
+   ],
+   [
+    "Supermoney",
+    "Live"
+   ],
+   [
+    "TimePay",
+    "Live"
+   ],
+   [
+    "Unity UPI App",
+    "Live"
+   ],
+   [
+    "Yes Pay Next",
+    "Live"
+   ],
+   [
+    "Indian Bank App",
+    "Live"
+   ],
+   [
+    "Kredit Bee",
+    "Live"
+   ],
+   [
+    "Rio Money",
+    "Live"
+   ],
+   [
+    "WhatsApp",
+    "Live"
+   ],
+   [
+    "Utkarsh Small Finance Bank App",
+    "Live"
+   ],
+   [
+    "PayNearby",
+    "Live"
+   ],
+   [
+    "Lxme",
+    "Live"
+   ],
+   [
+    "Zet",
+    "Live"
+   ],
+   [
+    "AU Small Finance Bank App",
+    "Live"
+   ]
+  ]
+ },
+ "banks-live": {
+  "title": "Banks Live",
+  "total": 63,
+  "head": "UPI LITE - 63 Banks Live",
+  "keys": [
+   "remitter_bank",
+   "lite"
+  ],
+  "rows": [
+   [
+    "Andhra Pradesh Grameena Bank",
+    "Live"
+   ],
+   [
+    "Andhra Pradesh State Cooperative Bank Ltd",
+    "Live"
+   ],
+   [
+    "Arunachal Pradesh Rural Bank",
+    "Live"
+   ],
+   [
+    "Au Small Finance Bank",
+    "Live"
+   ],
+   [
+    "Axis Bank Ltd.",
+    "Live"
+   ],
+   [
+    "Bank Of Baroda",
+    "Live"
+   ],
+   [
+    "Bank Of India",
+    "Live"
+   ],
+   [
+    "Bank Of Maharashtra",
+    "Live"
+   ],
+   [
+    "Bharat Co Operative Bank Mumbai Ltd",
+    "Live"
+   ],
+   [
+    "Canara Bank",
+    "Live"
+   ],
+   [
+    "Central Bank Of India",
+    "Live"
+   ],
+   [
+    "Chhattisgarh Rajya Gramin Bank",
+    "Live"
+   ],
+   [
+    "City Union Bank",
+    "Live"
+   ],
+   [
+    "Co-Operative Bank Of Rajkot Ltd",
+    "Live"
+   ],
+   [
+    "Cosmos Co-Operative Bank Ltd",
+    "Live"
+   ],
+   [
+    "Dbs Bank India Limited",
+    "Live"
+   ],
+   [
+    "Dcb Bank Ltd",
+    "Live"
+   ],
+   [
+    "Dhanalakshmi Bank",
+    "Live"
+   ],
+   [
+    "Dombivli Nagarik Sahakari Bank",
+    "Live"
+   ],
+   [
+    "Equitas Small Finance Bank",
+    "Live"
+   ],
+   [
+    "Federal Bank Ltd.",
+    "Live"
+   ],
+   [
+    "Fino Payments Bank Ltd.",
+    "Live"
+   ],
+   [
+    "Gujarat Gramin Bank",
+    "Live"
+   ],
+   [
+    "HDFC Bank Ltd.",
+    "Live"
+   ],
+   [
+    "ICICI Bank Ltd.",
+    "Live"
+   ],
+   [
+    "IDBI Bank Ltd.",
+    "Live"
+   ],
+   [
+    "IDFC Bank Ltd.",
+    "Live"
+   ],
+   [
+    "India Post Payments Bank Limited",
+    "Live"
+   ],
+   [
+    "Indian Bank",
+    "Live"
+   ],
+   [
+    "Indian Overseas Bank",
+    "Live"
+   ],
+   [
+    "IndusInd Bank Ltd.",
+    "Live"
+   ],
+   [
+    "Janakalyan Sahakari Bank Ltd.",
+    "Live"
+   ],
+   [
+    "Janata Sahakari Bank",
+    "Live"
+   ],
+   [
+    "Jharkhand Rajya Gramin Bank (Erstwhile Vananchal Gramin Bank)",
+    "Live"
+   ],
+   [
+    "Karnataka Bank",
+    "Live"
+   ],
+   [
+    "Karnataka Grameena Bank",
+    "Live"
+   ],
+   [
+    "Karur Vysya Bank",
+    "Live"
+   ],
+   [
+    "Kerala Gramin Bank",
+    "Live"
+   ],
+   [
+    "Kotak Mahindra Bank",
+    "Live"
+   ],
+   [
+    "Maharashtra Gramin Bank",
+    "Live"
+   ],
+   [
+    "Meghalaya Rural Bank",
+    "Live"
+   ],
+   [
+    "Mehsana Urban Co-Operative Bank",
+    "Live"
+   ],
+   [
+    "Mizoram Rural Bank",
+    "Live"
+   ],
+   [
+    "Punjab And Sind Bank",
+    "Live"
+   ],
+   [
+    "Punjab National Bank",
+    "Live"
+   ],
+   [
+    "Rajasthan Gramin Bank",
+    "Live"
+   ],
+   [
+    "Saraswat Co-Operative Bank",
+    "Live"
+   ],
+   [
+    "Shamrao Vithal Cooperative Bank Ltd",
+    "Live"
+   ],
+   [
+    "Shivalik Small Finance Bank Limited",
+    "Live"
+   ],
+   [
+    "South Indian Bank Limited",
+    "Live"
+   ],
+   [
+    "State Bank Of India",
+    "Live"
+   ],
+   [
+    "Suryoday Small Finance Bank Limited",
+    "Live"
+   ],
+   [
+    "Tamil Nadu State Apex Co Operative Bank Ltd",
+    "Live"
+   ],
+   [
+    "Tamilnad Mercantile Bank Limited",
+    "Live"
+   ],
+   [
+    "Telangana Grameena Bank",
+    "Live"
+   ],
+   [
+    "The Jammu & Kashmir Bank Limited",
+    "Live"
+   ],
+   [
+    "TJSB Sahakari Bank Limited",
+    "Live"
+   ],
+   [
+    "Uco Bank",
+    "Live"
+   ],
+   [
+    "Ujjivan Small Finance Bank Limited",
+    "Live"
+   ],
+   [
+    "Union Bank of India",
+    "Live"
+   ],
+   [
+    "Utkarsh Small Finance Bank",
+    "Live"
+   ],
+   [
+    "Uttarakhand Gramin Bank - Imps",
+    "Live"
+   ],
+   [
+    "Yes Bank Ltd.",
+    "Live"
+   ]
+  ]
+ },
+ "3rd-party-apps": {
+  "title": "UPI 3rd Party Applications",
+  "total": 66,
+  "head": null,
+  "keys": [
+   "tpap",
+   "go_live_mm_yyyy",
+   "psp_banks",
+   "handle_name",
+   "links_url"
+  ],
+  "rows": [
+   [
+    "Aditya Birla Capital Digital",
+    "April-2024",
+    "ICICI Bank",
+    "@abcdicici",
+    "https://www.adityabirlacapital.com/"
+   ],
+   [
+    "Amazon Pay",
+    "January-2019",
+    "Axis Bank",
+    "@apl",
+    "https://www.amazon.in/hz/contact-us/"
+   ],
+   [
+    "Amazon Pay",
+    "January-2019",
+    "RBL Bank",
+    "@rapl",
+    "https://www.amazon.in/hz/contact-us/"
+   ],
+   [
+    "Amazon Pay",
+    "January-2019",
+    "Yes Bank",
+    "@yapl",
+    "https://www.amazon.in/hz/contact-us/"
+   ],
+   [
+    "Bajaj Finserv",
+    "March-2021",
+    "Axis Bank",
+    "@abfspay",
+    "https://www.bajajfinserv.in/reach-us"
+   ],
+   [
+    "BharatPe",
+    "August-2024",
+    "Unity Small Finance Bank",
+    "@bpunity",
+    "https://bharatpe.com/"
+   ],
+   [
+    "ChangeJar",
+    "May-2025",
+    "Unity Small Finance Bank",
+    "@jarunity",
+    "https://www.myjar.app/"
+   ],
+   [
+    "Cheq",
+    "June-2026",
+    "Axis Bank",
+    "@cqaxis",
+    "-"
+   ],
+   [
+    "CRED",
+    "April-2019",
+    "Yes Bank",
+    "@yescred",
+    "https://cred.club/pay-via-upi"
+   ],
+   [
+    "CRED",
+    "April-2019",
+    "Axis Bank",
+    "@axisb",
+    "https://cred.club/pay-via-upi"
+   ],
+   [
+    "Curie Money",
+    "November-2024",
+    "Yes Bank",
+    "@yescurie",
+    "https://curie.money/"
+   ],
+   [
+    "FamApp by Trio",
+    "May-2024",
+    "Yes Bank",
+    "@yesfam",
+    "https://www.famapp.in/"
+   ],
+   [
+    "Fave",
+    "December-2025",
+    "Axis Bank",
+    "@fvaxis",
+    "https://www.fave.money/"
+   ],
+   [
+    "Flipkart UPI",
+    "March-2024",
+    "Axis Bank",
+    "@fkaxis",
+    "https://dl.flipkart.com/rv/fpg/upi"
+   ],
+   [
+    "Freo",
+    "August-2024",
+    "ICICI Bank",
+    "@freoicici",
+    "https://www.freo.money/"
+   ],
+   [
+    "GoodScore",
+    "July-2026",
+    "Axis Bank",
+    "@gsaxis",
+    "https://goodscore.app/"
+   ],
+   [
+    "Google Pay",
+    "September-2017",
+    "Axis Bank",
+    "@okaxis",
+    "https://support.google.com/pay/india/answer/10084701#zippy=%2Clevel---complaints-registration%2Clevel---grievance-redressal"
+   ],
+   [
+    "Google Pay",
+    "September-2017",
+    "HDFC Bank",
+    "@okhdfcbank",
+    "https://support.google.com/pay/india/answer/10084701#zippy=%2Clevel---complaints-registration%2Clevel---grievance-redressal"
+   ],
+   [
+    "Google Pay",
+    "September-2017",
+    "ICICI",
+    "@okicici",
+    "https://support.google.com/pay/india/answer/10084701#zippy=%2Clevel---complaints-registration%2Clevel---grievance-redressal"
+   ],
+   [
+    "Google Pay",
+    "September-2017",
+    "State Bank of India",
+    "@oksbi",
+    "https://support.google.com/pay/india/answer/10084701#zippy=%2Clevel---complaints-registration%2Clevel---grievance-redressal"
+   ],
+   [
+    "Groww",
+    "October-2022",
+    "Yes Bank",
+    "@yesg",
+    "https://groww.in/help/payments-&-withdrawals/groww-upi"
+   ],
+   [
+    "Herofincorp",
+    "December-2025",
+    "Axis Bank",
+    "@hfaxis",
+    "https://www.herofincorp.com/"
+   ],
+   [
+    "IND Money",
+    "October-2024",
+    "HDFC Bank",
+    "@inhdfc",
+    "https://www.indmoney.com/"
+   ],
+   [
+    "JUMPP",
+    "December-2025",
+    "Yes Bank",
+    "@jpyes",
+    "https://jumpp.finance/"
+   ],
+   [
+    "Jupiter Money",
+    "June-2021",
+    "Axis Bank",
+    "@jupiteraxis",
+    "https://jupiter.money/contact/"
+   ],
+   [
+    "Kiwi",
+    "May-2023",
+    "Axis Bank",
+    "@goaxb",
+    "www.gokiwi.in"
+   ],
+   [
+    "Kredit Bee",
+    "July-2025",
+    "Axis Bank",
+    "@kbaxis",
+    "https://www.kreditbee.in/"
+   ],
+   [
+    "Kredit.Pe",
+    "September-2024",
+    "HDFC Bank",
+    "@kphdfc",
+    "https://www.kredit.pe/"
+   ],
+   [
+    "MobiKwik",
+    "May-2018",
+    "HDFC Bank",
+    "@ikwik",
+    "https://www.mobikwik.com/contact"
+   ],
+   [
+    "MobiKwik",
+    "September-2025",
+    "NSDL Bank",
+    "@mbkns",
+    "https://www.mobikwik.com/contact"
+   ],
+   [
+    "Money View",
+    "October-2024",
+    "HDFC Bank",
+    "@mvhdfc",
+    "https://moneyview.in/"
+   ],
+   [
+    "Multipl",
+    "April-2026",
+    "Yes Bank",
+    "@mlyes",
+    "https://multipl.in/contact_us"
+   ],
+   [
+    "Navi",
+    "August-2023",
+    "Axis Bank",
+    "@naviaxis",
+    "https://navi.com/"
+   ],
+   [
+    "Navi",
+    "September-2025",
+    "Yes Bank",
+    "@nyes",
+    "https://navi.com/"
+   ],
+   [
+    "Novio",
+    "December-2025",
+    "DCB Bank",
+    "@nvdcb",
+    "https://goniyo.com/contact-us/"
+   ],
+   [
+    "Lxme UPI",
+    "September-2025",
+    "Axis Bank",
+    "@lxaxis",
+    "https://lxme.in"
+   ],
+   [
+    "One Card",
+    "September-2024",
+    "Yes Bank",
+    "@oneyes",
+    "https://www.getonecard.app/"
+   ],
+   [
+    "Paytm",
+    "March-2024",
+    "Yes Bank",
+    "@paytm",
+    "https://paytm.com/"
+   ],
+   [
+    "Paytm",
+    "March-2024",
+    "Yes Bank",
+    "@ptyes",
+    "https://paytm.com/"
+   ],
+   [
+    "Paytm",
+    "March-2024",
+    "HDFC Bank",
+    "@pthdfc",
+    "https://paytm.com/"
+   ],
+   [
+    "Paytm",
+    "March-2024",
+    "State Bank of India",
+    "@ptsbi",
+    "https://paytm.com/"
+   ],
+   [
+    "Paytm",
+    "March-2024",
+    "Axis Bank",
+    "@ptaxis",
+    "https://paytm.com/"
+   ],
+   [
+    "PhonePe",
+    "August-2016",
+    "Yes Bank",
+    "@ybl",
+    "https://www.phonepe.com/contact-us/"
+   ],
+   [
+    "PhonePe",
+    "August-2016",
+    "ICICI Bank",
+    "@ibl",
+    "https://www.phonepe.com/contact-us/"
+   ],
+   [
+    "PhonePe",
+    "August-2016",
+    "Axis Bank",
+    "@axl",
+    "https://www.phonepe.com/contact-us/"
+   ],
+   [
+    "POP UPI",
+    "June-2024",
+    "Yes Bank",
+    "@yespop",
+    "https://popclub.co/"
+   ],
+   [
+    "Rediff",
+    "December-2025",
+    "Axis Bank",
+    "@rpaxis",
+    "https://pay.rediff.com/webapp/upi"
+   ],
+   [
+    "Refyne",
+    "August-2026",
+    "Unity Small Finance Bank",
+    "@rfunity",
+    "https://www.refyne.co.in/"
+   ],
+   [
+    "Rio Money",
+    "November-2024",
+    "RBL Bank",
+    "@rmrbl",
+    "http://www.rio.money"
+   ],
+   [
+    "Samsung Pay",
+    "February-2018",
+    "Axis Bank",
+    "@pingpay",
+    "https://www.samsung.com/in/support/email/"
+   ],
+   [
+    "salaryse",
+    "July-2024",
+    "Yes Bank",
+    "@seyes",
+    "https://salaryse.com/"
+   ],
+   [
+    "Saathi - Pay Nearby",
+    "October-2025",
+    "Yes Bank",
+    "@pnyes",
+    "https://retailerportal.paynearby.in/auth/login"
+   ],
+   [
+    "Scapia",
+    "December-2025",
+    "Axis Bank",
+    "@tlaxis",
+    "https://www.scapia.cards/"
+   ],
+   [
+    "Shriram One",
+    "September-2023",
+    "HDFC Bank",
+    "@shriramhdfcbank",
+    "https://www.shriramfinance.in/reach-us"
+   ],
+   [
+    "Snapmint",
+    "March-2026",
+    "Yes Bank",
+    "@smyes",
+    "https://www.snapmint.com"
+   ],
+   [
+    "Stashfin",
+    "February-2026",
+    "Unity Small Finance Bank",
+    "@sfunity",
+    "https://www.stashfin.com/"
+   ],
+   [
+    "super.money",
+    "June-2024",
+    "Yes Bank",
+    "@superyes",
+    "https://super.money/"
+   ],
+   [
+    "Tata Neu",
+    "April-2022",
+    "ICICI Bank",
+    "@tapicici",
+    "https://www.tatapayments.com/upi"
+   ],
+   [
+    "Tata Neu",
+    "April-2026",
+    "Axis Bank",
+    "@tnaxis",
+    "https://www.tatapayments.com/upi"
+   ],
+   [
+    "TimePay",
+    "August-2021",
+    "The Cosmos Co-Operative Bank Ltd.",
+    "@timecosmos",
+    "https://timepayonline.com/"
+   ],
+   [
+    "T Wallet",
+    "November-2024",
+    "Axis Bank",
+    "@axisbank",
+    "https://twallet.telangana.gov.in/"
+   ],
+   [
+    "WhatsApp",
+    "November-2020",
+    "ICICI Bank",
+    "@waicici, @icici",
+    "http://www.whatsapp.com/contact/?lang=en"
+   ],
+   [
+    "WhatsApp",
+    "November-2020",
+    "Axis Bank",
+    "@waaxis",
+    "http://www.whatsapp.com/contact/?lang=en"
+   ],
+   [
+    "WhatsApp",
+    "November-2020",
+    "HDFC Bank",
+    "@wahdfcbank",
+    "http://www.whatsapp.com/contact/?lang=en"
+   ],
+   [
+    "WhatsApp",
+    "November-2020",
+    "State Bank of India",
+    "@wasbi",
+    "http://www.whatsapp.com/contact/?lang=en"
+   ],
+   [
+    "ZET",
+    "December-2025",
+    "RBL Bank",
+    "@ztrbl",
+    "https://zetapp.in/"
+   ]
+  ]
+ },
+ "ppi-apps": {
+  "title": "UPI PPI Applications",
+  "total": 37,
+  "head": null,
+  "keys": [
+   "ppi_issuer",
+   "app_name",
+   "handle_name",
+   "links_url"
+  ],
+  "rows": [
+   [
+    "ICICI Bank Limited",
+    "Pockets",
+    "@pockets",
+    "ICICI Bank Contact Us - Customer Care, Queries & Feedback - ICICI Bank"
+   ],
+   [
+    "IDFC FIRST Bank Limited",
+    "First ₹UPI",
+    "@idfcpay",
+    "https://www.idfcfirstbank.com/customer-care"
+   ],
+   [
+    "Amazon Pay (India) Private Limited",
+    "Amazon",
+    "@amazonpay",
+    "https://www.amazon.in/hz/contact-us/"
+   ],
+   [
+    "Spice Money Limited",
+    "BHIM SpicePay",
+    "@spicepay",
+    "https://spicemoney.com/corporate/customer-grievance"
+   ],
+   [
+    "Eroute Technologies Private Limited",
+    "OmniCard",
+    "@omni",
+    "https://www.eroute.in/contact"
+   ],
+   [
+    "Transerv Limited",
+    "Dhani",
+    "@dhani",
+    "Customer Care Policy | dhanipay.in"
+   ],
+   [
+    "Bajaj Finance Limited",
+    "Bajaj Finserv",
+    "@bpaywallet",
+    "Reach Us - For Customer Care, Queries, Feedback - Bajaj Finserv"
+   ],
+   [
+    "Transcorp International Limited",
+    "Cheq",
+    "@trans",
+    "https://transcorpint.com/contact-us/"
+   ],
+   [
+    "Tri O Tech Solutions Private Ltd.",
+    "FamApp by Trio",
+    "@fam",
+    "https://www.triotech.co.in/"
+   ],
+   [
+    "Pine Labs Private Ltd.",
+    "Fave",
+    "@pinelabs",
+    "https://www.pinelabs.com/contact-support"
+   ],
+   [
+    "One Mobikwik Systems Private Limited",
+    "Mobikwik",
+    "@mbk",
+    "https://www.mobikwik.com/contact"
+   ],
+   [
+    "Pay Point India Network Private Limited",
+    "Digikhata",
+    "@digikhata",
+    "https://paypointindia.com/about-us.aspx"
+   ],
+   [
+    "Livquik Technology Pvt. Ltd.",
+    "QuikWallet",
+    "@liv",
+    "https://livquik.com/quikwallet/"
+   ],
+   [
+    "Unimoni Financial Services Limited",
+    "Unimoni India",
+    "@paymoni",
+    "http://www.unimoni.in/"
+   ],
+   [
+    "Rapipay Fintech Private Limited",
+    "NYE",
+    "@nye",
+    "https://in.rapipay.com/"
+   ],
+   [
+    "PayU Payments Private Limited",
+    "Citrus Wallet",
+    "@Payu",
+    "https://consumer.citruspay.com/"
+   ],
+   [
+    "Ebix Payments services Pvt Ltd.",
+    "EbixCash UPI",
+    "@ebixcash",
+    "https://play.google.com/store/apps/details?id=com.ebixcash.upi&pcampaignid=web_share"
+   ],
+   [
+    "Balancehero India Pvt Ltd",
+    "True Balance",
+    "@tbl",
+    "https://www.truebalance.io/"
+   ],
+   [
+    "Paul Merchants Finance Private Limited",
+    "Paul Pay",
+    "@paulpay",
+    "https://v2.paulpay.in/#/important-links/t&cPPI"
+   ],
+   [
+    "Obopay Mobile Technology India Private Limited",
+    "Cashbook",
+    "@obopay",
+    "https://www.obopay.com/contact-2-2/"
+   ],
+   [
+    "Phonepe Private Limited",
+    "Phonepe",
+    "@phonepe",
+    "https://www.phonepe.com/contact-us/"
+   ],
+   [
+    "Yes Bank Ltd",
+    "Yes Pay Lite",
+    "@yesgo",
+    "https://www.yesbank.in/digital-banking"
+   ],
+   [
+    "Hindon Mercantile Ltd",
+    "Mufinpay Super App",
+    "@mufin",
+    "https://mufinpay.com/"
+   ],
+   [
+    "MobilePe Fintech Private Limited",
+    "Topay",
+    "@topay",
+    "https://topay.live/Home/Compliant"
+   ],
+   [
+    "Smart payments solutions Pvt Ltd",
+    "Payworld",
+    "@payworld",
+    "https://www.payworldmoney.com/"
+   ],
+   [
+    "Transaction Analysts (India) Private Limited",
+    "TA one",
+    "@tapay",
+    "https://transactionanalysts.com/compliance center/dispute-redressal-mechanism/"
+   ],
+   [
+    "HDFC Bank",
+    "PayZapp",
+    "@pzw",
+    "https://www.hdfcbank.com/personal/need-help/contact-us"
+   ],
+   [
+    "Dreampurse Technologies Pvt Ltd",
+    "Cred",
+    "@cred",
+    "https://cred.club/"
+   ],
+   [
+    "Amica Payment Services Private Limited",
+    "Jupiter Money",
+    "@jupiter",
+    "https://jupiteraccount.com/grievance"
+   ],
+   [
+    "I Money Pay Pvt. Ltd.",
+    "iMoney Pay",
+    "@imoney",
+    "https://imoneypay.in/contact-us"
+   ],
+   [
+    "Premium eBusiness Venture Pvt Ltd (Zokudo)",
+    "Zokudo",
+    "@zokudo",
+    "https://www.zokudo.com/contact-us"
+   ],
+   [
+    "Revolut Payments India Private Limited",
+    "Revolut India",
+    "@revolut",
+    "https://www.revolut.com/en-IN/contactus/"
+   ],
+   [
+    "Manappuram Finance Limited",
+    "Makash Digital Wallet",
+    "@makash",
+    "https://www.manappuram.com/makash"
+   ],
+   [
+    "Pockket Payment Technologies Private Limited ",
+    "The Card Company",
+    "@thecardco",
+    "www.thecardcompany.in"
+   ],
+   [
+    "Mswipe Technologies Private Limited",
+    "CTRLPay by MSwipe",
+    "@mswipe",
+    "https://portal.ctrlpay.biz/"
+   ],
+   [
+    "In-Solutions Global Limited",
+    "Consumer Choice Payments",
+    "@yourisg",
+    "https://consumerchoicepayments.com/"
+   ],
+   [
+    "Nehat Tech Solutions Private Limited",
+    "EnKash",
+    "@enkash",
+    "https://www.enkash.com/support"
+   ]
+  ]
+ },
+ "live-banks-supporting-aadhaar-otp": {
+  "title": null,
+  "keys": [],
+  "rows": []
+ },
+ "upi-global-acceptance": {
+  "title": null,
+  "keys": [],
+  "rows": []
+ },
+ "upi-global-fir": {
+  "title": null,
+  "keys": [],
+  "rows": []
+ },
+ "upi-global-nri": {
+  "title": null,
+  "keys": [],
+  "rows": []
+ }
+}

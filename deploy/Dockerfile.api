@@ -1,0 +1,17 @@
+# Build context: repo root.  docker compose -f deploy/docker-compose.yml build
+FROM node:22-alpine AS build
+WORKDIR /src
+RUN corepack enable
+COPY . .
+RUN pnpm install --frozen-lockfile --filter @upi-down/api... && pnpm --filter @upi-down/api build
+
+FROM node:22-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=build /src/apps/api/dist ./dist
+COPY --from=build /src/apps/api/package.json ./package.json.src
+RUN node -e "const p=require('./package.json.src');delete p.devDependencies;delete p.scripts;require('fs').writeFileSync('package.json',JSON.stringify(p))" \
+ && npm install --omit=dev --no-audit --no-fund && rm package.json.src && npm cache clean --force
+USER node
+EXPOSE 3020
+CMD ["node", "--max-old-space-size=256", "dist/server.js"]

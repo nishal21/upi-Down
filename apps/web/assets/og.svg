@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f110e"/>
+  <g stroke="#2a2e27" stroke-width="2">
+    <line x1="72" y1="380" x2="1128" y2="380"/>
+    <line x1="72" y1="452" x2="1128" y2="452"/>
+    <line x1="72" y1="524" x2="1128" y2="524"/>
+  </g>
+  <rect x="72" y="72" width="76" height="76" rx="6" fill="#ece6d6"/>
+  <text x="110" y="122" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="26" font-weight="800" fill="#0f110e">UPI</text>
+  <circle cx="146" cy="76" r="12" fill="#e4432d" stroke="#0f110e" stroke-width="5"/>
+  <text x="72" y="290" font-family="Segoe UI, Arial, sans-serif" font-size="112" font-weight="800" fill="#ece6d6" letter-spacing="-3">UPI Down<tspan fill="#e4432d">?</tspan></text>
+  <text x="72" y="342" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="#a8a392">Is it your bank, or just you? Live status from user reports.</text>
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="28" font-weight="700">
+    <text x="72" y="428" fill="#ece6d6">SBI</text><text x="1128" y="428" text-anchor="end" fill="#e4432d">DOWN</text>
+    <text x="72" y="500" fill="#ece6d6">HDFC</text><text x="1128" y="500" text-anchor="end" fill="#e9a825">SLOW</text>
+    <text x="72" y="572" fill="#ece6d6">ICICI</text><text x="1128" y="572" text-anchor="end" fill="#2e9d5b">WORKING</text>
+  </g>
+</svg>

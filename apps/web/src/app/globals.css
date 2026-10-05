@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+  logs: false;
+}
+
+/* Station Board — carbon ink + newsprint. Colour only ever means status. */
+@plugin "daisyui/theme" {
+  name: "upidown-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: #0f110e;
+  --color-base-200: #181b16;
+  --color-base-300: #2a2e27;
+  --color-base-content: #ece6d6;
+  --color-primary: #ece6d6;
+  --color-primary-content: #0f110e;
+  --color-secondary: #232720;
+  --color-secondary-content: #ece6d6;
+  --color-accent: #ece6d6;
+  --color-accent-content: #0f110e;
+  --color-neutral: #7b8178;
+  --color-neutral-content: #0f110e;
+  --color-info: #8fa3a8;
+  --color-info-content: #0f110e;
+  --color-success: #2e9d5b;
+  --color-success-content: #06140b;
+  --color-warning: #e9a825;
+  --color-warning-content: #1a1203;
+  --color-error: #e4432d;
+  --color-error-content: #fff4ef;
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "upidown-light";
+  default: false;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: #f4efe3;
+  --color-base-200: #ebe4d3;
+  --color-base-300: #d6cdb8;
+  --color-base-content: #14160f;
+  --color-primary: #14160f;
+  --color-primary-content: #f4efe3;
+  --color-secondary: #e2dac6;
+  --color-secondary-content: #14160f;
+  --color-accent: #14160f;
+  --color-accent-content: #f4efe3;
+  --color-neutral: #6b7069;
+  --color-neutral-content: #f4efe3;
+  --color-info: #4f6469;
+  --color-info-content: #f4efe3;
+  --color-success: #23804a;
+  --color-success-content: #f4efe3;
+  --color-warning: #b77d0a;
+  --color-warning-content: #fffaf0;
+  --color-error: #c8321d;
+  --color-error-content: #fff4ef;
+  --radius-selector: 0.25rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.25rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@custom-variant dark (&:where([data-theme="upidown-dark"], [data-theme="upidown-dark"] *));
+
+@theme inline {
+  --font-indic: var(--font-noto-beng), var(--font-noto-telu), var(--font-noto-taml), var(--font-noto-gujr),
+    var(--font-noto-knda), var(--font-noto-mlym), var(--font-noto-orya), var(--font-noto-guru), var(--font-noto-arab);
+  --font-display: var(--font-anek), var(--font-anek-deva), var(--font-indic), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-mukta), var(--font-anek-deva), var(--font-indic), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains), var(--font-mukta), var(--font-indic), ui-monospace, monospace;
+
+  /* shadcn tokens mapped onto the daisyUI theme */
+  --color-background: var(--color-base-100);
+  --color-foreground: var(--color-base-content);
+  --color-card: var(--color-base-200);
+  --color-card-foreground: var(--color-base-content);
+  --color-popover: var(--color-base-200);
+  --color-popover-foreground: var(--color-base-content);
+  --color-muted: var(--color-base-200);
+  --color-muted-foreground: color-mix(in oklab, var(--color-base-content) 58%, transparent);
+  --color-border: var(--color-base-300);
+  --color-input: var(--color-base-300);
+  --color-ring: var(--color-base-content);
+  --color-destructive: var(--color-error);
+  --color-primary-foreground: var(--color-primary-content);
+  --color-secondary-foreground: var(--color-secondary-content);
+  --color-accent-foreground: var(--color-accent-content);
+
+  --color-down: var(--color-error);
+  --color-slow: var(--color-warning);
+  --color-ok: var(--color-success);
+  --color-unknown: var(--color-neutral);
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+
+  --animate-pulse: pulse var(--duration) ease-out infinite;
+  --animate-pulse-ripple: pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+  @keyframes pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+    50% {
+      box-shadow: 0 0 0 var(--distance) var(--pulse-color, oklch(from var(--bg) l c h / 0.5));
+    }
+  }
+  @keyframes pulse-ripple {
+    0% {
+      box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);
+    }
+    100% {
+      box-shadow: 0 0 0 var(--distance) oklch(from var(--pulse-color, var(--bg)) l c h / 0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "kern";
+    min-height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  * {
+    @apply border-border;
+  }
+  ::selection {
+    background: var(--color-base-content);
+    color: var(--color-base-100);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-base-content);
+    outline-offset: 2px;
+  }
+
+  /* Tracking breaks Indic conjuncts and Arabic joining; tight leading clips stacked vowel signs. */
+  html:not([lang^="en"]) * {
+    letter-spacing: normal !important;
+  }
+  html:not([lang^="en"]) :is(.leading-none, .leading-tight) {
+    line-height: 1.3 !important;
+  }
+  html:not([lang^="en"]) :is(.uppercase) {
+    text-transform: none;
+  }
+  html[dir="rtl"] .tnum,
+  html[dir="rtl"] .font-mono {
+    unicode-bidi: plaintext;
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+@utility board-label {
+  @apply font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted-foreground;
+}
+
+/* Faint ruled-paper grain on the board, no blobs. */
+@utility board-rule {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 55px,
+    color-mix(in oklab, var(--color-base-300) 45%, transparent) 55px,
+    color-mix(in oklab, var(--color-base-300) 45%, transparent) 56px
+  );
+}
+
+@keyframes row-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+@utility row-in {
+  animation: row-in 260ms ease-out both;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@utility skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-base-200) 0%,
+    var(--color-base-300) 50%,
+    var(--color-base-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

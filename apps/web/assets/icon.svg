@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#0f110e"/>
+  <rect x="212" y="212" width="600" height="600" rx="28" fill="#ece6d6"/>
+  <text x="512" y="590" text-anchor="middle" font-family="JetBrains Mono, Consolas, monospace" font-size="230" font-weight="800" fill="#0f110e" letter-spacing="-6">UPI</text>
+  <circle cx="790" cy="234" r="92" fill="#e4432d" stroke="#0f110e" stroke-width="36"/>
+  <rect x="300" y="660" width="424" height="18" fill="#0f110e" opacity="0.18"/>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "name": "@upi-down/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/server.ts",
+    "dev:db": "node scripts/dev-db.mjs",
+    "seed": "node scripts/seed.mjs",
+    "build": "tsup",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.0",
+    "fastify": "^5.6.0",
+    "ioredis": "^5.8.0",
+    "postgres": "^3.4.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite-socket": "^0.2.11",
+    "@types/ioredis-mock": "^8.2.8",
+    "@types/node": "^24.0.0",
+    "@upi-down/shared": "workspace:*",
+    "ioredis-mock": "^8.13.1",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
