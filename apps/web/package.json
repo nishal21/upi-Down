@@ -1,0 +1,48 @@
+{
+  "name": "@upi-down/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "cap:sync": "cap sync android",
+    "cap:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/share": "^8.0.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4",
+    "@upi-down/shared": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "lucide-react": "^1.52.0",
+    "motion": "^14.0.0",
+    "next": "latest",
+    "next-themes": "^0.4.6",
+    "radix-ui": "^1.6.7",
+    "react": "latest",
+    "react-dom": "latest",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.7.0",
+    "vaul": "^1.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.2",
+    "@tailwindcss/postcss": "latest",
+    "@types/node": "^24.0.0",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "daisyui": "latest",
+    "sharp": "^0.35.5",
+    "tailwindcss": "latest",
+    "typescript": "^5.9.0"
+  }
+}

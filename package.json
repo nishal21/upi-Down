@@ -1,0 +1,15 @@
+{
+  "name": "upi-down",
+  "private": true,
+  "packageManager": "pnpm@12.9.1",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter ./apps/* dev",
+    "dev:web": "pnpm --filter @upi-down/web dev",
+    "dev:api": "pnpm --filter @upi-down/api dev",
+    "build": "pnpm -r build",
+    "build:web": "pnpm --filter @upi-down/web build",
+    "build:api": "pnpm --filter @upi-down/api build",
+    "android": "pnpm build:web && pnpm --filter @upi-down/web cap:sync && pnpm --filter @upi-down/web cap:open",
+    "typecheck": "pnpm -r typecheck"
+  }
+}
