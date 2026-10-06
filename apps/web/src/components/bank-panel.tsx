@@ -55,10 +55,13 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
   const onToken = useCallback((tk: string | undefined) => setToken(tk), []);
 
   const [appQuery, setAppQuery] = useState("");
+  const [fresh, setFresh] = useState<EntityStatus | null>(null);
+
+  if (!bank) return null;
+
   const picked = appId && !searchApps(appQuery).some((a) => a.id === appId) ? [UPI_APP_BY_ID[appId]] : [];
   const appChoices = [...picked, ...searchApps(appQuery)].filter((a) => a.id !== "bank-app" || bank.psp);
 
-  const [fresh, setFresh] = useState<EntityStatus | null>(null);
   const fromSnapshot = snapshot?.banks.find((b) => b.id === bankId) ?? empty(bankId);
   const live = fresh && fresh.total > fromSnapshot.total ? { ...fresh, spark: fromSnapshot.spark } : fromSnapshot;
   const Icon = STATUS_ICON[live.status];

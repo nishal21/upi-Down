@@ -27,7 +27,13 @@ export function BoardProvider({ children }: { children: ReactNode }) {
 
 export function useBoard() {
   const v = useContext(Actions);
-  if (!v) throw new Error("useBoard outside BoardProvider");
+  if (!v) {
+    // Never crash the shell (header stays mounted when a page errors).
+    return {
+      setOpenBank: () => {},
+      setQuery: () => {},
+    };
+  }
   return v;
 }
 

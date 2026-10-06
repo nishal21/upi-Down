@@ -14,7 +14,7 @@ export function ErrorScreen({ code, onRetry }: { code: string; onRetry?: () => v
   const missing = !onRetry;
 
   return (
-    <section className="relative isolate -mx-4 overflow-hidden px-4 pt-12 pb-16 sm:pt-20">
+    <section className="relative isolate -mx-4 overflow-hidden px-4 pt-12 pb-[max(4rem,var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px)))] sm:pt-20">
       <div
         aria-hidden
         data-tone={missing ? "unknown" : "down"}

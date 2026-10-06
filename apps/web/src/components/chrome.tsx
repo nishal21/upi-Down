@@ -13,7 +13,7 @@ function Mark() {
   const { snapshot } = useLive();
   const anyDown = snapshot?.banks.some((b) => b.status === "down");
   return (
-    <span className="relative grid size-8 place-items-center rounded-[3px] bg-base-content font-mono text-[10px] font-extrabold text-base-100">
+    <span className="relative grid size-8 shrink-0 place-items-center overflow-hidden rounded-[3px] bg-base-content font-mono text-[10px] font-extrabold text-base-100">
       UPI
       <span
         className={`absolute -top-1 -end-1 size-2.5 rounded-full ring-2 ring-base-100 ${anyDown ? "bg-down" : "bg-ok"}`}
@@ -27,11 +27,11 @@ export function Header() {
   const { t, lang, setLang } = useT();
   const { theme, toggle } = useTheme();
   return (
-    <header className="app-header sticky top-0 z-40 border-b border-base-300 bg-base-100/92 backdrop-blur-sm supports-[backdrop-filter]:bg-base-100/80">
+    <header className="app-header sticky top-0 z-40 border-b border-base-300 bg-base-100/95 backdrop-blur-sm supports-[backdrop-filter]:bg-base-100/85">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="UPI Down? home">
+        <Link href="/" className="flex min-w-0 shrink items-center gap-2.5" aria-label="UPI Down? home">
           <Mark />
-          <span className="font-display text-lg font-extrabold tracking-tight">
+          <span className="truncate font-display text-lg font-extrabold tracking-tight">
             UPI Down<span className="text-down">?</span>
           </span>
         </Link>

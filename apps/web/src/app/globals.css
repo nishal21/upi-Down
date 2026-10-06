@@ -22,7 +22,7 @@ html.native body {
 
 /*
  * Capacitor SystemBars (insetsHandling: css) injects --safe-area-inset-*.
- * On older Android WebViews env() is wrong/0 — prefer the CSS vars, fall back to env().
+ * native.ts also estimates them before Cap injects. Prefer CSS vars over env().
  * Sticky chrome must own the insets (body padding makes sticky top:0 collide with the status bar).
  */
 .app-header {
@@ -32,6 +32,12 @@ html.native body {
 }
 .app-footer {
   padding-bottom: max(1.5rem, var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px)));
+}
+html.native #main {
+  padding-bottom: max(0.5rem, var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px)));
+}
+html.native [data-sonner-toaster] {
+  top: calc(var(--safe-area-inset-top, env(safe-area-inset-top, 0px)) + 0.75rem) !important;
 }
 
 /* First-launch: hide app chrome until onboarding finishes (boot script sets needs-onboard) */

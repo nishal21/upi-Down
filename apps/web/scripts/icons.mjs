@@ -1,5 +1,5 @@
 // Renders PWA icons, favicon and Android source icons from /assets/icon.svg.
-import { mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
 const icon = new URL("../assets/icon.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
@@ -39,9 +39,15 @@ await sharp(icon).resize(48, 48).png().toFile(out("src/app/icon.png"));
 const favPng = await sharp(icon).resize(32, 32).png().toBuffer();
 await writeFile(out("public/favicon.ico"), pngToIco(favPng));
 await writeFile(out("src/app/favicon.ico"), pngToIco(favPng));
-// OG share image (1200×630) — always regenerated so deploy never ships without it.
-const ogSvg = new URL("../assets/og.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
-await sharp(ogSvg).resize(1200, 630).jpeg({ quality: 88, mozjpeg: true }).toFile(out("public/og.jpg"));
+// OG image: keep hand-authored public/og.jpg (do not overwrite from SVG).
+const ogJpg = out("public/og.jpg");
+try {
+  await access(ogJpg);
+} catch {
+  const ogSvg = new URL("../assets/og.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
+  await sharp(ogSvg).resize(1200, 630).jpeg({ quality: 88, mozjpeg: true }).toFile(ogJpg);
+  console.warn("public/og.jpg missing — generated from assets/og.svg (replace with your artwork)");
+}
 
 // Sources for `npx @capacitor/assets generate`.
 await sharp(icon).resize(1024, 1024).png().toFile(out("assets/icon-only.png"));

@@ -6,7 +6,7 @@ export type Theme = "dark" | "light";
 
 const stored = createStored<Theme>("upidown-theme", "dark");
 
-export const THEME_SCRIPT = `try{var d=document.documentElement,t=JSON.parse(localStorage.getItem("upidown-theme")||'"dark"');d.dataset.theme="upidown-"+t;var l=JSON.parse(localStorage.getItem("upidown-lang")||"null");if(l){d.lang=l+"-IN";d.dir=l==="ur"?"rtl":"ltr"}var cap=window.Capacitor;if(cap&&typeof cap.isNativePlatform==="function"&&cap.isNativePlatform()){d.classList.add("native");var ob=localStorage.getItem("upidown-onboarded");if(ob!=="true")d.classList.add("needs-onboard")}}catch(e){}`;
+export const THEME_SCRIPT = `try{var d=document.documentElement,t=JSON.parse(localStorage.getItem("upidown-theme")||'"dark"');d.dataset.theme="upidown-"+t;var l=JSON.parse(localStorage.getItem("upidown-lang")||"null");if(l){d.lang=l+"-IN";d.dir=l==="ur"?"rtl":"ltr"}var cap=window.Capacitor;if(cap&&typeof cap.isNativePlatform==="function"&&cap.isNativePlatform()){d.classList.add("native");var ob=localStorage.getItem("upidown-onboarded");if(ob!=="true")d.classList.add("needs-onboard");if(!d.style.getPropertyValue("--safe-area-inset-top")){d.style.setProperty("--safe-area-inset-top","32px");d.style.setProperty("--safe-area-inset-bottom","20px")}}}catch(e){}`;
 
 export function useTheme() {
   const theme = stored.use();
