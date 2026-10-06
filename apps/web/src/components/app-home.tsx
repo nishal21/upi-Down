@@ -1,8 +1,13 @@
 "use client";
 
 import { Home } from "./home";
+import { SoftBoundary } from "./soft-boundary";
 
-/** Thin client entry for the home page (error recovery lives in app/error.tsx). */
+/** Home wrapped so first-paint crashes remount quietly instead of flashing ERR. */
 export function AppHome() {
-  return <Home />;
+  return (
+    <SoftBoundary>
+      <Home />
+    </SoftBoundary>
+  );
 }

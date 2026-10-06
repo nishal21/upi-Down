@@ -44,9 +44,18 @@ html.native [data-sonner-toaster] {
 html.needs-onboard header,
 html.needs-onboard #main,
 html.needs-onboard .app-footer,
-html.needs-onboard [data-sonner-toaster] {
+html.needs-onboard [data-sonner-toaster],
+/* Cold start: hide SSR home until Lottie splash finishes (boot script sets needs-splash) */
+html.needs-splash header,
+html.needs-splash #main,
+html.needs-splash .app-footer,
+html.needs-splash [data-sonner-toaster] {
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+html.needs-splash body {
+  background: #0f110e !important;
 }
 
 /* Colour is reserved for status. Everything else is ink on paper. */

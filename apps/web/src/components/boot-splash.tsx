@@ -6,6 +6,10 @@ import splash from "@/assets/splash.json";
 
 const SAFETY_MS = 3500;
 
+function removeBootCover() {
+  document.getElementById("upidown-boot-cover")?.remove();
+}
+
 /** Native cold-start: Cap splash → Lottie → onboarding/home. */
 export function BootSplash({ onDone }: { onDone: () => void }) {
   const finished = useRef(false);
@@ -13,10 +17,13 @@ export function BootSplash({ onDone }: { onDone: () => void }) {
   const finish = () => {
     if (finished.current) return;
     finished.current = true;
+    removeBootCover();
+    document.documentElement.classList.remove("needs-splash");
     onDone();
   };
 
-  const hideNativeSplash = () => {
+  const revealLottie = () => {
+    removeBootCover();
     void import("@capacitor/splash-screen")
       .then(({ SplashScreen }) => SplashScreen.hide({ fadeOutDuration: 120 }))
       .catch(() => {
@@ -25,12 +32,9 @@ export function BootSplash({ onDone }: { onDone: () => void }) {
   };
 
   useEffect(() => {
-    const hide = window.setTimeout(hideNativeSplash, 80);
+    // Cap splash stays until Lottie is ready — do not hide early (causes home flash).
     const t = window.setTimeout(finish, SAFETY_MS);
-    return () => {
-      window.clearTimeout(hide);
-      window.clearTimeout(t);
-    };
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
@@ -49,7 +53,7 @@ export function BootSplash({ onDone }: { onDone: () => void }) {
         autoplay
         className="aspect-square w-[min(72vw,17.5rem)]"
         subscriptions={{
-          [LottieSubscription.ready]: hideNativeSplash,
+          [LottieSubscription.ready]: revealLottie,
           [LottieSubscription.complete]: finish,
         }}
       />

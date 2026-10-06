@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useLayoutEffect, useState, type ReactNode } from "react";
 import { BootSplash } from "./boot-splash";
 import { Onboarding } from "./onboarding";
 import { SwRegister } from "./sw-register";
@@ -19,82 +19,59 @@ function splashAlreadySeen(): boolean {
   }
 }
 
+function clearBootCover() {
+  document.getElementById("upidown-boot-cover")?.remove();
+  document.documentElement.classList.remove("needs-splash");
+}
+
 /**
- * Native: Cap splash → Lottie → onboarding (or home). After onboarding, finish()
- * does a full navigation to `/` — in-place mount was still hitting ERR.
- * Session splash skip avoids replaying Lottie on that hard nav.
+ * Native: dark cover (boot script) → Cap splash → Lottie → onboarding/home.
+ * After onboarding, finish() hard-navigates to `/`; session splash skip avoids replay.
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const native = useNativeClass();
   const done = useOnboarded();
-  const [settled, setSettled] = useState(() => {
-    if (typeof window === "undefined") return true;
-    if (detectNative()) {
-      markHtmlNative();
-      return true;
-    }
-    return false;
-  });
-  const [splashDone, setSplashDone] = useState(() => {
-    if (typeof window === "undefined") return true;
-    if (!detectNative()) return true;
-    return splashAlreadySeen();
-  });
 
-  useEffect(() => {
-    if (settled) return;
-    if (detectNative()) {
-      markHtmlNative();
-      setSettled(true);
-      return;
-    }
-    const started = Date.now();
-    const id = window.setInterval(() => {
-      if (detectNative()) {
-        markHtmlNative();
-        setSettled(true);
-        window.clearInterval(id);
-        return;
-      }
-      if (Date.now() - started > 500) {
-        setSettled(true);
-        window.clearInterval(id);
-      }
-    }, 16);
-    return () => window.clearInterval(id);
-  }, [settled]);
+  // false until layout effect — SSR still renders children for web SEO;
+  // native is covered by #upidown-boot-cover from THEME_SCRIPT.
+  const [bootReady, setBootReady] = useState(false);
+  const [splashDone, setSplashDone] = useState(true);
 
-  useEffect(() => {
-    if (!settled) return;
-    if (!native) {
+  useLayoutEffect(() => {
+    const isNative = detectNative();
+    if (isNative) markHtmlNative();
+
+    if (isNative && !splashAlreadySeen()) {
+      document.documentElement.classList.add("needs-splash");
+      setSplashDone(false);
+    } else {
+      clearBootCover();
       setSplashDone(true);
-      return;
     }
-    if (splashAlreadySeen()) setSplashDone(true);
-  }, [settled, native]);
+    setBootReady(true);
+  }, []);
 
-  useEffect(() => {
-    if (settled && native && !done) warmLive();
-  }, [settled, native, done]);
+  useLayoutEffect(() => {
+    if (!bootReady) return;
+    if (native && !done) warmLive();
+  }, [bootReady, native, done]);
 
-  const showSplash = settled && native && !splashDone;
-  // Keep needs-onboard through splash so chrome never flashes under Lottie.
-  const gating = settled && native && !done;
+  const showSplash = bootReady && native && !splashDone;
+  const gating = bootReady && native && !done;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setNeedsOnboard(gating);
   }, [gating]);
 
-  // Clear one-shot hard-reload guard once the app shell is healthy.
-  useEffect(() => {
-    if (!gating && settled && !showSplash) {
+  useLayoutEffect(() => {
+    if (!gating && bootReady && !showSplash) {
       try {
         sessionStorage.removeItem("upidown-hard-reload");
       } catch {
         /* ignore */
       }
     }
-  }, [gating, settled, showSplash]);
+  }, [gating, bootReady, showSplash]);
 
   const onSplashDone = () => {
     try {
@@ -102,15 +79,18 @@ export function AppShell({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
+    clearBootCover();
     setSplashDone(true);
   };
 
-  const showChrome = settled && !gating && !showSplash;
+  // Before bootReady: keep SSR children (SEO). Native cover/CSS hides them.
+  // After: gate on splash + onboarding.
+  const showChrome = !bootReady || (!gating && !showSplash);
 
   return (
     <>
       {showSplash ? <BootSplash onDone={onSplashDone} /> : null}
-      {!showSplash ? <Onboarding /> : null}
+      {bootReady && !showSplash ? <Onboarding /> : null}
       <SwRegister />
       {showChrome ? children : <div className="min-h-dvh bg-[#0f110e]" aria-hidden />}
     </>
