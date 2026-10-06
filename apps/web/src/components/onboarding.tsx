@@ -351,11 +351,16 @@ export function Onboarding() {
 
   function finish() {
     pinFavorites([...starred].slice(0, 5));
-    void import("@/lib/live").then((m) => m.warmLive());
-    // Mark done first so AppShell starts its reveal timer; then close the overlay.
     markOnboarded();
     void haptic("success");
-    window.setTimeout(() => setOpen(false), 200);
+    // Full navigation — in-place Home mount after onboarding still hit ERR;
+    // this is the same path as tapping "Back to all banks", which works.
+    try {
+      sessionStorage.removeItem("upidown-hard-reload");
+    } catch {
+      /* ignore */
+    }
+    window.location.replace(`${window.location.origin}/`);
   }
 
   function next() {

@@ -5,9 +5,19 @@ import { ArrowLeft, RotateCw, Search } from "lucide-react";
 import { BANKS } from "@upi-down/shared";
 import { bankSlug } from "@/lib/config";
 import { useT } from "@/lib/i18n";
+import { detectNative } from "@/lib/native";
 import { cn } from "@/lib/utils";
 
 const MAJOR = BANKS.filter((b) => b.tier <= 2).slice(0, 16);
+
+function goHome() {
+  try {
+    sessionStorage.removeItem("upidown-hard-reload");
+  } catch {
+    /* ignore */
+  }
+  window.location.replace(`${window.location.origin}/`);
+}
 
 export function ErrorScreen({ code, onRetry }: { code: string; onRetry?: () => void }) {
   const { t } = useT();
@@ -61,15 +71,16 @@ export function ErrorScreen({ code, onRetry }: { code: string; onRetry?: () => v
             <RotateCw className="size-4" aria-hidden /> {t.retry}
           </button>
         )}
-        <Link
-          href="/"
+        <button
+          type="button"
+          onClick={goHome}
           className={cn(
             "inline-flex h-12 items-center gap-2 rounded-[4px] px-5 font-display font-bold",
             onRetry ? "border border-base-300 hover:border-base-content" : "bg-base-content text-base-100",
           )}
         >
           <ArrowLeft className="size-4 rtl:rotate-180" aria-hidden /> {t.goHome}
-        </Link>
+        </button>
         <Link
           href="/#board"
           className="inline-flex h-12 items-center gap-2 rounded-[4px] border border-base-300 px-5 font-display font-bold hover:border-base-content"
