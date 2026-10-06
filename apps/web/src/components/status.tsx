@@ -48,7 +48,7 @@ export function StatusChip({ status, className }: { status: Status; className?: 
   return (
     <span
       className={cn(
-        "badge badge-sm h-6 max-w-[9rem] gap-1.5 rounded-[3px] border px-2 font-mono text-[11px] font-semibold uppercase tracking-wider",
+        "badge badge-sm h-auto min-h-6 max-w-[9rem] py-0.5 gap-1.5 rounded-[3px] border px-2 font-mono text-[11px] font-semibold uppercase tracking-wider",
         CHIP[status],
         className,
       )}

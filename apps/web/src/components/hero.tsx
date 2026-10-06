@@ -1,8 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { BANK_BY_ID, type EntityStatus } from "@upi-down/shared";
-import { BlurFade } from "@/components/ui/blur-fade";
+import { useMemo, useState } from "react";
+import { BANK_BY_ID, BOARD_BANKS, STATUS_RANK, type EntityStatus, type Status } from "@upi-down/shared";
 import { useT } from "@/lib/i18n";
 import { useLive, type Connection } from "@/lib/live";
 import { cn } from "@/lib/utils";
@@ -10,13 +9,13 @@ import { useBoard } from "./board-context";
 import { minutesAgo } from "./clock";
 import { StatusDot } from "./status";
 
-const Spotlight = dynamic(() => import("@/components/ui/spotlight-new").then((m) => m.Spotlight), { ssr: false });
+const ORDER: Status[] = ["down", "slow", "ok", "unknown"];
 
-const SINDOOR = {
-  gradientFirst:
-    "radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(8, 77%, 60%, .10) 0, hsla(8, 77%, 50%, .03) 50%, hsla(8, 77%, 45%, 0) 80%)",
-  gradientSecond: "radial-gradient(50% 50% at 50% 50%, hsla(8, 77%, 60%, .07) 0, hsla(8, 77%, 50%, .02) 80%, transparent 100%)",
-  gradientThird: "radial-gradient(50% 50% at 50% 50%, hsla(8, 77%, 60%, .05) 0, hsla(8, 77%, 45%, .02) 80%, transparent 100%)",
+const TEXT: Record<Status, string> = {
+  down: "text-down",
+  slow: "text-slow",
+  ok: "text-ok",
+  unknown: "text-muted-foreground",
 };
 
 function ConnectionPill({ connection, updatedAt }: { connection: Connection; updatedAt?: string }) {
@@ -31,20 +30,77 @@ function ConnectionPill({ connection, updatedAt }: { connection: Connection; upd
   );
 }
 
+function TickerItem({ e, onOpen, hidden }: { e: EntityStatus; onOpen: (id: string) => void; hidden?: boolean }) {
+  return (
+    <button
+      type="button"
+      tabIndex={hidden ? -1 : undefined}
+      onClick={() => onOpen(e.id)}
+      className={cn(
+        "tnum relative z-10 inline-flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-[3px] border px-2.5 font-mono text-[12px] font-bold transition-colors",
+        e.status === "down" && "border-down bg-down text-error-content",
+        e.status === "slow" && "border-slow/60 bg-slow/12 text-slow",
+        e.status === "ok" && "border-base-300 bg-base-100/70 hover:border-base-content",
+        e.status === "unknown" && "border-dashed border-base-300 bg-base-100/50 text-muted-foreground hover:border-base-content",
+      )}
+    >
+      <StatusDot status={e.status} />
+      {BANK_BY_ID[e.id]?.short}
+      {e.total > 0 && <span className="font-medium opacity-70">{e.total}</span>}
+    </button>
+  );
+}
+
+/** Every board bank scrolling past. Two copies make the loop seamless; the second is hidden from AT. */
+function Ticker({ items, onOpen }: { items: EntityStatus[]; onOpen: (id: string) => void }) {
+  // Pause while the pointer is over the strip so transform animation does not steal the click.
+  const [paused, setPaused] = useState(false);
+
+  return (
+    <div
+      dir="ltr"
+      className="ticker-wrap relative z-10 mt-7 w-full overflow-hidden"
+      onPointerEnter={() => setPaused(true)}
+      onPointerLeave={() => setPaused(false)}
+    >
+      <div
+        className={cn("ticker flex w-max gap-2 px-4 sm:px-6 lg:px-10", paused && "ticker-paused")}
+        style={{ "--ticker-duration": `${Math.max(items.length, 1) * 2.2}s` } as React.CSSProperties}
+      >
+        {items.map((e) => (
+          <TickerItem key={e.id} e={e} onOpen={onOpen} />
+        ))}
+        <div className="ticker-copy flex gap-2" aria-hidden>
+          {items.map((e) => (
+            <TickerItem key={e.id} e={e} onOpen={onOpen} hidden />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   const { t } = useT();
   const { snapshot, connection } = useLive();
   const { setOpenBank } = useBoard();
 
-  const banks = snapshot?.banks ?? [];
-  const down = banks.filter((b) => b.status === "down");
-  const slow = banks.filter((b) => b.status === "slow");
-  const quiet = snapshot !== null && banks.every((b) => b.total === 0);
-  const majorDown = down.some((b) => BANK_BY_ID[b.id]?.tier === 1);
+  const board = useMemo(() => {
+    const byId = new Map(snapshot?.banks.map((b) => [b.id, b]));
+    return BOARD_BANKS.map(
+      (b): EntityStatus =>
+        byId.get(b.id) ?? { id: b.id, status: "unknown", total: 0, counts: { failed: 0, pending: 0, slow: 0 }, spark: [] },
+    ).sort((a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status] || b.total - a.total);
+  }, [snapshot]);
+
+  const count = (s: Status) => board.filter((b) => b.status === s).length;
+  const down = board.filter((b) => b.status === "down");
+  const slow = board.filter((b) => b.status === "slow");
+  const quiet = snapshot !== null && board.every((b) => b.total === 0);
 
   let headline = t.heroOk;
   let sub = t.heroSubOk;
-  let tone: "down" | "slow" | "ok" | "unknown" = "ok";
+  let tone: Status = "ok";
   if (!snapshot) {
     headline = "UPI Down?";
     sub = t.disclaimer;
@@ -67,48 +123,51 @@ export function Hero() {
     tone = "unknown";
   }
 
-  const trouble: EntityStatus[] = [...down, ...slow].slice(0, 6);
-
   return (
-    <section className="relative overflow-hidden pt-8 pb-6 sm:pt-14 sm:pb-10">
-      {majorDown && (
-        <div className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black_55%,transparent)]">
-          <Spotlight {...SINDOOR} />
+    <section className="relative w-full overflow-hidden pt-8 pb-7 sm:pt-14 sm:pb-10">
+      <div aria-hidden data-tone={tone} className="hero-backdrop pointer-events-none absolute inset-0">
+        <div className="hero-grid absolute inset-0" />
+        <div className="hero-aurora absolute">
+          <span className="hero-orb hero-orb-a" />
+          <span className="hero-orb hero-orb-b" />
+          <span className="hero-orb hero-orb-c" />
+          <span className="hero-sheen" />
         </div>
-      )}
-      <BlurFade key={headline} duration={0.35} offset={6} className="relative z-10">
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-4">
         <ConnectionPill connection={connection} updatedAt={snapshot?.updatedAt} />
-        <h1
+        <h1 className="mt-4 max-w-[20ch] font-display text-[clamp(1.05rem,2.8vw,1.35rem)] font-bold tracking-tight text-muted-foreground">
+          Is UPI down right now?
+        </h1>
+        <p
+          aria-live="polite"
           className={cn(
-            "mt-4 max-w-[14ch] font-display text-[clamp(2.6rem,9vw,5.25rem)] font-extrabold leading-[0.92] tracking-[-0.02em] text-balance",
+            "fade-up mt-2 max-w-[14ch] font-display text-[clamp(2.6rem,9vw,5.25rem)] font-extrabold leading-[0.92] tracking-[-0.02em] text-balance",
             tone === "down" && "text-down",
             tone === "slow" && "text-slow",
           )}
         >
           {headline}
-        </h1>
+        </p>
         <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-muted-foreground">{sub}</p>
 
-        {trouble.length > 0 && (
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {trouble.map((b) => (
-              <li key={b.id}>
-                <button
-                  type="button"
-                  onClick={() => setOpenBank(b.id)}
-                  className={cn(
-                    "badge h-9 gap-2 rounded-[3px] px-3 font-mono text-[13px] font-bold",
-                    b.status === "down" ? "border-down bg-down text-error-content" : "border-slow/60 bg-slow/12 text-slow",
-                  )}
-                >
-                  {BANK_BY_ID[b.id]?.short}
-                  <span className="tnum opacity-80">{b.total}</span>
-                </button>
-              </li>
+        {snapshot && (
+          <dl className="tnum mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[12px]">
+            {ORDER.filter((s) => count(s) > 0).map((s) => (
+              <div key={s} className="flex items-baseline gap-1.5">
+                <dt className="sr-only">{t.status[s]}</dt>
+                <dd className={cn("text-xl font-extrabold leading-none", TEXT[s])}>{count(s)}</dd>
+                <span aria-hidden className="uppercase tracking-[0.12em] text-muted-foreground">
+                  {t.status[s]}
+                </span>
+              </div>
             ))}
-          </ul>
+          </dl>
         )}
-      </BlurFade>
+      </div>
+
+      <Ticker items={board} onOpen={setOpenBank} />
     </section>
   );
 }

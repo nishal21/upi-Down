@@ -47,7 +47,12 @@ async function verifyTurnstile(token: string | undefined, ip: string): Promise<b
   if (!config.turnstileSecret) return true;
   if (typeof token !== "string" || token.length === 0 || token.length > 2048) return false;
   if (config.turnstileHostnames.size === 0) return false;
-  let result: { success?: boolean; action?: string; hostname?: string };
+  let result: {
+    success?: boolean;
+    action?: string;
+    hostname?: string;
+    metadata?: { result_with_testing_key?: boolean };
+  };
   try {
     const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
       method: "POST",

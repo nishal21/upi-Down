@@ -35,8 +35,8 @@ export function Header() {
             UPI Down<span className="text-down">?</span>
           </span>
         </Link>
-        <IstClock className="tnum ms-auto hidden font-mono text-sm font-semibold sm:block" />
-        <div className="ms-auto flex items-center gap-1 sm:ms-3">
+        <IstClock className="tnum ms-auto font-mono text-[11px] font-semibold sm:text-sm" />
+        <div className="flex items-center gap-1 sm:ms-1">
           <label className="relative flex h-9 items-center rounded-[3px] text-muted-foreground focus-within:text-base-content hover:text-base-content">
             <Languages className="pointer-events-none absolute start-2 size-4" aria-hidden />
             <span className="sr-only">{t.language}</span>
@@ -93,20 +93,43 @@ export function Banners() {
 
 export function Footer() {
   const { t } = useT();
+  const year = new Date().getFullYear();
   return (
     <footer className="mt-16 border-t border-base-300">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-[60ch] space-y-1.5">
           <p className="font-medium text-base-content">{t.disclaimer}</p>
           <p>{t.notAffiliated}</p>
+          <p className="pt-1 text-xs">
+            © {year} Nishal K.{" "}
+            <a
+              href="https://github.com/nishal21/upi-Down"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-base-content"
+            >
+              github.com/nishal21/upi-Down
+            </a>
+          </p>
         </div>
-        <nav className="flex gap-4 font-mono text-xs uppercase tracking-[0.14em]">
+        <nav className="flex flex-wrap gap-4 font-mono text-xs uppercase tracking-[0.14em]">
           <Link href="/about/" className="hover:text-base-content">
             {t.about}
           </Link>
           <Link href="/privacy/" className="hover:text-base-content">
             {t.privacy}
           </Link>
+          <a
+            href="https://github.com/nishal21/upi-Down"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-base-content"
+          >
+            GitHub
+          </a>
+          <a href="/llms.txt" className="hover:text-base-content">
+            llms.txt
+          </a>
         </nav>
       </div>
     </footer>

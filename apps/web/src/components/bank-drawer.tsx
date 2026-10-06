@@ -5,7 +5,7 @@ import { BANK_BY_ID } from "@upi-down/shared";
 import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "@/components/ui/drawer";
 import { useT } from "@/lib/i18n";
 import { BankPanel } from "./bank-panel";
-import { useBoard } from "./board-context";
+import { useBoard, useOpenBank } from "./board-context";
 
 function useWide() {
   const [wide, setWide] = useState(false);
@@ -21,7 +21,8 @@ function useWide() {
 
 export function BankDrawer() {
   const { t } = useT();
-  const { openBank, setOpenBank } = useBoard();
+  const { setOpenBank } = useBoard();
+  const openBank = useOpenBank();
   const wide = useWide();
   const bank = openBank ? BANK_BY_ID[openBank] : null;
   const isOpen = !!bank;
@@ -46,12 +47,12 @@ export function BankDrawer() {
       onOpenChange={(o) => !o && close()}
       direction={wide ? "right" : "bottom"}
     >
-      <DrawerContent className="max-h-[92dvh] border-base-300 bg-base-100 data-[vaul-drawer-direction=right]:w-[440px] data-[vaul-drawer-direction=right]:sm:max-w-[440px]">
+      <DrawerContent className="border-base-300 bg-base-100 data-[vaul-drawer-direction=right]:w-[min(100vw,28rem)] data-[vaul-drawer-direction=right]:max-w-[28rem] data-[vaul-drawer-direction=bottom]:max-h-[94dvh]">
         {bank && (
           <>
             <DrawerTitle className="sr-only">{t.isItDown(bank.short)}</DrawerTitle>
             <DrawerDescription className="sr-only">{t.disclaimer}</DrawerDescription>
-            <div className="overflow-y-auto px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <BankPanel key={bank.id} bankId={bank.id} onPickBank={setOpenBank} />
             </div>
           </>

@@ -21,7 +21,19 @@ pnpm --filter web dev                # http://localhost:3000
 pnpm --filter @upi-down/api seed     # optional fake reports
 ```
 
-Copy `apps/api/.env.example` to `.env` and `apps/web/.env.example` to `.env.local` first.
+Copy `apps/api/.env.example` to `.env` and `apps/web/.env.example` to `.env.development.local` first. Don't use `.env.local` in `apps/web`: Next reads it during production builds too, and it overrides `.env.production`.
+
+## Bank and app data
+
+`data/npci-upi-members.json` is a copy of NPCI's [UPI members list](https://www.npci.org.in/product/upi/all-members): 751 banks and 61 extra apps. `node scripts/npci-sync.mjs` regenerates `packages/shared/src/npci.generated.ts` from it. NPCI blocks scripted requests, so to refresh it, open that page in a browser and save the responses from `/api/all-members-tab-details?product_name=UPI&tab_name=<upi|3rd-party-apps|ppi-apps>&page_no=1&page_size=2000&locale=en`.
+
+## Languages
+
+English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu (right to left), Kannada, Odia, Malayalam, Punjabi and Assamese. Strings live in `apps/web/src/lib/locales/`. Every file is typed as `Dict` from `en.ts`, so a missing key fails typecheck.
+
+## License
+
+[PolyForm Noncommercial 1.0.0](LICENSE.md). Free for personal and non-commercial use. Commercial use needs permission.
 
 ## Android
 

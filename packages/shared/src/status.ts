@@ -60,7 +60,7 @@ export interface VerdictInput {
   appStatus?: Status;
 }
 
-/** "Is it just me?" — answered right after a report. */
+/** Answers "is it just me?" right after a report. */
 export function verdict({ bankStatus, bankTotal, appStatus }: VerdictInput): Verdict {
   if (bankStatus === "down" || bankStatus === "slow" || bankTotal >= SLOW_MIN) return "bank";
   if (appStatus === "down" || appStatus === "slow") return "app";

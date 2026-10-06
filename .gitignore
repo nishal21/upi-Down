@@ -28,3 +28,8 @@ keystore.properties
 .DS_Store
 Thumbs.db
 *.log
+
+devlog.md
+learning-journal.md
+graphify-out/
+deploy/DEPLOY.md

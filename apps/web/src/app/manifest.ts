@@ -6,7 +6,11 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "UPI Down? Live bank UPI status",
     short_name: "UPI Down?",
-    description: "Is your bank's UPI down, or is it just you? Live status from user reports.",
+    description: "Is UPI down right now, or is it just you? Live Indian bank UPI status from user reports.",
+    id: "/",
+    dir: "auto",
+    orientation: "any",
+    prefer_related_applications: false,
     start_url: "/",
     display: "standalone",
     background_color: "#0f110e",

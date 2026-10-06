@@ -13,7 +13,8 @@ export function PlaceholdersAndVanishInput({
   ariaLabel?: string;
   placeholders: string[];
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  /** Receives the query string captured before the vanish animation clears the field. */
+  onSubmit: (value: string) => void;
 }) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
 
@@ -153,28 +154,36 @@ export function PlaceholdersAndVanishInput({
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && !animating) {
-      vanishAndSubmit();
+      e.preventDefault();
+      submitValue(inputRef.current?.value || "");
     }
   };
 
-  const vanishAndSubmit = () => {
+  const vanishAndSubmit = (value: string) => {
     setAnimating(true);
     draw();
 
-    const value = inputRef.current?.value || "";
     if (value && inputRef.current) {
       const maxX = newDataRef.current.reduce(
         (prev, current) => (current.x > prev ? current.x : prev),
         0
       );
       animate(maxX);
+    } else {
+      setAnimating(false);
     }
+  };
+
+  const submitValue = (raw: string) => {
+    const value = raw.trim();
+    if (!value || animating) return;
+    vanishAndSubmit(value);
+    onSubmit(value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    vanishAndSubmit();
-    onSubmit && onSubmit(e);
+    submitValue(inputRef.current?.value || "");
   };
   return (
     <form

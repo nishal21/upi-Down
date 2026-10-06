@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { memo, useDeferredValue, useMemo } from "react";
 import { Star } from "lucide-react";
 import {
   BANK_BY_ID,
@@ -18,10 +18,10 @@ import { useFavorites } from "@/lib/favorites";
 import { useT } from "@/lib/i18n";
 import { useLive } from "@/lib/live";
 import { cn } from "@/lib/utils";
-import { useBoard } from "./board-context";
+import { useBoard, useQuery } from "./board-context";
 import { SignalPlate, Sparkline, StatusChip } from "./status";
 
-const SEARCH_LIMIT = 50;
+const SEARCH_LIMIT = 10;
 
 const emptyEntity = (id: string): EntityStatus => ({
   id,
@@ -44,7 +44,7 @@ function HeaderRow() {
   );
 }
 
-function Row({
+const Row = memo(function Row({
   entity,
   label,
   name,
@@ -57,9 +57,9 @@ function Row({
   label: string;
   name: string;
   index: number;
-  onOpen?: () => void;
+  onOpen?: (id: string) => void;
   fav?: boolean;
-  onFav?: () => void;
+  onFav?: (id: string) => void;
 }) {
   const { t } = useT();
   const body = (
@@ -101,20 +101,20 @@ function Row({
         {onOpen ? (
           <button
             type="button"
-            onClick={onOpen}
-            className="grid min-h-[60px] flex-1 grid-cols-[1fr_auto] items-center gap-3 px-3 py-2 text-start sm:grid-cols-[1fr_9rem_6.5rem_5.5rem]"
+            onClick={() => onOpen(entity.id)}
+            className="grid min-h-[52px] flex-1 grid-cols-[1fr_auto] items-center gap-3 px-3 py-1.5 text-start sm:grid-cols-[1fr_9rem_6.5rem_5.5rem]"
           >
             {body}
           </button>
         ) : (
-          <div className="grid min-h-[60px] flex-1 grid-cols-[1fr_auto] items-center gap-3 px-3 py-2 sm:grid-cols-[1fr_9rem_6.5rem_5.5rem]">
+          <div className="grid min-h-[52px] flex-1 grid-cols-[1fr_auto] items-center gap-3 px-3 py-1.5 sm:grid-cols-[1fr_9rem_6.5rem_5.5rem]">
             {body}
           </div>
         )}
         {onFav ? (
           <button
             type="button"
-            onClick={onFav}
+            onClick={() => onFav(entity.id)}
             aria-label={fav ? t.favRemove : t.favAdd}
             aria-pressed={fav}
             className="grid w-11 shrink-0 place-items-center text-muted-foreground transition-colors hover:text-base-content sm:w-10"
@@ -126,7 +126,7 @@ function Row({
         )}
       </div>
   );
-}
+});
 
 function SkeletonRows() {
   return (
@@ -143,10 +143,11 @@ function SkeletonRows() {
 }
 
 export function Board() {
-  const { t } = useT();
+  const { t, dir } = useT();
   const { snapshot } = useLive();
   const { favorites, toggle, isFav } = useFavorites();
-  const { query, setOpenBank } = useBoard();
+  const { setOpenBank } = useBoard();
+  const query = useDeferredValue(useQuery());
 
   const bankMap = useMemo(() => new Map(snapshot?.banks.map((b) => [b.id, b])), [snapshot]);
   const banks = useMemo(() => {
@@ -173,28 +174,28 @@ export function Board() {
           label={b.short}
           name={b.name}
           index={i}
-          onOpen={() => setOpenBank(e.id)}
+          onOpen={setOpenBank}
           fav={isFav(e.id)}
-          onFav={() => toggle(e.id)}
+          onFav={toggle}
         />
       );
     });
 
   const trigger =
-    "h-9 rounded-[3px] px-3 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:flex-none";
+    "h-9 min-w-0 flex-1 rounded-[3px] px-2 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground sm:flex-none sm:px-3";
 
   return (
-    <Tabs defaultValue={favorites.length > 0 ? "fav" : "all"} className="gap-4">
+    <Tabs defaultValue={favorites.length > 0 ? "fav" : "all"} dir={dir} className="gap-4">
       <TabsList className="h-auto w-full justify-start gap-1 rounded-[4px] border border-base-300 bg-transparent p-1 sm:w-auto">
         <TabsTrigger value="all" className={trigger}>
-          {t.tabAll}
+          <span className="truncate">{t.tabAll}</span>
         </TabsTrigger>
         <TabsTrigger value="fav" className={trigger}>
-          {t.tabFav}
+          <span className="truncate">{t.tabFav}</span>
           {favorites.length > 0 && <span className="tnum ms-1 opacity-70">{favorites.length}</span>}
         </TabsTrigger>
         <TabsTrigger value="apps" className={trigger}>
-          {t.tabApps}
+          <span className="truncate">{t.tabApps}</span>
         </TabsTrigger>
       </TabsList>
 

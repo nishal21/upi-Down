@@ -19,16 +19,25 @@ import { SignalPlate, StatusChip } from "./status";
 export function BankSearch() {
   const { t } = useT();
   const { setQuery, setOpenBank } = useBoard();
+
+  // Honor ?q= from WebSite SearchAction / shared links.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q")?.trim();
+    if (!q) return;
+    setQuery(q);
+    const first = searchBanks(q, 1)[0];
+    if (first) setOpenBank(first.id);
+  }, [setQuery, setOpenBank]);
+
   return (
     <PlaceholdersAndVanishInput
       placeholders={t.search}
       ariaLabel={t.search[0]}
       onChange={(e) => setQuery(e.target.value)}
-      onSubmit={(e) => {
-        const value = e.currentTarget.querySelector("input")?.value ?? "";
-        const first = searchBanks(value)[0];
+      onSubmit={(value) => {
+        const first = searchBanks(value, 1)[0];
         setQuery("");
-        if (first && value.trim()) setOpenBank(first.id);
+        if (first) setOpenBank(first.id);
       }}
     />
   );
@@ -55,18 +64,21 @@ export function CommandSearch() {
 
   const [q, setQ] = useState("");
   const statusOf = (id: string) => snapshot?.banks.find((b) => b.id === id)?.status ?? "unknown";
-  const results = searchBanks(q, 40);
+  const results = searchBanks(q, 8);
 
   return (
     <CommandDialog
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={(o) => {
+        setOpen(o);
+        if (!o) setQ("");
+      }}
       title={t.search[0]}
       description={t.disclaimer}
       shouldFilter={false}
     >
       <CommandInput placeholder={t.search[0]} value={q} onValueChange={setQ} />
-      <CommandList>
+      <CommandList className="max-h-[min(36vh,180px)]">
         <CommandEmpty>{t.noMatch}</CommandEmpty>
         <CommandGroup heading={q ? t.searchAll : t.tabAll}>
           {results.map((b) => (
@@ -77,10 +89,10 @@ export function CommandSearch() {
                 setOpen(false);
                 setOpenBank(b.id);
               }}
-              className="gap-3"
+              className="h-10 gap-2.5 py-0"
             >
               <SignalPlate label={BANK_BY_ID[b.id].short} status={statusOf(b.id)} />
-              <span className="flex-1 truncate">{b.name}</span>
+              <span className="min-w-0 flex-1 truncate text-sm">{b.name}</span>
               <StatusChip status={statusOf(b.id)} />
             </CommandItem>
           ))}

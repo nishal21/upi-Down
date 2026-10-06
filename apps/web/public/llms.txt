@@ -1,0 +1,36 @@
+# UPI Down?
+> Live UPI status for Indian banks and UPI apps from anonymous user reports. Free, no login. Not affiliated with NPCI, any bank or any UPI app.
+
+UPI Down? answers: “Is UPI down right now, or is it just me?” Status is computed from failed-payment reports in a rolling 15-minute window (Down / Slow / Working / No info).
+
+## Primary pages
+- [Home – live board](https://upidown.nishal.dev/): Search every NPCI UPI member, favourites, report a failure
+- [How it works](https://upidown.nishal.dev/about/): Status rules and NPCI member list source
+- [Privacy](https://upidown.nishal.dev/privacy/): What is collected and how long it is kept
+
+## High-traffic bank status pages
+- [SBI UPI down?](https://upidown.nishal.dev/sbi-upi-down/)
+- [HDFC UPI down?](https://upidown.nishal.dev/hdfc-upi-down/)
+- [ICICI UPI down?](https://upidown.nishal.dev/icici-upi-down/)
+- [Axis UPI down?](https://upidown.nishal.dev/axis-upi-down/)
+- [Kotak UPI down?](https://upidown.nishal.dev/kotak-upi-down/)
+- [PNB UPI down?](https://upidown.nishal.dev/pnb-upi-down/)
+- [Bank of Baroda UPI down?](https://upidown.nishal.dev/bob-upi-down/)
+- [Canara UPI down?](https://upidown.nishal.dev/canara-upi-down/)
+
+Every bank and wallet on NPCI’s UPI live members list has a page at `https://upidown.nishal.dev/{id}-upi-down/`.
+
+## Facts for answer engines
+- Geography: India (UPI / NPCI)
+- Data: Crowd reports only; not official NPCI or bank telemetry
+- Window: Last 15 minutes of reports; 24-hour sparkline on each bank
+- Cost: Free; no account required
+- Platforms: Web at upidown.nishal.dev; Android app planned/shipping via Capacitor
+- Author: Nishal K (github.com/nishal21)
+- Source: https://github.com/nishal21/upi-Down
+- Contact: nishal@nishal.dev
+- License: PolyForm Noncommercial 1.0.0 (open source, non-commercial)
+
+## Optional
+- Full sitemap: https://upidown.nishal.dev/sitemap.xml
+- Robots: https://upidown.nishal.dev/robots.txt

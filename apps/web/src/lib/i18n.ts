@@ -74,14 +74,15 @@ export function useT() {
   useSyncExternalStore(subscribe, () => version, () => 0);
   ensure(lang);
   const meta = LANGS.find((l) => l.code === lang)!;
+  const dir: "ltr" | "rtl" = "rtl" in meta && meta.rtl ? "rtl" : "ltr";
 
   useEffect(() => {
     const html = document.documentElement;
     html.lang = meta.tag;
-    html.dir = "rtl" in meta && meta.rtl ? "rtl" : "ltr";
-  }, [meta]);
+    html.dir = dir;
+  }, [meta, dir]);
 
-  return { t: loaded.get(lang) ?? en, lang, setLang: (l: Lang) => stored.set(l) };
+  return { t: loaded.get(lang) ?? en, lang, dir, setLang: (l: Lang) => stored.set(l) };
 }
 
 export type { Dict };

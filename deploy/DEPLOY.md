@@ -21,6 +21,8 @@ sudo mkdir -p /opt/upi-down && sudo chown $USER /opt/upi-down
 git clone <repo> /opt/upi-down && cd /opt/upi-down
 cp deploy/.env.example deploy/.env
 # fill POSTGRES_PASSWORD and HASH_SECRET:  openssl rand -hex 32
+# paste the Turnstile secret into TURNSTILE_SECRET (Cloudflare > Turnstile > widget > Settings)
+# the widget's hostname list must include upidown.nishal.dev; subdomains such as app. are covered
 docker compose -f deploy/docker-compose.yml up -d --build
 curl -s 127.0.0.1:3020/api/healthz
 ```

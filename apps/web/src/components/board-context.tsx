@@ -1,24 +1,35 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useMemo, useState, type ReactNode } from "react";
 
-interface BoardCtx {
-  openBank: string | null;
+interface BoardActions {
   setOpenBank: (id: string | null) => void;
-  query: string;
   setQuery: (q: string) => void;
 }
 
-const Ctx = createContext<BoardCtx | null>(null);
+// Split so opening a bank re-renders only the drawer, and typing re-renders only the board.
+const Actions = createContext<BoardActions | null>(null);
+const OpenBank = createContext<string | null>(null);
+const Query = createContext("");
 
 export function BoardProvider({ children }: { children: ReactNode }) {
   const [openBank, setOpenBank] = useState<string | null>(null);
   const [query, setQuery] = useState("");
-  return <Ctx.Provider value={{ openBank, setOpenBank, query, setQuery }}>{children}</Ctx.Provider>;
+  const actions = useMemo(() => ({ setOpenBank, setQuery }), []);
+  return (
+    <Actions.Provider value={actions}>
+      <OpenBank.Provider value={openBank}>
+        <Query.Provider value={query}>{children}</Query.Provider>
+      </OpenBank.Provider>
+    </Actions.Provider>
+  );
 }
 
 export function useBoard() {
-  const v = useContext(Ctx);
+  const v = useContext(Actions);
   if (!v) throw new Error("useBoard outside BoardProvider");
   return v;
 }
+
+export const useOpenBank = () => useContext(OpenBank);
+export const useQuery = () => useContext(Query);

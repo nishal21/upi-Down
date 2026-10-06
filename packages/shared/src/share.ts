@@ -8,12 +8,16 @@ const PHRASE: Record<Status, string> = {
 };
 
 export function istTime(date: Date = new Date()): string {
-  return new Intl.DateTimeFormat("en-IN", {
-    hour: "2-digit",
+  const parts = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
     minute: "2-digit",
-    hour12: false,
+    hour12: true,
     timeZone: "Asia/Kolkata",
-  }).format(date);
+  }).formatToParts(date);
+  const hour = parts.find((p) => p.type === "hour")?.value ?? "";
+  const minute = parts.find((p) => p.type === "minute")?.value ?? "";
+  const dayPeriod = (parts.find((p) => p.type === "dayPeriod")?.value ?? "").toUpperCase();
+  return `${hour}:${minute} ${dayPeriod}`.trim();
 }
 
 export function shareLine(short: string, status: Status, date: Date = new Date()): string {

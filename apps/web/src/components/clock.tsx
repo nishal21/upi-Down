@@ -12,8 +12,9 @@ export function IstClock({ className }: { className?: string }) {
     return () => clearInterval(id);
   }, []);
   return (
-    <time className={className} suppressHydrationWarning>
-      {now ?? "--:--"} <span className="text-muted-foreground">IST</span>
+    <time className={className} dateTime={now ?? undefined} suppressHydrationWarning>
+      <span className="whitespace-nowrap">{now ?? "--:-- --"}</span>{" "}
+      <span className="text-muted-foreground">IST</span>
     </time>
   );
 }

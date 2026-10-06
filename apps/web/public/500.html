@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>UPI Down? · Something broke</title>
+    <style>
+      :root { color-scheme: dark light; --bg: #0f110e; --ink: #ece6d6; --muted: #9aa097; --down: #e4432d; --down-ink: #fff4ef; --line: #2a2e27; }
+      @media (prefers-color-scheme: light) { :root { --bg: #f4efe3; --ink: #14160f; --muted: #6b7069; --down: #c8321d; --line: #d6cdb8; } }
+      html, body { margin: 0; min-height: 100dvh; background: var(--bg); color: var(--ink); font: 16px/1.5 ui-sans-serif, system-ui, sans-serif; }
+      main { max-width: 36rem; margin: 0 auto; padding: 4.5rem 1.25rem 3rem; }
+      .tiles { display: flex; gap: 0.5rem; }
+      .tiles span { display: grid; place-items: center; width: 4rem; height: 4rem; border-radius: 4px; background: var(--down); color: var(--down-ink); font: 800 1.75rem/1 ui-monospace, monospace; }
+      h1 { margin: 2rem 0 0; font-size: clamp(2rem, 7vw, 3.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.02em; }
+      p { margin: 1rem 0 0; font-size: 17px; color: var(--muted); max-width: 46ch; }
+      a { display: inline-flex; align-items: center; height: 3rem; margin-top: 2rem; padding: 0 1.25rem; border-radius: 4px; background: var(--ink); color: var(--bg); font-weight: 700; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="tiles" aria-hidden="true"><span>5</span><span>0</span><span>0</span></div>
+      <h1>The server hit a snag</h1>
+      <p>This is a problem with this site, not with UPI or your bank. Wait a moment and try again.</p>
+      <a href="/">Back to all banks</a>
+    </main>
+  </body>
+</html>

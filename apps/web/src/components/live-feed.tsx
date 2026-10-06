@@ -25,8 +25,8 @@ export function LiveFeed() {
           <AnimatePresence initial={false}>
             {recent.slice(0, 8).map((r) => (
               <AnimatedListItem key={`${r.at}-${r.bankId}-${r.kind}`}>
-                <li className="tnum grid grid-cols-[3.25rem_1fr_auto] items-center gap-2 rounded-[3px] bg-base-200 px-2.5 py-2 font-mono text-[12px]">
-                  <span className="text-muted-foreground">{istTime(new Date(r.at))}</span>
+                <li className="tnum grid grid-cols-[4.5rem_1fr_auto] items-center gap-2 rounded-[3px] bg-base-200 px-2.5 py-2 font-mono text-[12px]">
+                  <span className="whitespace-nowrap text-muted-foreground">{istTime(new Date(r.at))}</span>
                   <span className="truncate font-semibold">
                     {BANK_BY_ID[r.bankId]?.short}
                     {r.appId && <span className="font-normal text-muted-foreground"> · {UPI_APP_BY_ID[r.appId]?.name}</span>}

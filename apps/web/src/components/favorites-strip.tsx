@@ -1,18 +1,18 @@
 "use client";
 
 import { BANK_BY_ID, type Status } from "@upi-down/shared";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { useFavorites } from "@/lib/favorites";
 import { useT } from "@/lib/i18n";
 import { useLive } from "@/lib/live";
+import { cn } from "@/lib/utils";
 import { useBoard } from "./board-context";
 import { StatusChip } from "./status";
 
-const RING: Record<Status, string> = {
-  down: "var(--color-error)",
-  slow: "var(--color-warning)",
-  ok: "var(--color-success)",
-  unknown: "var(--color-neutral)",
+const EDGE: Record<Status, string> = {
+  down: "border-s-down bg-down/[0.06]",
+  slow: "border-s-slow bg-slow/[0.05]",
+  ok: "border-s-ok",
+  unknown: "border-s-base-300",
 };
 
 export function FavoritesStrip() {
@@ -32,21 +32,21 @@ export function FavoritesStrip() {
             const e = snapshot?.banks.find((b) => b.id === id);
             const status = e?.status ?? "unknown";
             return (
-              <HoverBorderGradient
+              <button
                 key={id}
-                as="button"
+                type="button"
                 onClick={() => setOpenBank(id)}
-                color={RING[status]}
-                duration={status === "down" ? 0.6 : 1.4}
-                containerClassName="snap-start shrink-0"
-                className="flex w-40 flex-col items-start gap-3 p-3 text-start"
+                className={cn(
+                  "flex w-40 shrink-0 snap-start flex-col items-start gap-3 rounded-[4px] border border-s-[3px] border-base-300 bg-base-200 p-3 text-start transition-colors hover:border-base-content",
+                  EDGE[status],
+                )}
               >
                 <span className="font-mono text-lg font-extrabold leading-none">{BANK_BY_ID[id].short}</span>
                 <StatusChip status={status} />
                 <span className="tnum font-mono text-[11px] text-muted-foreground">
                   {e && e.total > 0 ? t.reportsIn15(e.total) : t.noReports15}
                 </span>
-              </HoverBorderGradient>
+              </button>
             );
           })}
       </div>

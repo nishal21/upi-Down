@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy",
-  description: "What UPI Down? collects (almost nothing) and how long it keeps it.",
+  title: "Privacy – what UPI Down? collects",
+  description:
+    "What UPI Down? stores when you report a failed UPI payment: short-lived device hash, no login, no UPI ID or account numbers, no payment processing. Last updated October 2026.",
   alternates: { canonical: "/privacy/" },
+  openGraph: {
+    title: "Privacy · UPI Down?",
+    description: "No login, no UPI ID, no payment details. What we collect and how long it is kept.",
+    url: "/privacy/",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
 };
 
 const UPDATED = "5 October 2026";
@@ -27,8 +35,8 @@ export default function Privacy() {
         </li>
         <li>
           <b>A random install ID:</b> created on your device so one phone can't flood reports. The server only keeps a
-          hashed form with a salt that changes every day, for at most 24 hours, in temporary memory (Redis). It is never
-          stored with your reports.
+          hashed form with a salt that changes every day, for at most 10 minutes per bank, in temporary memory (Redis). It
+          is never stored with your reports.
         </li>
         <li>
           <b>Your IP address:</b> used only for rate limiting, hashed the same way, kept for at most 1 hour, and never
@@ -53,7 +61,7 @@ export default function Privacy() {
       </p>
 
       <h2>Security</h2>
-      <p>All traffic uses HTTPS. Servers are hosted in India-accessible infrastructure behind Cloudflare.</p>
+      <p>All traffic uses HTTPS. The server is a private VPS behind Cloudflare.</p>
 
       <h2>Spam protection</h2>
       <p>

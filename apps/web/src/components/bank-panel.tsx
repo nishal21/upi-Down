@@ -104,6 +104,24 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
             <Icon className="size-7 shrink-0" strokeWidth={2.4} aria-hidden />
             {t.status[live.status]}
           </p>
+          <ul className="mt-2.5 flex flex-wrap gap-1.5">
+            <li className="inline-flex h-6 items-center rounded-[3px] border border-base-300 px-2 font-mono text-[11px] font-bold tracking-wide">
+              {bank.short}
+            </li>
+            {bank.psp && (
+              <li className="inline-flex h-6 items-center rounded-[3px] border border-base-300 bg-base-200 px-2 text-[11px] font-semibold">
+                Own UPI app
+              </li>
+            )}
+            {bank.ppi && (
+              <li className="inline-flex h-6 items-center rounded-[3px] border border-base-300 bg-base-200 px-2 text-[11px] font-semibold">
+                Wallet / payments bank
+              </li>
+            )}
+            <li className="inline-flex h-6 items-center rounded-[3px] border border-dashed border-base-300 px-2 text-[11px] text-muted-foreground">
+              NPCI UPI member
+            </li>
+          </ul>
           <p className="tnum mt-2 font-mono text-sm text-muted-foreground">
             {live.total > 0 ? (
               <>
