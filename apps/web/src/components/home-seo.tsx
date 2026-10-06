@@ -18,7 +18,7 @@ export function HomeSeo() {
   };
 
   return (
-    <section className="mx-auto max-w-6xl px-4 pb-16 pt-12" aria-labelledby="seo-heading">
+    <section className="web-seo mx-auto max-w-6xl px-4 pb-16 pt-12" aria-labelledby="seo-heading">
       <JsonLd data={faqLd} />
 
       <h2 id="seo-heading" className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">

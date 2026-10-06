@@ -89,7 +89,7 @@ export function CommandSearch() {
                 setOpen(false);
                 setOpenBank(b.id);
               }}
-              className="h-10 gap-2.5 py-0"
+              className="h-10 gap-2.5 rounded-[3px] py-0 data-[selected=true]:bg-base-200"
             >
               <SignalPlate label={BANK_BY_ID[b.id].short} status={statusOf(b.id)} />
               <span className="min-w-0 flex-1 truncate text-sm">{b.name}</span>

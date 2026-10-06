@@ -94,8 +94,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className="mx-auto max-w-3xl px-4 pt-8 sm:pt-12">
-      <JsonLd data={jsonLd} />
-      <nav aria-label="Breadcrumb" className="board-label">
+      <div className="web-seo">
+        <JsonLd data={jsonLd} />
+      </div>
+      <nav aria-label="Breadcrumb" className="board-label web-seo">
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
             <Link href="/" className="hover:text-base-content">
@@ -109,7 +111,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <h1 className="mt-3 font-display text-[clamp(2rem,6vw,3.25rem)] font-extrabold leading-[0.95] tracking-[-0.02em] text-balance">
         Is {bank.short} UPI down right now?
       </h1>
-      <p id="bank-answer" className="mt-3 max-w-[55ch] text-[17px] leading-relaxed text-muted-foreground">
+      <p id="bank-answer" className="web-seo mt-3 max-w-[55ch] text-[17px] leading-relaxed text-muted-foreground">
         Live {bank.name} UPI status from anonymous failed-payment reports in the last 15 minutes. Not from NPCI or{" "}
         {bank.name}.
       </p>
@@ -118,7 +120,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <BankPage bankId={bank.id} />
       </div>
 
-      <section className="mt-12 space-y-6" aria-labelledby="faq-heading">
+      <section className="web-seo mt-12 space-y-6" aria-labelledby="faq-heading">
         <h2 id="faq-heading" className="font-display text-2xl font-bold">
           {bank.short} UPI questions
         </h2>
@@ -130,7 +132,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         ))}
       </section>
 
-      <nav className="mt-12" aria-label="Other banks">
+      <nav className="web-seo mt-12" aria-label="Other banks">
         <p className="board-label mb-3">Check other banks</p>
         <ul className="flex flex-wrap gap-2">
           {others.map((b) => (

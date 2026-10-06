@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import {
   Anek_Devanagari,
   Anek_Latin,
@@ -16,6 +17,7 @@ import {
 } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { AppShell } from "@/components/app-shell";
 import { Banners, Footer, Header } from "@/components/chrome";
 import { SwRegister } from "@/components/sw-register";
 import { SITE_URL } from "@/lib/config";
@@ -121,24 +123,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${anek.variable} ${anekDeva.variable} ${mukta.variable} ${mono.variable} ${scriptVars}`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
-      </head>
       <body>
-        <TooltipProvider delayDuration={300}>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:bg-base-content focus:px-3 focus:py-2 focus:text-base-100"
-          >
-            Skip to content
-          </a>
-          <Header />
-          <Banners />
-          <main id="main">{children}</main>
-          <Footer />
-          <Toaster position="top-center" />
-        </TooltipProvider>
-        <SwRegister />
+        <Script id="upidown-boot" strategy="beforeInteractive">
+          {THEME_SCRIPT}
+        </Script>
+        <AppShell>
+          <TooltipProvider delayDuration={300}>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:bg-base-content focus:px-3 focus:py-2 focus:text-base-100"
+            >
+              Skip to content
+            </a>
+            <Header />
+            <Banners />
+            <main id="main">{children}</main>
+            <Footer />
+            <Toaster position="top-center" />
+          </TooltipProvider>
+          <SwRegister />
+        </AppShell>
       </body>
     </html>
   );

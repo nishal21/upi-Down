@@ -95,12 +95,12 @@ export function Footer() {
   const { t } = useT();
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-16 border-t border-base-300">
+    <footer className="app-footer mt-16 border-t border-base-300">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-[60ch] space-y-1.5">
           <p className="font-medium text-base-content">{t.disclaimer}</p>
-          <p>{t.notAffiliated}</p>
-          <p className="pt-1 text-xs">
+          <p className="web-seo">{t.notAffiliated}</p>
+          <p className="web-seo pt-1 text-xs">
             © {year} Nishal K.{" "}
             <a
               href="https://github.com/nishal21/upi-Down"
@@ -123,11 +123,11 @@ export function Footer() {
             href="https://github.com/nishal21/upi-Down"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-base-content"
+            className="web-seo hover:text-base-content"
           >
             GitHub
           </a>
-          <a href="/llms.txt" className="hover:text-base-content">
+          <a href="/llms.txt" className="web-seo hover:text-base-content">
             llms.txt
           </a>
         </nav>

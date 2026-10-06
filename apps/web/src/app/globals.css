@@ -5,6 +5,21 @@
   logs: false;
 }
 
+/* Capacitor: hide SEO / GEO / AEO web chrome before React hydrates */
+html.native .web-seo {
+  display: none !important;
+}
+html.native .app-footer {
+  margin-top: 1.5rem;
+}
+html.native .app-footer > div {
+  padding-block: 1.25rem;
+  padding-inline: 0.75rem;
+}
+html.native body {
+  overscroll-behavior-y: none;
+}
+
 /* Colour is reserved for status. Everything else is ink on paper. */
 @plugin "daisyui/theme" {
   name: "upidown-dark";

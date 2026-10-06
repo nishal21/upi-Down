@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Home } from "@/components/home";
 import { HomeSeo } from "@/components/home-seo";
 import { JsonLd } from "@/components/json-ld";
+import { WebOnly } from "@/components/web-only";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, HOME_KEYWORDS, absoluteUrl, jsonLdGraph } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
 
@@ -79,9 +80,13 @@ const webAppLd = jsonLdGraph([
 export default function Page() {
   return (
     <>
-      <JsonLd data={webAppLd} />
+      <WebOnly>
+        <JsonLd data={webAppLd} />
+      </WebOnly>
       <Home />
-      <HomeSeo />
+      <WebOnly>
+        <HomeSeo />
+      </WebOnly>
     </>
   );
 }
