@@ -4,10 +4,18 @@ import { THEME_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 // Replaces the root layout, so it can't use the header, fonts or translations. Kept plain on purpose.
-export default function GlobalError({ retry }: { error: Error & { digest?: string }; retry: () => void }) {
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  console.error(error);
   return (
     <html lang="en-IN" data-theme="upidown-dark" suppressHydrationWarning>
       <head>
+        {/* global-error replaces the root layout — next/script may not be available here */}
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <title>UPI Down? · Something broke</title>
       </head>
@@ -39,7 +47,7 @@ export default function GlobalError({ retry }: { error: Error & { digest?: strin
             <div className="mt-8 flex flex-wrap gap-3">
               <button
                 type="button"
-                onClick={retry}
+                onClick={reset}
                 className="h-12 rounded-[4px] bg-base-content px-5 font-bold text-base-100"
               >
                 Try again

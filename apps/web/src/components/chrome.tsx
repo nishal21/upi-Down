@@ -27,7 +27,7 @@ export function Header() {
   const { t, lang, setLang } = useT();
   const { theme, toggle } = useTheme();
   return (
-    <header className="sticky top-0 z-40 border-b border-base-300 bg-base-100/92 backdrop-blur-sm supports-[backdrop-filter]:bg-base-100/80">
+    <header className="app-header sticky top-0 z-40 border-b border-base-300 bg-base-100/92 backdrop-blur-sm supports-[backdrop-filter]:bg-base-100/80">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4">
         <Link href="/" className="flex items-center gap-2.5" aria-label="UPI Down? home">
           <Mark />

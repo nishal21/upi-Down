@@ -139,7 +139,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Banners />
             <main id="main">{children}</main>
             <Footer />
-            <Toaster position="top-center" />
+            <Toaster
+              position="top-center"
+              offset="calc(var(--safe-area-inset-top, env(safe-area-inset-top, 0px)) + 0.75rem)"
+              mobileOffset="calc(var(--safe-area-inset-top, env(safe-area-inset-top, 0px)) + 0.75rem)"
+            />
           </TooltipProvider>
           <SwRegister />
         </AppShell>

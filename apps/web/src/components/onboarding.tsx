@@ -4,12 +4,10 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Megaphone, Search, Shield, Star } from "lucide-react";
 import { pinFavorites } from "@/lib/favorites";
-import { createStored } from "@/lib/store";
+import { markOnboarded, useOnboarded } from "@/lib/onboarding-store";
 import { useIsNative } from "@/lib/use-native";
 import { haptic } from "@/lib/native";
 import { cn } from "@/lib/utils";
-
-const onboarded = createStored<boolean>("upidown-onboarded", false);
 
 const STEPS = [
   { id: "board", label: "LIVE BOARD" },
@@ -333,7 +331,7 @@ function HonestSlide({ agreed, setAgreed }: { agreed: boolean; setAgreed: (v: bo
 
 export function Onboarding() {
   const native = useIsNative();
-  const done = onboarded.use();
+  const done = useOnboarded();
   const reduce = useReducedMotion();
   const preview = forcePreview();
   const [step, setStep] = useState(0);
@@ -349,7 +347,7 @@ export function Onboarding() {
   function finish() {
     void haptic("success");
     pinFavorites([...starred].slice(0, 5));
-    onboarded.set(true);
+    markOnboarded();
     setOpen(false);
   }
 
@@ -361,6 +359,12 @@ export function Onboarding() {
     void haptic("tap");
     if (last) finish();
     else setStep((s) => s + 1);
+  }
+
+  function back() {
+    if (step <= 0) return;
+    void haptic("tap");
+    setStep((s) => s - 1);
   }
 
   function toggleStar(id: string) {
@@ -375,6 +379,7 @@ export function Onboarding() {
 
   const hint = useMemo(() => {
     if (step === 0) return "Swipe or tap Continue";
+    if (step === 1) return "Swipe between steps · or tap Continue";
     if (step === 2) return "Reports take ~10 seconds";
     if (step === 3) return "Free forever · No login needed";
     return "You can change this later from the board";
@@ -384,8 +389,8 @@ export function Onboarding() {
     <div
       className="fixed inset-0 z-[100] flex flex-col bg-[#f4efe3] text-[#1a1a1a]"
       style={{
-        paddingTop: "max(0.75rem, env(safe-area-inset-top))",
-        paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+        paddingTop: "max(0.75rem, var(--safe-area-inset-top, env(safe-area-inset-top, 0px)))",
+        paddingBottom: "max(0.75rem, var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px)))",
       }}
       role="dialog"
       aria-modal="true"
@@ -399,11 +404,20 @@ export function Onboarding() {
         <AnimatePresence mode="wait">
           <motion.div
             key={STEPS[step].id}
-            className="flex min-h-0 flex-1 flex-col"
+            className="flex min-h-0 flex-1 touch-pan-y flex-col"
             initial={reduce ? false : { opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             exit={reduce ? undefined : { opacity: 0, x: -24 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            drag={reduce ? false : "x"}
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.18}
+            onDragEnd={(_, info) => {
+              const x = info.offset.x;
+              const v = info.velocity.x;
+              if (x < -72 || v < -500) next();
+              else if (x > 72 || v > 500) back();
+            }}
           >
             <div id="onboard-title" className="sr-only">
               {STEPS[step].label}

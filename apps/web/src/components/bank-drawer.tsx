@@ -52,7 +52,7 @@ export function BankDrawer() {
           <>
             <DrawerTitle className="sr-only">{t.isItDown(bank.short)}</DrawerTitle>
             <DrawerDescription className="sr-only">{t.disclaimer}</DrawerDescription>
-            <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+            <div className="min-h-0 flex-1 overflow-y-auto px-5 pt-4 pb-[max(1.25rem,var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px)))]">
               <BankPanel key={bank.id} bankId={bank.id} onPickBank={setOpenBank} />
             </div>
           </>

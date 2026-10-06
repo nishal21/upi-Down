@@ -15,7 +15,13 @@ export function Home() {
   return (
     <BoardProvider>
       <Hero />
-      <div className={native ? "mx-auto max-w-6xl px-3 pb-[max(1rem,env(safe-area-inset-bottom))]" : "mx-auto max-w-6xl px-4"}>
+      <div
+        className={
+          native
+            ? "mx-auto max-w-6xl px-3 pb-[max(1.25rem,var(--safe-area-inset-bottom,env(safe-area-inset-bottom,0px)))]"
+            : "mx-auto max-w-6xl px-4"
+        }
+      >
         <div className={native ? "flex flex-col gap-4" : "grid gap-6 lg:grid-cols-[1fr_300px]"}>
           <div className="flex min-w-0 flex-col gap-4">
             <BankSearch />

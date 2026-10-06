@@ -49,5 +49,7 @@ export async function bindBackButton() {
 export async function syncStatusBar(theme: Theme) {
   if (!isNative()) return;
   const { StatusBar, Style } = await import("@capacitor/status-bar");
+  await StatusBar.setOverlaysWebView({ overlay: true });
   await StatusBar.setStyle({ style: theme === "dark" ? Style.Dark : Style.Light });
+  await StatusBar.setBackgroundColor({ color: "#00000000" });
 }
