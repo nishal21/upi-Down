@@ -1,9 +1,20 @@
 "use client";
 
+import { useEffect } from "react";
 import { THEME_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
-// Replaces the root layout, so it can't use the header, fonts or translations. Kept plain on purpose.
+function isNativeHost() {
+  try {
+    const cap = (window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor;
+    if (cap?.isNativePlatform?.()) return true;
+    return location.hostname === "app.upidown.nishal.dev";
+  } catch {
+    return false;
+  }
+}
+
+// Replaces the root layout — kept plain on purpose.
 export default function GlobalError({
   error,
   reset,
@@ -11,11 +22,33 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  console.error(error);
+  useEffect(() => {
+    console.error(error);
+    if (!isNativeHost()) return;
+    try {
+      if (sessionStorage.getItem("upidown-hard-reload") === "1") return;
+      sessionStorage.setItem("upidown-hard-reload", "1");
+    } catch {
+      /* ignore */
+    }
+    const t = window.setTimeout(() => {
+      window.location.replace(`${window.location.origin}/`);
+    }, 150);
+    return () => window.clearTimeout(t);
+  }, [error]);
+
+  // Native: blank while auto-reloading — never flash the ERR chrome.
+  if (typeof window !== "undefined" && isNativeHost()) {
+    return (
+      <html lang="en-IN" data-theme="upidown-dark" suppressHydrationWarning>
+        <body className="min-h-dvh bg-[#0f110e]" />
+      </html>
+    );
+  }
+
   return (
     <html lang="en-IN" data-theme="upidown-dark" suppressHydrationWarning>
       <head>
-        {/* global-error replaces the root layout — next/script may not be available here */}
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <title>UPI Down? · Something broke</title>
       </head>
@@ -31,9 +64,9 @@ export default function GlobalError({
           </div>
           <div className="relative">
             <div className="flex gap-2" aria-hidden>
-              {["E", "R", "R"].map((ch, i) => (
+              {["E", "R", "R"].map((ch) => (
                 <span
-                  key={i}
+                  key={ch}
                   className="grid size-16 place-items-center rounded-[4px] border border-down bg-down font-mono text-3xl font-extrabold text-error-content"
                 >
                   {ch}

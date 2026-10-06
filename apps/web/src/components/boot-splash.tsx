@@ -10,29 +10,33 @@ function removeBootCover() {
   document.getElementById("upidown-boot-cover")?.remove();
 }
 
-/** Native cold-start: Cap splash → Lottie → onboarding/home. */
+function dismissNativeFrames() {
+  removeBootCover();
+  try {
+    (window as unknown as { UpiDownNative?: { dismissSplash?: () => void } }).UpiDownNative?.dismissSplash?.();
+  } catch {
+    /* ignore */
+  }
+  void import("@capacitor/splash-screen")
+    .then(({ SplashScreen }) => SplashScreen.hide({ fadeOutDuration: 120 }))
+    .catch(() => {
+      /* web / missing plugin */
+    });
+}
+
+/** Native cold-start: system/Cap splash → Lottie → onboarding/home. */
 export function BootSplash({ onDone }: { onDone: () => void }) {
   const finished = useRef(false);
 
   const finish = () => {
     if (finished.current) return;
     finished.current = true;
-    removeBootCover();
+    dismissNativeFrames();
     document.documentElement.classList.remove("needs-splash");
     onDone();
   };
 
-  const revealLottie = () => {
-    removeBootCover();
-    void import("@capacitor/splash-screen")
-      .then(({ SplashScreen }) => SplashScreen.hide({ fadeOutDuration: 120 }))
-      .catch(() => {
-        /* web / missing plugin */
-      });
-  };
-
   useEffect(() => {
-    // Cap splash stays until Lottie is ready — do not hide early (causes home flash).
     const t = window.setTimeout(finish, SAFETY_MS);
     return () => window.clearTimeout(t);
   }, []);
@@ -53,7 +57,7 @@ export function BootSplash({ onDone }: { onDone: () => void }) {
         autoplay
         className="aspect-square w-[min(72vw,17.5rem)]"
         subscriptions={{
-          [LottieSubscription.ready]: revealLottie,
+          [LottieSubscription.ready]: dismissNativeFrames,
           [LottieSubscription.complete]: finish,
         }}
       />

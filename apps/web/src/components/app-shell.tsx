@@ -3,6 +3,7 @@
 import { useLayoutEffect, useState, type ReactNode } from "react";
 import { BootSplash } from "./boot-splash";
 import { Onboarding } from "./onboarding";
+import { SoftBoundary } from "./soft-boundary";
 import { SwRegister } from "./sw-register";
 import { detectNative, markHtmlNative } from "@/lib/native";
 import { warmLive } from "@/lib/live";
@@ -25,15 +26,13 @@ function clearBootCover() {
 }
 
 /**
- * Native: dark cover (boot script) → Cap splash → Lottie → onboarding/home.
- * After onboarding, finish() hard-navigates to `/`; session splash skip avoids replay.
+ * Native: system splash (kept) → Lottie → onboarding → home.
+ * Web: children immediately (SEO). Blocking boot script covers native SSR HTML.
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const native = useNativeClass();
   const done = useOnboarded();
 
-  // false until layout effect — SSR still renders children for web SEO;
-  // native is covered by #upidown-boot-cover from THEME_SCRIPT.
   const [bootReady, setBootReady] = useState(false);
   const [splashDone, setSplashDone] = useState(true);
 
@@ -63,16 +62,6 @@ export function AppShell({ children }: { children: ReactNode }) {
     setNeedsOnboard(gating);
   }, [gating]);
 
-  useLayoutEffect(() => {
-    if (!gating && bootReady && !showSplash) {
-      try {
-        sessionStorage.removeItem("upidown-hard-reload");
-      } catch {
-        /* ignore */
-      }
-    }
-  }, [gating, bootReady, showSplash]);
-
   const onSplashDone = () => {
     try {
       sessionStorage.setItem(SPLASH_SEEN, "1");
@@ -83,8 +72,8 @@ export function AppShell({ children }: { children: ReactNode }) {
     setSplashDone(true);
   };
 
-  // Before bootReady: keep SSR children (SEO). Native cover/CSS hides them.
-  // After: gate on splash + onboarding.
+  // SSR: show children for SEO (native covered by blocking boot script).
+  // Native after boot: wait for splash + onboarding before chrome/home.
   const showChrome = !bootReady || (!gating && !showSplash);
 
   return (
@@ -92,7 +81,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       {showSplash ? <BootSplash onDone={onSplashDone} /> : null}
       {bootReady && !showSplash ? <Onboarding /> : null}
       <SwRegister />
-      {showChrome ? children : <div className="min-h-dvh bg-[#0f110e]" aria-hidden />}
+      {showChrome ? (
+        <SoftBoundary resetKey={done ? "in" : "out"}>{children}</SoftBoundary>
+      ) : (
+        <div className="min-h-dvh bg-[#0f110e]" aria-hidden />
+      )}
     </>
   );
 }

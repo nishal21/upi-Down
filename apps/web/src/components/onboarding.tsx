@@ -353,14 +353,9 @@ export function Onboarding() {
     pinFavorites([...starred].slice(0, 5));
     markOnboarded();
     void haptic("success");
-    // Full navigation — in-place Home mount after onboarding still hit ERR;
-    // this is the same path as tapping "Back to all banks", which works.
-    try {
-      sessionStorage.removeItem("upidown-hard-reload");
-    } catch {
-      /* ignore */
-    }
-    window.location.replace(`${window.location.origin}/`);
+    // Stay in-place — hard reload was flashing ERR then home. SoftBoundary
+    // remounts Home if the first paint throws.
+    setOpen(false);
   }
 
   function next() {

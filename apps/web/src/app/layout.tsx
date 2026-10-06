@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import {
   Anek_Devanagari,
   Anek_Latin,
@@ -124,9 +123,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body>
-        <Script id="upidown-boot" strategy="beforeInteractive">
-          {THEME_SCRIPT}
-        </Script>
+        {/* Blocking — next/script beforeInteractive is deferred and lets SSR home flash. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <AppShell>
           <TooltipProvider delayDuration={300}>
             <a
