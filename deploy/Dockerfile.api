@@ -10,7 +10,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=build /src/apps/api/dist ./dist
 COPY --from=build /src/apps/api/package.json ./package.json.src
-RUN node -e "const p=require('./package.json.src');delete p.devDependencies;delete p.scripts;require('fs').writeFileSync('package.json',JSON.stringify(p))" \
+# Must JSON.parse — require() only treats *.json as JSON, not *.src
+RUN node -e "const fs=require('fs');const p=JSON.parse(fs.readFileSync('package.json.src','utf8'));delete p.devDependencies;delete p.scripts;fs.writeFileSync('package.json',JSON.stringify(p))" \
  && npm install --omit=dev --no-audit --no-fund && rm package.json.src && npm cache clean --force
 USER node
 EXPOSE 3020

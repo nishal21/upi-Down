@@ -23,3 +23,4 @@
 - AEO/GEO: put the answer question as a stable H1, duplicate FAQ in HTML + FAQPage JSON-LD, add Speakable cssSelectors, ship `llms.txt`, and allow GPTBot/ClaudeBot/PerplexityBot in robots. Metadata alone will not rank #1.
 - WebSite SearchAction `urlTemplate` with `?q=` must be honored client-side or Google’s sitelinks search box breaks.
 - Footer copyright year: `new Date().getFullYear()` in the client Footer is fine for static export (builds once; year updates on next deploy).
+- In Docker, `require('foo.json.src')` is JS not JSON. Use `JSON.parse(fs.readFileSync(...))` or keep a `.json` suffix.

@@ -68,3 +68,8 @@ Done
 - About “Made by”: Nishal K, github.com/nishal21, nishal.dev, repo link.
 - Footer: © {year} Nishal K + repo URL; GitHub nav link.
 - Layout author/creator + llms.txt author/source updated.
+
+## Deploy Dockerfile.api fix
+Done
+- Runtime stage used `require('./package.json.src')` which Node parses as JS → SyntaxError on `"name":`.
+- Now `JSON.parse(fs.readFileSync(...))`. Push + rebuild on VPS.
