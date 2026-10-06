@@ -1,22 +1,23 @@
 "use client";
 
-import { useEffect, useSyncExternalStore } from "react";
-import { isNative } from "./native";
+import { useLayoutEffect, useSyncExternalStore } from "react";
+import { detectNative, markHtmlNative } from "./native";
 
 function readNative(): boolean {
-  if (typeof window === "undefined") return false;
-  if (isNative()) return true;
-  return document.documentElement.classList.contains("native");
+  return detectNative();
 }
 
-/** True in Capacitor. Also respects html.native from the boot script (no one-frame flash). */
+/** True in Capacitor. Hostname + html.native work before the bridge injects. */
 export function useIsNative() {
   return useSyncExternalStore(
     (onChange) => {
-      if (readNative()) return () => {};
-      // Capacitor bridge can appear a tick after first paint
+      if (readNative()) {
+        markHtmlNative();
+        return () => {};
+      }
       const id = window.setInterval(() => {
         if (readNative()) {
+          markHtmlNative();
           onChange();
           window.clearInterval(id);
         }
@@ -32,11 +33,11 @@ export function useIsNative() {
   );
 }
 
-/** Marks <html class="native"> for CSS and layout tweaks. */
+/** Keep html.native for CSS — never strip it (hydration used to toggle it off and show SEO). */
 export function useNativeClass() {
   const native = useIsNative();
-  useEffect(() => {
-    document.documentElement.classList.toggle("native", native);
+  useLayoutEffect(() => {
+    if (native) markHtmlNative();
   }, [native]);
   return native;
 }

@@ -6,7 +6,28 @@ function cap(): Cap | undefined {
   return (globalThis as { Capacitor?: Cap }).Capacitor;
 }
 
+/** Capacitor WebView host from capacitor.config.ts — reliable even before the bridge injects. */
+export const NATIVE_HOST = "app.upidown.nishal.dev";
+
 export const isNative = () => cap()?.isNativePlatform() === true;
+
+/** Sync detect for boot / CSS — bridge, html class, or Capacitor hostname. */
+export function detectNative(): boolean {
+  if (typeof window === "undefined") return false;
+  if (isNative()) return true;
+  try {
+    if (document.documentElement.classList.contains("native")) return true;
+    if (location.hostname === NATIVE_HOST) return true;
+  } catch {
+    /* ignore */
+  }
+  return false;
+}
+
+export function markHtmlNative() {
+  if (typeof document === "undefined") return;
+  document.documentElement.classList.add("native");
+}
 
 export async function haptic(kind: "tap" | "success" | "warn" = "tap") {
   if (isNative()) {
@@ -48,17 +69,16 @@ export async function bindBackButton() {
 
 /**
  * Capacitor SystemBars injects --safe-area-inset-* on <html>.
- * Until that runs (or if it never does), estimate insets so sticky chrome stays clear of status / gesture bars.
+ * Until that runs, estimate insets so sticky chrome stays clear of status / gesture bars.
  * If Cap explicitly set 0px, the WebView is already padded — leave it.
  */
 export function ensureNativeSafeArea() {
-  if (!isNative() || typeof document === "undefined") return;
+  if (!detectNative() || typeof document === "undefined") return;
   const root = document.documentElement;
   const inlineTop = root.style.getPropertyValue("--safe-area-inset-top").trim();
   const inlineBottom = root.style.getPropertyValue("--safe-area-inset-bottom").trim();
 
   if (inlineTop === "") {
-    // Cap has not injected yet — use a density-aware status-bar estimate.
     const dpr = Math.min(window.devicePixelRatio || 1, 3.5);
     const top = Math.round(28 * (dpr >= 3 ? 1.15 : 1));
     root.style.setProperty("--safe-area-inset-top", `${top}px`);
@@ -69,8 +89,9 @@ export function ensureNativeSafeArea() {
 }
 
 export async function syncStatusBar(theme: Theme) {
-  if (!isNative()) return;
+  if (!detectNative()) return;
   try {
+    markHtmlNative();
     ensureNativeSafeArea();
     const { StatusBar, Style } = await import("@capacitor/status-bar");
     await StatusBar.setOverlaysWebView({ overlay: true });
@@ -86,9 +107,8 @@ export async function syncStatusBar(theme: Theme) {
         style: theme === "dark" ? SystemBarsStyle.Dark : SystemBarsStyle.Light,
       });
     } catch {
-      /* SystemBars optional on older Cap builds */
+      /* optional */
     }
-    // Cap injects insets shortly after bridge ready — refresh estimates then reconcile.
     window.setTimeout(ensureNativeSafeArea, 100);
     window.setTimeout(ensureNativeSafeArea, 600);
   } catch (e) {
