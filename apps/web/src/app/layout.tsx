@@ -19,7 +19,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AppShell } from "@/components/app-shell";
 import { Banners, Footer, Header } from "@/components/chrome";
-import { SwRegister } from "@/components/sw-register";
 import { SITE_URL } from "@/lib/config";
 import { ogImages, twitterImages } from "@/lib/seo";
 import { THEME_SCRIPT } from "@/lib/theme";
@@ -142,7 +141,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
             <Toaster position="top-center" offset={{ top: "0.75rem" }} mobileOffset={{ top: "0.75rem" }} />
           </TooltipProvider>
-          <SwRegister />
         </AppShell>
       </body>
     </html>

@@ -9,11 +9,24 @@ export function createStored<T>(key: string, fallback: T, firstRun?: () => T) {
   const listeners = new Set<Listener>();
   let cache: T | undefined;
 
+  const coerce = (value: unknown): T => {
+    if (Array.isArray(fallback)) {
+      return (Array.isArray(value) ? value : fallback) as T;
+    }
+    if (typeof fallback === "boolean") {
+      return (typeof value === "boolean" ? value : fallback) as T;
+    }
+    if (typeof fallback === "string") {
+      return (typeof value === "string" ? value : fallback) as T;
+    }
+    return value as T;
+  };
+
   const read = (): T => {
     if (cache !== undefined) return cache;
     try {
       const raw = localStorage.getItem(key);
-      cache = raw === null ? (firstRun?.() ?? fallback) : (JSON.parse(raw) as T);
+      cache = raw === null ? (firstRun?.() ?? fallback) : coerce(JSON.parse(raw));
     } catch {
       cache = fallback;
     }

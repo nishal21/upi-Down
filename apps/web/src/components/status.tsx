@@ -34,27 +34,29 @@ const CHIP: Record<Status, string> = {
 };
 
 export function StatusDot({ status, className }: { status: Status; className?: string }) {
+  const safe: Status = STATUS_DOT[status] ? status : "unknown";
   return (
     <span className={cn("relative inline-flex", className)} aria-hidden>
-      {status === "down" && <span className={cn("status absolute animate-ping", STATUS_DOT[status])} />}
-      <span className={cn("status", STATUS_DOT[status])} />
+      {safe === "down" && <span className={cn("status absolute animate-ping", STATUS_DOT[safe])} />}
+      <span className={cn("status", STATUS_DOT[safe])} />
     </span>
   );
 }
 
 export function StatusChip({ status, className }: { status: Status; className?: string }) {
   const { t } = useT();
-  const Icon = STATUS_ICON[status];
+  const safe: Status = STATUS_ICON[status] ? status : "unknown";
+  const Icon = STATUS_ICON[safe];
   return (
     <span
       className={cn(
         "badge badge-sm h-auto min-h-6 max-w-[9rem] py-0.5 gap-1.5 rounded-[3px] border px-2 font-mono text-[11px] font-semibold uppercase tracking-wider",
-        CHIP[status],
+        CHIP[safe],
         className,
       )}
     >
       <Icon className="size-3.5 shrink-0" strokeWidth={2.4} aria-hidden />
-      <span className="truncate">{t.status[status]}</span>
+      <span className="truncate">{t.status[safe]}</span>
     </span>
   );
 }
@@ -90,21 +92,22 @@ export function Sparkline({
   className?: string;
   tall?: boolean;
 }) {
-  const max = Math.max(1, ...data);
+  const series = Array.isArray(data) ? data.filter((n) => typeof n === "number" && Number.isFinite(n)) : [];
+  const max = Math.max(1, ...series, 0);
   const h = tall ? 56 : 22;
   const w = tall ? 6 : 3;
   const gap = tall ? 3 : 1.5;
-  const width = data.length * (w + gap) - gap;
+  const width = Math.max(series.length * (w + gap) - gap, w);
   return (
     <svg
       viewBox={`0 0 ${width} ${h}`}
       width={width}
       height={h}
-      className={cn("overflow-visible", STATUS_TEXT[status === "unknown" ? "unknown" : status], className)}
+      className={cn("overflow-visible", STATUS_TEXT[status === "unknown" || !STATUS_TEXT[status] ? "unknown" : status], className)}
       role="img"
-      aria-label={`${data.reduce((a, b) => a + b, 0)} reports in 24 hours`}
+      aria-label={`${series.reduce((a, b) => a + b, 0)} reports in 24 hours`}
     >
-      {data.map((v, i) => {
+      {series.map((v, i) => {
         const bh = v === 0 ? 1.5 : Math.max(2.5, (v / max) * h);
         return (
           <rect
@@ -115,7 +118,7 @@ export function Sparkline({
             height={bh}
             rx={0.5}
             className={v === 0 ? "fill-base-300" : "fill-current"}
-            opacity={i === data.length - 1 ? 1 : 0.55 + (i / data.length) * 0.45}
+            opacity={i === series.length - 1 ? 1 : 0.55 + (i / series.length) * 0.45}
           />
         );
       })}

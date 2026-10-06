@@ -19,7 +19,10 @@ const listeners = new Set<() => void>();
 function readCache(): StatusSnapshot | null {
   try {
     const cached = localStorage.getItem(CACHE_KEY);
-    return cached ? (JSON.parse(cached) as StatusSnapshot) : null;
+    if (!cached) return null;
+    const snap = JSON.parse(cached) as StatusSnapshot;
+    if (!snap || !Array.isArray(snap.banks) || !Array.isArray(snap.apps)) return null;
+    return snap;
   } catch {
     return null;
   }
