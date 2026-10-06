@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy – what UPI Down? collects",
@@ -8,8 +9,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy · UPI Down?",
     description: "No login, no UPI ID, no payment details. What we collect and how long it is kept.",
-    url: "/privacy/",
+    url: absoluteUrl("/privacy/"),
     type: "website",
+    siteName: SITE_NAME,
+    images: ogImages("UPI Down? privacy"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy · UPI Down?",
+    description: "No login, no UPI ID, no payment details. What we collect and how long it is kept.",
+    images: twitterImages(),
   },
   robots: { index: true, follow: true },
 };

@@ -92,6 +92,27 @@ export function absoluteUrl(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+/** Absolute OG/Twitter image — page-level openGraph replaces layout, so every page must set this. */
+export const OG_IMAGE_URL = absoluteUrl("/og.jpg");
+export const OG_IMAGE_ALT = "UPI Down? live bank status board";
+
+export function ogImages(alt = OG_IMAGE_ALT) {
+  return [
+    {
+      url: OG_IMAGE_URL,
+      secureUrl: OG_IMAGE_URL,
+      width: 1200,
+      height: 630,
+      alt,
+      type: "image/jpeg" as const,
+    },
+  ];
+}
+
+export function twitterImages() {
+  return [OG_IMAGE_URL];
+}
+
 export function majorBankLinks() {
   return BOARD_BANKS.filter((b) => b.tier === 1).map((b) => ({
     name: b.name,

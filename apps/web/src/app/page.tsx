@@ -3,7 +3,16 @@ import { Home } from "@/components/home";
 import { HomeSeo } from "@/components/home-seo";
 import { JsonLd } from "@/components/json-ld";
 import { WebOnly } from "@/components/web-only";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, HOME_KEYWORDS, absoluteUrl, jsonLdGraph } from "@/lib/seo";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  HOME_KEYWORDS,
+  SITE_NAME,
+  absoluteUrl,
+  jsonLdGraph,
+  ogImages,
+  twitterImages,
+} from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -14,13 +23,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Is UPI down right now? Live bank status",
     description: DEFAULT_DESCRIPTION,
-    url: "/",
+    url: SITE_URL,
     type: "website",
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    images: ogImages(),
   },
   twitter: {
     card: "summary_large_image",
     title: "Is UPI down right now?",
     description: DEFAULT_DESCRIPTION,
+    images: twitterImages(),
   },
 };
 

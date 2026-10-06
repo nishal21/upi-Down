@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NPCI_SYNCED_AT } from "@upi-down/shared";
+import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "How UPI Down? works – status rules explained",
@@ -9,7 +10,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How UPI Down? works",
     description: "Status rules for Down, Slow, Working and No info from user reports.",
-    url: "/about/",
+    url: absoluteUrl("/about/"),
+    type: "website",
+    siteName: SITE_NAME,
+    images: ogImages("How UPI Down? status rules work"),
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How UPI Down? works",
+    description: "Status rules for Down, Slow, Working and No info from user reports.",
+    images: twitterImages(),
   },
   keywords: ["how to check if upi is down", "upi status explained", "upi down meaning"],
 };

@@ -5,7 +5,7 @@ import { BANKS, BANK_BY_ID } from "@upi-down/shared";
 import { BankPage } from "@/components/bank-page";
 import { JsonLd } from "@/components/json-ld";
 import { SITE_URL, bankSlug } from "@/lib/config";
-import { absoluteUrl, bankFaq, bankKeywords } from "@/lib/seo";
+import { absoluteUrl, bankFaq, bankKeywords, ogImages, twitterImages, SITE_NAME } from "@/lib/seo";
 
 /** Unknown bank URLs 404. With static export this only applies in `next build` / hosting. */
 export const dynamicParams = false;
@@ -32,15 +32,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `Is ${bank.short} UPI down today?`,
       description,
-      url: path,
+      url: absoluteUrl(path),
       type: "website",
-      images: [{ url: "/og.jpg", width: 1200, height: 630, alt: `${bank.short} UPI status on UPI Down?` }],
+      siteName: SITE_NAME,
+      images: ogImages(`${bank.short} UPI status on UPI Down?`),
     },
     twitter: {
       card: "summary_large_image",
       title: `Is ${bank.short} UPI down?`,
       description,
-      images: ["/og.jpg"],
+      images: twitterImages(),
     },
   };
 }
