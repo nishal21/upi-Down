@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Is UPI down right now? Live bank status",
     description: "Live UPI status for Indian banks from user reports. Not affiliated with NPCI or any bank.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "UPI Down? live bank status board" }],
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "UPI Down? live bank status board" }],
   },
   icons: {
     icon: [
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Is UPI down right now?",
     description: "Live bank UPI status from user reports in India.",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   alternates: { canonical: "/", languages: { "en-IN": "/", "x-default": "/" } },
   robots: {

@@ -1,9 +1,8 @@
-// Renders PWA icons, favicon, Android source icons and the OG image from the SVGs in /assets.
+// Renders PWA icons, favicon and Android source icons from /assets/icon.svg.
 import { mkdir, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
 const icon = new URL("../assets/icon.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
-const og = new URL("../assets/og.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
 const out = (p) => new URL(`../${p}`, import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
 
 /** Single PNG packed as a modern ICO (PNG-in-ICO). */
@@ -40,7 +39,7 @@ await sharp(icon).resize(48, 48).png().toFile(out("src/app/icon.png"));
 const favPng = await sharp(icon).resize(32, 32).png().toBuffer();
 await writeFile(out("public/favicon.ico"), pngToIco(favPng));
 await writeFile(out("src/app/favicon.ico"), pngToIco(favPng));
-await sharp(og).png().toFile(out("public/og.png"));
+// OG image: keep hand-authored public/og.jpg (do not overwrite from SVG).
 
 // Sources for `npx @capacitor/assets generate`.
 await sharp(icon).resize(1024, 1024).png().toFile(out("assets/icon-only.png"));
