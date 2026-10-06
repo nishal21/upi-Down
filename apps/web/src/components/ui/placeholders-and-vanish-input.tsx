@@ -20,6 +20,7 @@ export function PlaceholdersAndVanishInput({
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const startAnimation = () => {
+    if (!placeholders.length) return;
     intervalRef.current = setInterval(() => {
       setCurrentPlaceholder((prev) => (prev + 1) % placeholders.length);
     }, 3000);

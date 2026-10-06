@@ -13,12 +13,14 @@ import {
 } from "@/components/ui/command";
 import { useT } from "@/lib/i18n";
 import { useLive } from "@/lib/live";
+import { useIsNative } from "@/lib/use-native";
 import { useBoard } from "./board-context";
 import { SignalPlate, StatusChip } from "./status";
 
 export function BankSearch() {
   const { t } = useT();
   const { setQuery, setOpenBank } = useBoard();
+  const native = useIsNative();
 
   // Honor ?q= from WebSite SearchAction / shared links.
   useEffect(() => {
@@ -28,6 +30,38 @@ export function BankSearch() {
     const first = searchBanks(q, 1)[0];
     if (first) setOpenBank(first.id);
   }, [setQuery, setOpenBank]);
+
+  // Capacitor: plain input — the vanish/canvas search has crashed first paint after onboarding.
+  if (native) {
+    return (
+      <form
+        role="search"
+        className="relative"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const value = new FormData(e.currentTarget).get("q");
+          const q = typeof value === "string" ? value.trim() : "";
+          if (!q) return;
+          const first = searchBanks(q, 1)[0];
+          setQuery("");
+          e.currentTarget.reset();
+          if (first) setOpenBank(first.id);
+        }}
+      >
+        <input
+          name="q"
+          type="search"
+          inputMode="search"
+          enterKeyHint="search"
+          autoComplete="off"
+          placeholder={t.search[0]}
+          aria-label={t.search[0]}
+          onChange={(e) => setQuery(e.target.value)}
+          className="h-12 w-full rounded-[4px] border border-base-300 bg-base-200 px-4 text-base text-base-content outline-none focus:border-base-content"
+        />
+      </form>
+    );
+  }
 
   return (
     <PlaceholdersAndVanishInput

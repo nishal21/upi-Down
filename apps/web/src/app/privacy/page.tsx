@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BackHome } from "@/components/back-home";
 import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ const UPDATED = "5 October 2026";
 export default function Privacy() {
   return (
     <article className="mx-auto max-w-2xl px-4 pt-10 leading-relaxed [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-bold [&_li]:mt-1.5 [&_p]:mt-3 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:ps-5">
+      <BackHome />
       <h1 className="font-display text-4xl font-extrabold">Privacy</h1>
       <p className="board-label mt-2">Last updated {UPDATED}</p>
 

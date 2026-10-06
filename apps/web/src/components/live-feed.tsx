@@ -37,7 +37,7 @@ export function LiveFeed() {
                       r.kind === "failed" ? "text-down" : r.kind === "pending" ? "text-slow" : "text-muted-foreground",
                     )}
                   >
-                    {t.kind[r.kind]}
+                    {t.kind[r.kind] ?? r.kind}
                   </span>
                 </li>
               </AnimatedListItem>

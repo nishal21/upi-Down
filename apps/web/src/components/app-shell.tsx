@@ -2,26 +2,32 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { Onboarding } from "./onboarding";
+import { SoftBoundary } from "./soft-boundary";
 import { SwRegister } from "./sw-register";
 import { detectNative, markHtmlNative } from "@/lib/native";
+import { warmLive } from "@/lib/live";
 import { readOnboarded, useOnboarded } from "@/lib/onboarding-store";
 import { setNeedsOnboard, useNativeClass } from "@/lib/use-native";
 
 /**
- * Native: onboarding first. Do not mount Header/Home until done.
- * Never force-show the web shell while Cap/native is still settling.
+ * Native: onboarding first. Reveal the app a beat after onboarding so motion
+ * cleanup can't race the first Home mount (that race was the ERR loop).
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const native = useNativeClass();
   const done = useOnboarded();
   const [settled, setSettled] = useState(() => {
     if (typeof window === "undefined") return true;
-    // Already know we're in the app → don't wait; gate on onboarding instead.
     if (detectNative()) {
       markHtmlNative();
       return true;
     }
     return false;
+  });
+  const [reveal, setReveal] = useState(() => {
+    if (typeof window === "undefined") return true;
+    if (!detectNative()) return true;
+    return readOnboarded();
   });
 
   useEffect(() => {
@@ -39,7 +45,6 @@ export function AppShell({ children }: { children: ReactNode }) {
         window.clearInterval(id);
         return;
       }
-      // Web only: after a short wait, show the site.
       if (Date.now() - started > 500) {
         setSettled(true);
         window.clearInterval(id);
@@ -48,27 +53,38 @@ export function AppShell({ children }: { children: ReactNode }) {
     return () => window.clearInterval(id);
   }, [settled]);
 
-  const gating = settled && native && !done;
+  // Warm API while onboarding so Home isn't cold on first paint.
+  useEffect(() => {
+    if (settled && native && !done) warmLive();
+  }, [settled, native, done]);
 
   useEffect(() => {
+    const gating = settled && native && !done;
     setNeedsOnboard(gating);
-  }, [gating]);
 
-  // Until settled, keep chrome unmounted if boot already marked needs-onboard / native.
-  const waitingNative =
-    typeof window !== "undefined" &&
-    !settled &&
-    (document.documentElement.classList.contains("needs-onboard") ||
-      document.documentElement.classList.contains("native") ||
-      detectNative());
+    if (!native) {
+      setReveal(true);
+      return;
+    }
+    if (!done) {
+      setReveal(false);
+      return;
+    }
+    const t = window.setTimeout(() => setReveal(true), 180);
+    return () => window.clearTimeout(t);
+  }, [settled, native, done]);
 
-  const showChrome = settled ? !gating : !waitingNative;
+  const showChrome = settled && reveal;
 
   return (
     <>
       <Onboarding />
       <SwRegister />
-      {showChrome ? children : <div className="min-h-dvh bg-background" aria-hidden />}
+      {showChrome ? (
+        <SoftBoundary resetKey={done ? "in" : "out"}>{children}</SoftBoundary>
+      ) : (
+        <div className="min-h-dvh bg-background" aria-hidden />
+      )}
     </>
   );
 }

@@ -121,6 +121,11 @@ function start() {
   window.addEventListener("offline", () => emit({ connection: "offline", stale: true }));
 }
 
+/** Kick off status polling before Home mounts (e.g. during onboarding). */
+export function warmLive() {
+  start();
+}
+
 function subscribe(l: () => void) {
   listeners.add(l);
   start();

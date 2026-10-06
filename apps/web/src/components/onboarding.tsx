@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Megaphone, Search, Shield, Star } from "lucide-react";
 import { pinFavorites } from "@/lib/favorites";
@@ -342,13 +342,20 @@ export function Onboarding() {
 
   const last = step === STEPS.length - 1;
 
+  // Prefetch status while the user swipes through slides.
+  useEffect(() => {
+    if (native || preview) void import("@/lib/live").then((m) => m.warmLive());
+  }, [native, preview]);
+
   if ((!native && !preview) || (done && !preview) || !open) return null;
 
   function finish() {
-    void haptic("success");
     pinFavorites([...starred].slice(0, 5));
+    void import("@/lib/live").then((m) => m.warmLive());
+    // Mark done first so AppShell starts its reveal timer; then close the overlay.
     markOnboarded();
-    setOpen(false);
+    void haptic("success");
+    window.setTimeout(() => setOpen(false), 200);
   }
 
   function next() {

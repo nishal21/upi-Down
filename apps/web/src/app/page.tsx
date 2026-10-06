@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Home } from "@/components/home";
+import { AppHome } from "@/components/app-home";
 import { HomeSeo } from "@/components/home-seo";
 import { JsonLd } from "@/components/json-ld";
 import { WebOnly } from "@/components/web-only";
@@ -96,7 +96,7 @@ export default function Page() {
       <WebOnly>
         <JsonLd data={webAppLd} />
       </WebOnly>
-      <Home />
+      <AppHome />
       <WebOnly>
         <HomeSeo />
       </WebOnly>

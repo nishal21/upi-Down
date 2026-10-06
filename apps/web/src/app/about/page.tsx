@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NPCI_SYNCED_AT } from "@upi-down/shared";
+import { BackHome } from "@/components/back-home";
 import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ const rows = [
 export default function About() {
   return (
     <article className="mx-auto max-w-2xl px-4 pt-10 leading-relaxed">
+      <BackHome />
       <h1 className="font-display text-4xl font-extrabold">How UPI Down? works</h1>
       <p className="mt-4 text-lg text-muted-foreground">
         When a UPI payment fails, you can&apos;t tell if it&apos;s the bank, the app or your phone. UPI Down? asks everyone
