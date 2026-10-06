@@ -87,3 +87,14 @@ Next
 - Commit/push Dockerfile.api + nginx http2 fixes so VPS matches GitHub.
 - Optional CF cache: `/api/status` 5s; bypass stream + report.
 - Search Console sitemap; confirm Turnstile hostnames include upidown.nishal.dev.
+
+## Favicon
+Done
+- `favicon.ico` (public + app), layout icon links, `pnpm icons` / `prebuild` via `scripts/icons.mjs`.
+- VPS: git pull → rebuild web → rsync `web/out`.
+
+## Board load + tab lag
+Done
+- Show BOARD_BANKS names immediately (no skeleton wait on API).
+- Tabs `forceMount` + hide inactive; drop staggered `row-in` remount animation.
+- Tab change via `startTransition`; hydrate status from localStorage on client module load.

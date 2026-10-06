@@ -15,7 +15,24 @@ interface LiveState {
 
 const CACHE_KEY = "upidown-last-status";
 const listeners = new Set<() => void>();
-let state: LiveState = { snapshot: null, connection: "connecting", stale: false };
+
+function readCache(): StatusSnapshot | null {
+  try {
+    const cached = localStorage.getItem(CACHE_KEY);
+    return cached ? (JSON.parse(cached) as StatusSnapshot) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Client module load: show last snapshot immediately (names + status), then refresh. */
+let state: LiveState =
+  typeof window !== "undefined"
+    ? (() => {
+        const snap = readCache();
+        return { snapshot: snap, connection: "connecting" as Connection, stale: !!snap };
+      })()
+    : { snapshot: null, connection: "connecting", stale: false };
 let started = false;
 let source: EventSource | null = null;
 let pollTimer: ReturnType<typeof setTimeout> | null = null;
@@ -81,10 +98,10 @@ function disconnect() {
 function start() {
   if (started) return;
   started = true;
-  try {
-    const cached = localStorage.getItem(CACHE_KEY);
-    if (cached) emit({ snapshot: JSON.parse(cached) as StatusSnapshot, stale: true });
-  } catch {}
+  if (!state.snapshot) {
+    const cached = readCache();
+    if (cached) emit({ snapshot: cached, stale: true });
+  }
 
   void poll().then(() => {
     if (sseFailures < 2 && !state.snapshot?.degraded) connect();

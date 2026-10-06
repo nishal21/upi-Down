@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
+    "icons": "node scripts/icons.mjs",
+    "prebuild": "node scripts/icons.mjs",
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "cap:sync": "cap sync android",

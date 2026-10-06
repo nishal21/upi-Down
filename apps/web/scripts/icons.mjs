@@ -1,10 +1,29 @@
-// Renders PWA icons, Android source icons and the OG image from the SVGs in /assets.
-import { mkdir } from "node:fs/promises";
+// Renders PWA icons, favicon, Android source icons and the OG image from the SVGs in /assets.
+import { mkdir, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
 const icon = new URL("../assets/icon.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
 const og = new URL("../assets/og.svg", import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
 const out = (p) => new URL(`../${p}`, import.meta.url).pathname.replace(/^\/(\w:)/, "$1");
+
+/** Single PNG packed as a modern ICO (PNG-in-ICO). */
+function pngToIco(png) {
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0);
+  header.writeUInt16LE(1, 2);
+  header.writeUInt16LE(1, 4);
+  const entry = Buffer.alloc(16);
+  entry.writeUInt8(0, 0); // 0 ⇒ 256; we use 32 below
+  entry.writeUInt8(32, 0);
+  entry.writeUInt8(32, 1);
+  entry.writeUInt8(0, 2);
+  entry.writeUInt8(0, 3);
+  entry.writeUInt16LE(1, 4);
+  entry.writeUInt16LE(32, 6);
+  entry.writeUInt32LE(png.length, 8);
+  entry.writeUInt32LE(22, 12);
+  return Buffer.concat([header, entry, png]);
+}
 
 await mkdir(out("public/icons"), { recursive: true });
 
@@ -18,6 +37,9 @@ await sharp({ create: { width: 512, height: 512, channels: 4, background: "#0f11
   .toFile(out("public/icons/maskable-512.png"));
 await sharp(icon).resize(180, 180).png().toFile(out("public/apple-touch-icon.png"));
 await sharp(icon).resize(48, 48).png().toFile(out("src/app/icon.png"));
+const favPng = await sharp(icon).resize(32, 32).png().toBuffer();
+await writeFile(out("public/favicon.ico"), pngToIco(favPng));
+await writeFile(out("src/app/favicon.ico"), pngToIco(favPng));
 await sharp(og).png().toFile(out("public/og.png"));
 
 // Sources for `npx @capacitor/assets generate`.
