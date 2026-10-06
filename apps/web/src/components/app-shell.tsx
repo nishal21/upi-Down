@@ -1,17 +1,28 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
+import { BootSplash } from "./boot-splash";
 import { Onboarding } from "./onboarding";
 import { SwRegister } from "./sw-register";
 import { detectNative, markHtmlNative } from "@/lib/native";
 import { warmLive } from "@/lib/live";
-import { readOnboarded, useOnboarded } from "@/lib/onboarding-store";
+import { useOnboarded } from "@/lib/onboarding-store";
 import { setNeedsOnboard, useNativeClass } from "@/lib/use-native";
 
+const SPLASH_SEEN = "upidown-splash-seen";
+
+function splashAlreadySeen(): boolean {
+  try {
+    return sessionStorage.getItem(SPLASH_SEEN) === "1";
+  } catch {
+    return false;
+  }
+}
+
 /**
- * Native: onboarding first. After onboarding, finish() does a full navigation
- * to `/` (same as the working "Back to all banks" button) — in-place mount was
- * still hitting ERR.
+ * Native: Cap splash → Lottie → onboarding (or home). After onboarding, finish()
+ * does a full navigation to `/` — in-place mount was still hitting ERR.
+ * Session splash skip avoids replaying Lottie on that hard nav.
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const native = useNativeClass();
@@ -23,6 +34,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       return true;
     }
     return false;
+  });
+  const [splashDone, setSplashDone] = useState(() => {
+    if (typeof window === "undefined") return true;
+    if (!detectNative()) return true;
+    return splashAlreadySeen();
   });
 
   useEffect(() => {
@@ -49,9 +65,20 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, [settled]);
 
   useEffect(() => {
+    if (!settled) return;
+    if (!native) {
+      setSplashDone(true);
+      return;
+    }
+    if (splashAlreadySeen()) setSplashDone(true);
+  }, [settled, native]);
+
+  useEffect(() => {
     if (settled && native && !done) warmLive();
   }, [settled, native, done]);
 
+  const showSplash = settled && native && !splashDone;
+  // Keep needs-onboard through splash so chrome never flashes under Lottie.
   const gating = settled && native && !done;
 
   useEffect(() => {
@@ -60,22 +87,32 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   // Clear one-shot hard-reload guard once the app shell is healthy.
   useEffect(() => {
-    if (!gating && settled) {
+    if (!gating && settled && !showSplash) {
       try {
         sessionStorage.removeItem("upidown-hard-reload");
       } catch {
         /* ignore */
       }
     }
-  }, [gating, settled]);
+  }, [gating, settled, showSplash]);
 
-  const showChrome = settled && !gating;
+  const onSplashDone = () => {
+    try {
+      sessionStorage.setItem(SPLASH_SEEN, "1");
+    } catch {
+      /* ignore */
+    }
+    setSplashDone(true);
+  };
+
+  const showChrome = settled && !gating && !showSplash;
 
   return (
     <>
-      <Onboarding />
+      {showSplash ? <BootSplash onDone={onSplashDone} /> : null}
+      {!showSplash ? <Onboarding /> : null}
       <SwRegister />
-      {showChrome ? children : <div className="min-h-dvh bg-background" aria-hidden />}
+      {showChrome ? children : <div className="min-h-dvh bg-[#0f110e]" aria-hidden />}
     </>
   );
 }

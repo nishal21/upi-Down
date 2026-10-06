@@ -20,8 +20,9 @@ const config: CapacitorConfig = {
       initialViewportFitValueHint: "cover",
     },
     SplashScreen: {
-      launchShowDuration: 600,
-      launchAutoHide: true,
+      // Stay up until BootSplash Lottie is ready, then SplashScreen.hide().
+      launchShowDuration: 0,
+      launchAutoHide: false,
       backgroundColor: "#0f110e",
       showSpinner: false,
     },
