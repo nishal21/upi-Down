@@ -73,3 +73,17 @@ Done
 Done
 - Runtime stage used `require('./package.json.src')` which Node parses as JS → SyntaxError on `"name":`.
 - Now `JSON.parse(fs.readFileSync(...))`. Push + rebuild on VPS.
+
+## Deploy nginx http2
+Done
+- VPS nginx rejected `http2 on;` → use `listen 443 ssl http2;`. 526 was origin never loading the site.
+
+## VPS live (upidown.nishal.dev)
+Done
+- API + Postgres + Redis healthy on 127.0.0.1:3020/5442/6390.
+- Static `web/out` built on VPS; Nginx + CF Origin cert; degrade cron installed.
+- Verified: public 200, `/api/healthz` ok, `/sbi-upi-down/` 200.
+Next
+- Commit/push Dockerfile.api + nginx http2 fixes so VPS matches GitHub.
+- Optional CF cache: `/api/status` 5s; bypass stream + report.
+- Search Console sitemap; confirm Turnstile hostnames include upidown.nishal.dev.

@@ -24,3 +24,4 @@
 - WebSite SearchAction `urlTemplate` with `?q=` must be honored client-side or Google’s sitelinks search box breaks.
 - Footer copyright year: `new Date().getFullYear()` in the client Footer is fine for static export (builds once; year updates on next deploy).
 - In Docker, `require('foo.json.src')` is JS not JSON. Use `JSON.parse(fs.readFileSync(...))` or keep a `.json` suffix.
+- Ubuntu nginx often lacks `http2 on;`. Use `listen 443 ssl http2;` instead.
