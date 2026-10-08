@@ -7,7 +7,6 @@ import {
   BANKS,
   BOARD_APPS,
   BOARD_BANKS,
-  STATUS_RANK,
   UPI_APP_BY_ID,
   searchBanks,
   type EntityStatus,
@@ -73,8 +72,10 @@ const Row = memo(function Row({
     <>
       <span className="flex min-w-0 items-center gap-3">
         <SignalPlate label={label} status={entity.status} />
-        <span className="min-w-0">
-          <span className="block truncate font-display text-[15px] font-semibold leading-tight">{name}</span>
+        <span className="min-w-0 flex-1">
+          <span className="block line-clamp-2 font-display text-[13px] font-semibold leading-tight sm:truncate sm:text-[15px]">
+            {name}
+          </span>
           <span className="tnum block font-mono text-[11px] text-muted-foreground sm:hidden">{reportsLabel}</span>
         </span>
       </span>
@@ -82,7 +83,7 @@ const Row = memo(function Row({
         <StatusChip status={entity.status} />
       </span>
       <span className="tnum hidden text-end font-mono text-sm font-semibold sm:block">
-        {entity.total > 0 ? entity.total : <span className="text-muted-foreground">—</span>}
+        {entity.total > 0 ? entity.total : <span className="text-muted-foreground">0</span>}
       </span>
       <span className="hidden justify-end sm:flex">
         <Sparkline data={entity.spark} status={entity.status} />
@@ -141,24 +142,30 @@ export function Board() {
   const [tab, setTab] = useState(favorites.length > 0 ? "fav" : "all");
 
   const bankMap = useMemo(() => new Map(snapshot?.banks.map((b) => [b.id, b])), [snapshot]);
+  const favSet = useMemo(() => new Set(favorites), [favorites]);
+
+  // Fixed BOARD_BANKS order (no jump when live data arrives). Favorites float to the top.
   const banks = useMemo(() => {
-    if (!query.trim()) {
-      // Names from BOARD_BANKS immediately — don't wait on the API for the list.
-      const ordered = snapshot ? snapshot.banks : BOARD_BANKS.map((b) => emptyEntity(b.id));
-      return ordered.filter((e) => BANK_BY_ID[e.id]);
+    const q = query.trim();
+    if (q) {
+      return searchBanks(q, SEARCH_LIMIT).map((b) => bankMap.get(b.id) ?? emptyEntity(b.id));
     }
-    const found = searchBanks(query, SEARCH_LIMIT).map((b) => bankMap.get(b.id) ?? emptyEntity(b.id));
-    return found.sort((a, b) => STATUS_RANK[a.status] - STATUS_RANK[b.status] || b.total - a.total);
-  }, [snapshot, query, bankMap]);
+    const rest = BOARD_BANKS.filter((b) => !favSet.has(b.id)).map((b) => bankMap.get(b.id) ?? emptyEntity(b.id));
+    const pinned = favorites
+      .map((id) => bankMap.get(id) ?? emptyEntity(id))
+      .filter((e) => BANK_BY_ID[e.id]);
+    return [...pinned, ...rest];
+  }, [snapshot, query, bankMap, favorites, favSet]);
+
   const favs = useMemo(
     () => favorites.map((id) => bankMap.get(id) ?? emptyEntity(id)).filter((e) => BANK_BY_ID[e.id]),
     [favorites, bankMap],
   );
+  const appMap = useMemo(() => new Map(snapshot?.apps.map((a) => [a.id, a])), [snapshot]);
   const apps = useMemo(
-    () => (snapshot?.apps ?? BOARD_APPS.map((a) => emptyEntity(a.id))).filter((e) => UPI_APP_BY_ID[e.id]),
-    [snapshot],
+    () => BOARD_APPS.map((a) => appMap.get(a.id) ?? emptyEntity(a.id)),
+    [appMap],
   );
-  const favSet = useMemo(() => new Set(favorites), [favorites]);
 
   const bankRows = (list: EntityStatus[]) =>
     list.map((e) => {
@@ -174,7 +181,7 @@ export function Board() {
           onFav={toggle}
           favAdd={t.favAdd}
           favRemove={t.favRemove}
-          reportsLabel={e.total > 0 ? t.reportsIn15(e.total) : t.noReports15}
+          reportsLabel={e.total > 0 ? t.reportsIn15(e.total) : t.noReportsShort}
         />
       );
     });
@@ -234,7 +241,7 @@ export function Board() {
               entity={e}
               label={UPI_APP_BY_ID[e.id].short}
               name={UPI_APP_BY_ID[e.id].name}
-              reportsLabel={e.total > 0 ? t.reportsIn15(e.total) : t.noReports15}
+              reportsLabel={e.total > 0 ? t.reportsIn15(e.total) : t.noReportsShort}
             />
           ))}
         </TabsContent>

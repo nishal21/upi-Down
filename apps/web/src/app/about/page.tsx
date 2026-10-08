@@ -4,7 +4,7 @@ import { BackHome } from "@/components/back-home";
 import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "How UPI Down? works – status rules explained",
+  title: "How UPI Down? works: status rules explained",
   description:
     "How UPI Down? turns anonymous failed-payment reports into Down, Slow, Working or No info for Indian banks. Crowd-sourced, not NPCI official data.",
   alternates: { canonical: "/about/" },

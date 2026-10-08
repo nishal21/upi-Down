@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Check, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
@@ -56,6 +56,13 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
 
   const [appQuery, setAppQuery] = useState("");
   const [fresh, setFresh] = useState<EntityStatus | null>(null);
+  const pendingSend = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (pendingSend.current) clearTimeout(pendingSend.current);
+    };
+  }, []);
 
   if (!bank) return null;
 
@@ -69,10 +76,7 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
     .filter((b) => b.id !== bankId && b.status === "ok" && BANK_BY_ID[b.id]?.tier === 1)
     .slice(0, 4);
 
-  async function submit() {
-    if (sending) return;
-    setSending(true);
-    void haptic("tap");
+  async function flushReport() {
     const res = await sendReport({ bankId, kind, appId, deviceId: deviceId(), turnstileToken: token });
     setSending(false);
     if (token) {
@@ -93,6 +97,28 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
       setNeedCaptcha(true);
       toast.message(t.captcha);
     } else toast.error(t.failed);
+  }
+
+  function submit() {
+    if (sending || pendingSend.current) return;
+    if (needCaptcha && !token) return;
+    void haptic("tap");
+    setSending(true);
+    toast.message(t.reportedToast, {
+      duration: 4500,
+      action: {
+        label: t.undo,
+        onClick: () => {
+          if (pendingSend.current) clearTimeout(pendingSend.current);
+          pendingSend.current = null;
+          setSending(false);
+        },
+      },
+    });
+    pendingSend.current = setTimeout(() => {
+      pendingSend.current = null;
+      void flushReport();
+    }, 4000);
   }
 
   const doShare = () => share(shareLine(bank.short, live.status), bankUrl(bankId));
@@ -132,7 +158,7 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
                 {t.reportsLabel}
               </>
             ) : (
-              t.noReports15
+              t.noReportsShort
             )}
           </p>
         </div>
@@ -160,9 +186,13 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
 
       <div>
         <p className="board-label mb-2">{t.last24}</p>
-        <div className="overflow-x-auto">
-          <Sparkline data={live.spark} status={live.status} tall />
-        </div>
+        {live.spark.every((v) => v === 0) ? (
+          <p className="text-sm text-muted-foreground">{t.sparkEmpty}</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <Sparkline data={live.spark} status={live.status} tall />
+          </div>
+        )}
       </div>
 
       <div className="border-t border-base-300 pt-5">
@@ -248,7 +278,7 @@ export function BankPanel({ bankId, onPickBank }: { bankId: string; onPickBank?:
                 distance="10px"
                 className="h-14 w-full rounded-[4px] bg-down font-display text-lg font-bold text-error-content disabled:opacity-60"
               >
-                {sending ? t.reporting : t.reportBtn(bank.short)}
+                {sending ? t.reporting : t.reportBtn(bank.name)}
               </PulsatingButton>
             </motion.div>
           )}

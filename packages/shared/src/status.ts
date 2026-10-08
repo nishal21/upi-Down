@@ -34,7 +34,7 @@ export function totalOf(w: WindowCounts): number {
   return w.failed + w.pending + w.slow;
 }
 
-export function score({ window, baseline, hasHistory }: ScoreInput): Score {
+export function score({ window, baseline }: ScoreInput): Score {
   const total = totalOf(window);
   const ratio = total / Math.max(baseline, BASELINE_FLOOR);
 
@@ -44,7 +44,9 @@ export function score({ window, baseline, hasHistory }: ScoreInput): Score {
   if (total >= SLOW_MIN && ratio >= SLOW_RATIO) {
     return { status: "slow", total, ratio };
   }
-  if (total === 0 && !hasHistory) {
+  // Zero reports in the window = No info. Never mark Working just because
+  // the bank had history earlier (that was showing green with 0 reports).
+  if (total === 0) {
     return { status: "unknown", total, ratio };
   }
   return { status: "ok", total, ratio };

@@ -1,21 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BANK_BY_ID, searchBanks } from "@upi-down/shared";
+import { searchBanks } from "@upi-down/shared";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
 import { useT } from "@/lib/i18n";
-import { useLive } from "@/lib/live";
 import { useIsNative } from "@/lib/use-native";
+import { BankPick } from "./bank-pick";
 import { useBoard } from "./board-context";
-import { SignalPlate, StatusChip } from "./status";
 
 export function BankSearch() {
   const { t } = useT();
@@ -77,10 +68,9 @@ export function BankSearch() {
   );
 }
 
-/** ⌘K / Ctrl+K or "/" anywhere. */
+/** ⌘K / Ctrl+K or "/" anywhere. Same sheet as "My payment failed". */
 export function CommandSearch() {
   const { t } = useT();
-  const { snapshot } = useLive();
   const { setOpenBank } = useBoard();
   const [open, setOpen] = useState(false);
 
@@ -96,42 +86,13 @@ export function CommandSearch() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const [q, setQ] = useState("");
-  const statusOf = (id: string) => snapshot?.banks.find((b) => b.id === id)?.status ?? "unknown";
-  const results = searchBanks(q, 8);
-
   return (
-    <CommandDialog
+    <BankPick
       open={open}
-      onOpenChange={(o) => {
-        setOpen(o);
-        if (!o) setQ("");
-      }}
+      onOpenChange={setOpen}
       title={t.search[0]}
-      description={t.disclaimer}
-      shouldFilter={false}
-    >
-      <CommandInput placeholder={t.search[0]} value={q} onValueChange={setQ} />
-      <CommandList className="max-h-[min(36vh,180px)]">
-        <CommandEmpty>{t.noMatch}</CommandEmpty>
-        <CommandGroup heading={q ? t.searchAll : t.tabAll}>
-          {results.map((b) => (
-            <CommandItem
-              key={b.id}
-              value={b.id}
-              onSelect={() => {
-                setOpen(false);
-                setOpenBank(b.id);
-              }}
-              className="h-10 gap-2.5 rounded-[3px] py-0 data-[selected=true]:bg-base-200"
-            >
-              <SignalPlate label={BANK_BY_ID[b.id].short} status={statusOf(b.id)} />
-              <span className="min-w-0 flex-1 truncate text-sm">{b.name}</span>
-              <StatusChip status={statusOf(b.id)} />
-            </CommandItem>
-          ))}
-        </CommandGroup>
-      </CommandList>
-    </CommandDialog>
+      description={t.searchAll}
+      onPick={setOpenBank}
+    />
   );
 }

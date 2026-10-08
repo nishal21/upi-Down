@@ -31,11 +31,11 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-3 px-4">
         <Link href="/" className="flex min-w-0 shrink items-center gap-2.5" aria-label="UPI Down? home">
           <Mark />
-          <span className="truncate font-display text-lg font-extrabold tracking-tight">
+          <span className="hidden min-[400px]:inline truncate font-display text-lg font-extrabold tracking-tight">
             UPI Down<span className="text-down">?</span>
           </span>
         </Link>
-        <IstClock className="tnum ms-auto font-mono text-[11px] font-semibold sm:text-sm" />
+        <IstClock className="tnum ms-auto shrink-0 font-mono text-[10px] font-semibold tabular-nums sm:text-sm" />
         <div className="flex items-center gap-1 sm:ms-1">
           <label className="relative flex h-9 items-center rounded-[3px] text-muted-foreground focus-within:text-base-content hover:text-base-content">
             <Languages className="pointer-events-none absolute start-2 size-4" aria-hidden />

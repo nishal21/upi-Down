@@ -7,7 +7,7 @@ export const SITE_TAGLINE = "Live bank UPI status from user reports";
 
 export const DEFAULT_TITLE = "UPI Down today? Live bank UPI status from user reports";
 export const DEFAULT_DESCRIPTION =
-  "Is UPI down right now, or is it just you? Check live status for SBI, HDFC, ICICI, PhonePe, Google Pay and every NPCI UPI bank from anonymous failed-payment reports. Free, no login. Not affiliated with NPCI.";
+  "Is UPI down, or just you? Live status for SBI, HDFC, ICICI, PhonePe, Google Pay and other UPI banks from recent user reports. Free, no login. Not affiliated with NPCI.";
 
 export const HOME_KEYWORDS = [
   "upi down",
@@ -53,7 +53,7 @@ export function bankFaq(bank: Bank) {
     },
     {
       q: `My ${short} UPI payment failed but money was debited. What now?`,
-      a: `Failed UPI debits are usually reversed automatically, often within 24–48 hours. Keep the UPI transaction ID (RRN) and raise a complaint in your UPI app or with ${name} if it is not reversed.`,
+      a: `Failed UPI debits are usually reversed automatically, often within 24-48 hours. Keep the UPI transaction ID (RRN) and raise a complaint in your UPI app or with ${name} if it is not reversed.`,
     },
     {
       q: `Why does ${short} UPI fail on one app but work on another?`,

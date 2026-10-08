@@ -3,7 +3,7 @@ import { BackHome } from "@/components/back-home";
 import { SITE_NAME, absoluteUrl, ogImages, twitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Privacy – what UPI Down? collects",
+  title: "Privacy: what UPI Down? collects",
   description:
     "What UPI Down? stores when you report a failed UPI payment: short-lived device hash, no login, no UPI ID or account numbers, no payment processing. Last updated October 2026.",
   alternates: { canonical: "/privacy/" },

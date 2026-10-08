@@ -44,7 +44,7 @@ export function FavoritesStrip() {
                 <span className="font-mono text-lg font-extrabold leading-none">{BANK_BY_ID[id].short}</span>
                 <StatusChip status={status} />
                 <span className="tnum font-mono text-[11px] text-muted-foreground">
-                  {e && e.total > 0 ? t.reportsIn15(e.total) : t.noReports15}
+                  {e && e.total > 0 ? t.reportsIn15(e.total) : t.noReportsShort}
                 </span>
               </button>
             );

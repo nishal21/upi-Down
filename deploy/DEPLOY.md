@@ -41,11 +41,14 @@ rsync -az --delete apps/web/out/ vps:/opt/upi-down/web/out/
 
 ```sh
 sudo cp deploy/cloudflare-realip.conf /etc/nginx/snippets/
+sudo cp deploy/nginx-security-headers.conf /opt/upi-down/deploy/
 sudo cp deploy/nginx-upidown.nishal.dev.conf /etc/nginx/sites-available/upidown.nishal.dev
-sudo ln -s /etc/nginx/sites-available/upidown.nishal.dev /etc/nginx/sites-enabled/
+sudo ln -sf /etc/nginx/sites-available/upidown.nishal.dev /etc/nginx/sites-enabled/
 sudo mkdir -p /var/cache/nginx/upidown
 sudo nginx -t && sudo systemctl reload nginx
 ```
+
+Security headers live in `deploy/nginx-security-headers.conf` and are included from every `location` that sets `add_header` (nginx drops parent headers otherwise).
 
 `nginx -t` must pass before reload, otherwise every site on the box is at risk.
 

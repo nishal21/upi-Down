@@ -93,9 +93,8 @@ const webAppLd = jsonLdGraph([
 export default function Page() {
   return (
     <>
-      <WebOnly>
-        <JsonLd data={webAppLd} />
-      </WebOnly>
+      {/* Outside WebOnly so ld+json stays in static HTML for crawlers/scanners. */}
+      <JsonLd data={webAppLd} />
       <AppHome />
       <WebOnly>
         <HomeSeo />

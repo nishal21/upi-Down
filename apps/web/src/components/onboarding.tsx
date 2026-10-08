@@ -57,7 +57,7 @@ function StepHeader({ step, onSkip, showSkip }: { step: number; onSkip: () => vo
     <div className="space-y-3">
       <div className="flex items-center justify-between gap-3">
         <p className="font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[#1a1a1a]">
-          Step {String(step + 1).padStart(2, "0")} / 04 — {STEPS[step].label}
+          Step {String(step + 1).padStart(2, "0")} / 04 · {STEPS[step].label}
         </p>
         {showSkip && (
           <button
@@ -130,7 +130,7 @@ function LiveBoardSlide() {
       </motion.div>
 
       <div className="border border-dashed border-[#1a1a1a] px-3 py-2.5 text-[12px] leading-snug text-[#3d3d3d]">
-        Check status before every big payment — saves failed txn charges.
+        Check status before every big payment. Saves failed txn charges.
       </div>
     </div>
   );
@@ -216,7 +216,7 @@ function ReportSlide({ kind, setKind }: { kind: string; setKind: (k: string) => 
           Payment failed? Shout it out.
         </h1>
         <p className="text-[14px] leading-relaxed text-[#5c5c5c]">
-          One tap tells others to wait — before their money gets stuck too.
+          One tap tells others to wait before their money gets stuck too.
         </p>
       </div>
 

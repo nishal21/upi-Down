@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BANK_BY_ID, BOARD_BANKS, STATUS_RANK, type EntityStatus, type Status } from "@upi-down/shared";
 import { useT } from "@/lib/i18n";
 import { useLive, type Connection } from "@/lib/live";
 import { cn } from "@/lib/utils";
 import { useBoard } from "./board-context";
 import { minutesAgo } from "./clock";
+import { ReportPicker } from "./report-picker";
 import { StatusDot } from "./status";
 
 const ORDER: Status[] = ["down", "slow", "ok", "unknown"];
@@ -20,6 +21,21 @@ const TEXT: Record<Status, string> = {
 
 function ConnectionPill({ connection, updatedAt }: { connection: Connection; updatedAt?: string }) {
   const { t } = useT();
+  // Hide "connecting" for a beat so cold start doesn't flash it under the headline.
+  const [showConnecting, setShowConnecting] = useState(false);
+  useEffect(() => {
+    if (connection !== "connecting") {
+      setShowConnecting(false);
+      return;
+    }
+    const id = window.setTimeout(() => setShowConnecting(true), 700);
+    return () => window.clearTimeout(id);
+  }, [connection]);
+
+  if (connection === "connecting" && !showConnecting) {
+    return <span className="inline-block h-4" aria-hidden />;
+  }
+
   const label = { live: t.live, polling: t.polling, offline: t.offline, connecting: t.connecting }[connection];
   return (
     <span className="tnum inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -84,6 +100,7 @@ export function Hero() {
   const { t } = useT();
   const { snapshot, connection } = useLive();
   const { setOpenBank } = useBoard();
+  const [reportOpen, setReportOpen] = useState(false);
 
   const board = useMemo(() => {
     const byId = new Map(snapshot?.banks.map((b) => [b.id, b]));
@@ -152,6 +169,14 @@ export function Hero() {
         </p>
         <p className="mt-4 max-w-[52ch] text-[17px] leading-relaxed text-muted-foreground">{sub}</p>
 
+        <button
+          type="button"
+          onClick={() => setReportOpen(true)}
+          className="mt-5 inline-flex h-12 items-center justify-center rounded-[4px] bg-down px-5 font-display text-base font-bold text-error-content"
+        >
+          {t.reportCta}
+        </button>
+
         {snapshot && (
           <dl className="tnum mt-6 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[12px]">
             {ORDER.filter((s) => count(s) > 0).map((s) => (
@@ -168,6 +193,7 @@ export function Hero() {
       </div>
 
       <Ticker items={board} onOpen={setOpenBank} />
+      <ReportPicker open={reportOpen} onOpenChange={setReportOpen} />
     </section>
   );
 }

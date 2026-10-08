@@ -128,7 +128,9 @@ const bankIndex = BANKS.map((b) => ({ bank: b, hay: norm([b.short, b.name, ...b.
 
 export function searchBanks(query: string, limit = Infinity): Bank[] {
   const q = norm(query);
-  if (!q) return BOARD_BANKS;
+  if (!q) {
+    return Number.isFinite(limit) ? BOARD_BANKS.slice(0, limit) : BOARD_BANKS;
+  }
   const words = q.split(" ");
   const out: Bank[] = [];
   for (const { bank, hay } of bankIndex) {

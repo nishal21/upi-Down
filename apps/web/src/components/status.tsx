@@ -62,12 +62,13 @@ export function StatusChip({ status, className }: { status: Status; className?: 
 }
 
 export function SignalPlate({ label, status, size = "md" }: { label: string; status: Status; size?: "md" | "lg" }) {
-  const text = label.length > 5 ? label.slice(0, 5) : label;
+  const long = label.length > 4;
   return (
     <span
       className={cn(
-        "relative grid shrink-0 place-items-center rounded-[3px] border font-mono font-extrabold tracking-tight",
-        size === "lg" ? "size-16 text-base" : "size-11 text-[11px]",
+        "relative grid shrink-0 place-items-center rounded-[3px] border px-1 font-mono font-extrabold tracking-tight",
+        size === "lg" ? "h-16 min-w-16 px-1.5" : "h-11 min-w-11",
+        size === "lg" ? (long ? "text-[10px] leading-none" : "text-base") : long ? "text-[9px] leading-none" : "text-[11px]",
         status === "down" && "border-down bg-down text-error-content",
         status === "slow" && "border-slow/70 bg-slow/10 text-slow",
         status === "ok" && "border-base-300 bg-base-200 text-base-content",
@@ -75,7 +76,7 @@ export function SignalPlate({ label, status, size = "md" }: { label: string; sta
       )}
       aria-hidden
     >
-      {text}
+      {label}
     </span>
   );
 }
@@ -93,11 +94,19 @@ export function Sparkline({
   tall?: boolean;
 }) {
   const series = Array.isArray(data) ? data.filter((n) => typeof n === "number" && Number.isFinite(n)) : [];
+  const sum = series.reduce((a, b) => a + b, 0);
   const max = Math.max(1, ...series, 0);
   const h = tall ? 56 : 22;
   const w = tall ? 6 : 3;
   const gap = tall ? 3 : 1.5;
   const width = Math.max(series.length * (w + gap) - gap, w);
+  if (sum === 0 && !tall) {
+    return (
+      <span className={cn("font-mono text-[11px] text-muted-foreground", className)} aria-label="No reports in 24 hours">
+        0
+      </span>
+    );
+  }
   return (
     <svg
       viewBox={`0 0 ${width} ${h}`}
@@ -105,7 +114,7 @@ export function Sparkline({
       height={h}
       className={cn("overflow-visible", STATUS_TEXT[status === "unknown" || !STATUS_TEXT[status] ? "unknown" : status], className)}
       role="img"
-      aria-label={`${series.reduce((a, b) => a + b, 0)} reports in 24 hours`}
+      aria-label={`${sum} reports in 24 hours`}
     >
       {series.map((v, i) => {
         const bh = v === 0 ? 1.5 : Math.max(2.5, (v / max) * h);
